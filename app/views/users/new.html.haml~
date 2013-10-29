@@ -1,0 +1,10 @@
+%h4 New User Registration Form !!
+
+=form_tag users_path , :method => :post do
+  = label :user, :email, 'Email'
+  = text_field :user, 'Email'
+  = label :user, :password, 'Password'
+  = text_field :user, 'Password'
+  = label :user, :c_password, 'Confirm Password'
+  = text_field :user, 'Confirm Password'
+  = submit_tag 'Create Account'

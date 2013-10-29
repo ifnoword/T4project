@@ -1,0 +1,17 @@
+%h1 Welcome to NAME.com
+
+
+= form_tag, :method => :post do
+  = text_field :email , 'email'
+  = text_field :password , 'password'
+  = submit_tag 'Login'  
+
+
+=link_to "Register", new_user_path
+
+= form_tag jobs_path, :method => :post do
+  = text_field :job_terms , 'title'
+  = submit_tag 'Search'  
+
+
+
