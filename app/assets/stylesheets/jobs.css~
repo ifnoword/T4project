@@ -2,11 +2,11 @@ div.middle {
   text-align: center;
 }
 #icon, #indexbox{
-  position: relative;
-  top: 100px;
+
 }
 
 div.account{
   position: absolute;
   top:20px;
+  right: 20px;
 }
