@@ -14,6 +14,11 @@
 ActiveRecord::Schema.define(:version => 20131029215546) do
 
   create_table "jobs", :force => true do |t|
+    t.string   "employer"
+    t.string   "title"
+    t.text     "desc"
+    t.text     "reqs"
+    t.text     "desire"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -21,9 +26,9 @@ ActiveRecord::Schema.define(:version => 20131029215546) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "password"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
