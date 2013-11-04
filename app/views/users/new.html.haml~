@@ -1,14 +1,20 @@
-%h1 New User Registration Form !!
+.account
+  =link_to "Back", jobs
 
-=form_tag users_path do
+.middle
 
-  = label :user, :email, 'Email'
-  = text_field :user, 'email'
+  %h1 New User Registration Form !!
 
-  = label :user, :password, 'Password'
-  = text_field :user, 'password'
+  =form_tag users_path do
 
-  = label :user, :password_confirmation, 'Confirm Password'
-  = text_field :user, 'password_confirmation'
+    = label :user, :email, 'Email'
+    = text_field :user, 'email'
 
-  = submit_tag 'Create Account'
+    = label :user, :password, 'Password'
+    = text_field :user, 'password'
+
+    = label :user, :password_confirmation, 'Confirm Password'
+    = text_field :user, 'password_confirmation'
+
+    %br
+    = submit_tag 'Create Account'
