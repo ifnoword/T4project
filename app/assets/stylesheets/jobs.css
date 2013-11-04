@@ -1,11 +1,11 @@
 
-#icon, #indexbox{
-  position: relative;
-  top: 100px;
+#icon{
+  margin:100px 0 0 0;
+  
 }
 
+
 div.account{
-  position: absolute;
-  top:20px;
-  right: 20px;
+  text-align:right;
+  margin:20px 20px 0 0;
 }
