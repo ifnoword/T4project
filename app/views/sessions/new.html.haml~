@@ -8,8 +8,8 @@
         = password_field :session, 'password', :placeholder => 'Password'
         %br
         = submit_tag 'Login'
- 
+    %h3 
+      Not a memeber? 
+      =link_to 'Create an account', new_user_path
 
-  %h3 
-    Not a memeber? 
-    =link_to 'Create an account', new_user_path
+

@@ -7,5 +7,51 @@
 
 div.account{
   text-align:right;
-  margin:20px;
+  margin:20px 20px 0 0;
+}
+
+
+.common_button {
+        -moz-box-shadow:inset 0px 1px 0px 0px #e6e9eb;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #e6e9eb;
+        box-shadow:inset 0px 1px 0px 0px #e6e9eb;
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d2d3d4), color-stop(1, #9ea0a3) );
+        background:-moz-linear-gradient( center top, #d2d3d4 5%, #9ea0a3 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d3d4', endColorstr='#9ea0a3');
+        background-color:#d2d3d4;
+        -webkit-border-top-left-radius:0px;
+        -moz-border-radius-topleft:0px;
+        border-top-left-radius:0px;
+        -webkit-border-top-right-radius:0px;
+        -moz-border-radius-topright:0px;
+        border-top-right-radius:0px;
+        -webkit-border-bottom-right-radius:0px;
+        -moz-border-radius-bottomright:0px;
+        border-bottom-right-radius:0px;
+        -webkit-border-bottom-left-radius:0px;
+        -moz-border-radius-bottomleft:0px;
+        border-bottom-left-radius:0px;
+        text-indent:0;
+        border:1px solid #b8bdc2;
+        display:inline-block;
+        color:#222222;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        font-style:normal;
+        height:40px;
+        line-height:40px;
+        width:100px;
+        text-decoration:none;
+        text-align:center;
+        text-shadow:1px 1px 0px #b5b5b5;
+}
+.common_button:hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9ea0a3), color-stop(1, #d2d3d4) );
+        background:-moz-linear-gradient( center top, #9ea0a3 5%, #d2d3d4 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ea0a3', endColorstr='#d2d3d4');
+        background-color:#9ea0a3;
+}.common_button:active {
+        position:relative;
+        top:1px;
 }

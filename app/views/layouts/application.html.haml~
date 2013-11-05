@@ -14,7 +14,7 @@
           =link_to 'Login/Register', login_path
       -else
         .account
-          =link_to 'back', jobs_path
+          =link_to 'Back', jobs_path
 
     -else
       .account
@@ -27,5 +27,8 @@
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
+
+
+
 
     = yield

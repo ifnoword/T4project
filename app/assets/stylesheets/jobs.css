@@ -9,3 +9,44 @@ div.account{
   text-align:right;
   margin:20px 20px 0 0;
 }
+
+
+.common_button {
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background-color:#f3f3f3;
+        -webkit-border-top-left-radius:0px;
+        -moz-border-radius-topleft:0px;
+        border-top-left-radius:0px;
+        -webkit-border-top-right-radius:0px;
+        -moz-border-radius-topright:0px;
+        border-top-right-radius:0px;
+        -webkit-border-bottom-right-radius:0px;
+        -moz-border-radius-bottomright:0px;
+        border-bottom-right-radius:0px;
+        -webkit-border-bottom-left-radius:0px;
+        -moz-border-radius-bottomleft:0px;
+        border-bottom-left-radius:0px;
+        text-indent:0;
+        border:1px solid #b8bdc2;
+        display:inline-block;
+        color:#222222;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        font-style:normal;
+        height:40px;
+        line-height:40px;
+        width:100px;
+        text-decoration:none;
+        text-align:center;
+        text-shadow:1px 1px 0px #ffffff;
+}
+.common_button:hover {
+        background-color:#e8e8e8;
+}
+.common_button:active {
+        position:relative;
+        top:1px;
+}

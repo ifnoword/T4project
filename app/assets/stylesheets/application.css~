@@ -16,7 +16,21 @@ html{
  padding: 0;
 }
 .middle {
-
+  text-align: center;
 }
 
+a:visited{
+  color:#CC0000;
+}
+.account a,.account a:visited{
+  color:black;
+  font-weight:bold;
+}
+a,.account a:link{
+  text-decoration:none;
+}
+a,.account a:hover{
+  text-decoration:underline;
+  color:#CC0000;
+}
 
