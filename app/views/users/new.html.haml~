@@ -1,13 +1,12 @@
 .middle
-  %h1 New User Registration Form !!
-
   #Reg_form
+    %h1 New User Registration Form !!
     = form_tag users_path do
       .text_style
         = text_field :session, 'email',:placeholder => 'Email'
         %br
         = password_field :session, 'password', :placeholder => 'Password'
         %br
-	= password_field :psw_confirm, 'password', :placeholder => 'PSW Confirm'
+        = password_field :psw_confirm, 'password', :placeholder => 'PSW Confirm'
         %br
         = submit_tag 'Create my account'

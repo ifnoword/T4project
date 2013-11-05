@@ -1,7 +1,6 @@
 .middle
-  %h1#icon Welcome to NAME.com
-
-  #indexbox
+  .text_style
+    %h1#icon Welcome to NAME.com
     = form_tag jobs_path, :method => :post do
       = text_field :job_terms , 'title'
       = submit_tag 'Search'  

@@ -10,3 +10,26 @@ label{
   display: block;
   line-height: 25px;
 }
+
+#common_form{
+    margin:0 auto 0 auto;
+    width:650px;
+
+background: #fefcea; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #fefcea 0%, #fee101 68%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fefcea), color-stop(68%,#fee101)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* IE10+ */
+background: linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#fee101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+    -moz-border-radius:12px;
+    -webkit-border-radius:12px;
+    border-radius:12px;
+    box-shadow: 6px 8px 7px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: 6px 8px 7px rgba(0, 0, 0, 0.74);
+    -webkit-box-shadow: 6px 8px 7px rgba(0, 0, 0, 0.74);
+    border:1px solid #F1BB1A;
+}

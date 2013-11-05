@@ -1,6 +1,6 @@
 .middle
-  %h1 Employer Sign In
-  #Login_form
+  #common_form
+    %h1 Employer Sign In
     = form_tag login_create_path do
       .text_style
         = text_field :session, 'email',:placeholder => 'Email'
@@ -10,6 +10,6 @@
         = submit_tag 'Login'
  
 
-  %h4 
+  %h3 
     Not a memeber? 
     =link_to 'Create an account', new_user_path
