@@ -1,3 +1,15 @@
+input{
+  border:1px solid #b8bdc2;
+  height:35px;
+  font-size:20px;
+  
+}
+
+#search_box{
+  width:600px;
+  height:35px;
+}
+
 
 #icon{
   margin:100px 0 0 0;
@@ -12,13 +24,10 @@ div.account{
 
 
 .common_button {
-        -moz-box-shadow:inset 0px 1px 0px 0px #e6e9eb;
-        -webkit-box-shadow:inset 0px 1px 0px 0px #e6e9eb;
-        box-shadow:inset 0px 1px 0px 0px #e6e9eb;
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d2d3d4), color-stop(1, #9ea0a3) );
-        background:-moz-linear-gradient( center top, #d2d3d4 5%, #9ea0a3 100% );
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d3d4', endColorstr='#9ea0a3');
-        background-color:#d2d3d4;
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background-color:#f3f3f3;
         -webkit-border-top-left-radius:0px;
         -moz-border-radius-topleft:0px;
         border-top-left-radius:0px;
@@ -44,14 +53,12 @@ div.account{
         width:100px;
         text-decoration:none;
         text-align:center;
-        text-shadow:1px 1px 0px #b5b5b5;
+        text-shadow:1px 1px 0px #ffffff;
 }
 .common_button:hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9ea0a3), color-stop(1, #d2d3d4) );
-        background:-moz-linear-gradient( center top, #9ea0a3 5%, #d2d3d4 100% );
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ea0a3', endColorstr='#d2d3d4');
-        background-color:#9ea0a3;
-}.common_button:active {
+        background-color:#e8e8e8;
+}
+.common_button:active {
         position:relative;
         top:1px;
 }

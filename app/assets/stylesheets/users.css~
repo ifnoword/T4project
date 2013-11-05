@@ -31,5 +31,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
     box-shadow: 6px 8px 7px rgba(0, 0, 0, 0.74);
     -moz-box-shadow: 6px 8px 7px rgba(0, 0, 0, 0.74);
     -webkit-box-shadow: 6px 8px 7px rgba(0, 0, 0, 0.74);
-    border:1px solid #F1BB1A;
+    border:1px solid #eee;
 }

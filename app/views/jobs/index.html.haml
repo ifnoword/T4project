@@ -3,7 +3,7 @@
 
   .text_style
     = form_tag jobs_path, :method => :post do
-      = text_field :job_terms , 'title'
+      = text_field :job_terms , 'title',:id => 'search_box'
       %br
       = submit_tag 'Search',:class => 'common_button'  
 

@@ -1,3 +1,17 @@
+input{
+  border:1px solid #b8bdc2;
+  height:35px;
+  font-size:20px;
+}
+.common_form input{
+  text-align:center;
+}
+
+#search_box{
+  width:600px;
+  height:35px;
+}
+
 
 #icon{
   margin:100px 0 0 0;

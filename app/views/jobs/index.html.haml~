@@ -4,6 +4,7 @@
   .text_style
     = form_tag jobs_path, :method => :post do
       = text_field :job_terms , 'title'
+      %br
       = submit_tag 'Search',:class => 'common_button'  
 
 

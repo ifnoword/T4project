@@ -1,4 +1,20 @@
 $(function() {
+	//over the input
+        $( "input" ).mouseover(function(){
+			if(!$(this).is(":focus")){
+                                $(this).css("border-color","#a3a3a3"); 
+			}
+                }).mouseout(function(){
+			if(!$(this).is(":focus")){
+                 	       $(this).css("border-color","#b8bdc2");
+			}
+                }).focus(function(){
+                                $(this).css("border-color","#F6A828"); 
+                }).blur(function(){
+                        $(this).css("border-color","#b8bdc2"); 
+        }); 
+
+
 	var availableTags = [
 	"ActionScript",
 	"AppleScript",
@@ -14,8 +30,12 @@ $(function() {
 	"Scala",
 	"Scheme"
 	];
-	$( "#job_terms_title" ).autocomplete({
+	$( "#search_box" ).autocomplete({
 		source: availableTags
 	}).focus();
+
+
+
+
 });
 
