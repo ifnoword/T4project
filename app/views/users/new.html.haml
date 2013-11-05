@@ -1,20 +1,13 @@
-.account
-  =link_to "Back", jobs_path
-
 .middle
-
   %h1 New User Registration Form !!
 
-  =form_tag users_path do
-
-    = label :user, :email, 'Email'
-    = text_field :user, 'email'
-
-    = label :user, :password, 'Password'
-    = text_field :user, 'password'
-
-    = label :user, :password_confirmation, 'Confirm Password'
-    = text_field :user, 'password_confirmation'
-
-    %br
-    = submit_tag 'Create Account'
+  #Reg_form
+    = form_tag users_path do
+      .text_style
+        = text_field :session, 'email',:placeholder => 'Email'
+        %br
+        = password_field :session, 'password', :placeholder => 'Password'
+        %br
+        = password_field :psw_confirm, 'password', :placeholder => 'PSW Confirm'
+        %br
+        = submit_tag 'Create my account'

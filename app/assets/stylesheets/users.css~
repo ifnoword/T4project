@@ -1,9 +1,10 @@
-#users form{
-  position:absolute;
-  top: 100px;
-  left:50px;
-  display: block;
-  line-height: 25px;
+.text_style{
+
+  padding:20px 0 20px;
+}
+
+.text_style input{
+  margin-bottom:20px;	
 }
 
 label{

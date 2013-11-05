@@ -1,12 +1,9 @@
-.account
-  =link_to "Register", new_user_path
-
 .middle
   %h1#icon Welcome to NAME.com
 
-#indexbox
-  = form_tag jobs_path, :method => :post do
-    = text_field :job_terms , 'title'
-    = submit_tag 'Search'  
+  #indexbox
+    = form_tag jobs_path, :method => :post do
+      = text_field :job_terms , 'title'
+      = submit_tag 'Search'  
 
 

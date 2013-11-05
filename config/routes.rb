@@ -3,6 +3,11 @@ ProjectTrial::Application.routes.draw do
   # first created -> highest priority.
   resources :jobs
   resources :users
+
+  match '/login', to: 'sessions#new', via: :get
+  match '/login_create', to: 'sessions#create', via: :post
+  match '/logout', to: 'sessions#destroy', via: :delete
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
