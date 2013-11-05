@@ -2,12 +2,15 @@ input{
   border:1px solid #b8bdc2;
   height:35px;
   font-size:20px;
-  
+}
+.common_form input{
+  text-align:center;
 }
 
 #search_box{
   width:600px;
   height:35px;
+  padding:0 0 0 5px;
 }
 
 
