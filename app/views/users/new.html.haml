@@ -15,12 +15,12 @@
         %br
         -if flash[:acct_fail]
           -if !!flash[:acct_fail]['password']
-            %p= 'Email '+flash[:acct_fail]['password']
+            %p= 'Password '+flash[:acct_fail]['password']
         = password_field :user, 'password', :placeholder => 'Password'
         %br
         -if flash[:acct_fail]
           -if !!flash[:acct_fail]['password_confirmation']
-            %p= 'Email '+flash[:acct_fail]['password_confirmation']
+            %p= flash[:acct_fail]['password_confirmation']
         = password_field :user, 'password_confirmation', :placeholder => 'PSW Confirm'
         %br
         = submit_tag 'Create my account'  

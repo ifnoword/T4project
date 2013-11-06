@@ -4,19 +4,23 @@
     = form_tag users_path do
       .text_style
         -if flash[:acct_fail]
-          %p= 'Username '+flash[:acct_fail]['name']
+          -if !!flash[:acct_fail]['name']
+            %p= 'Username '+flash[:acct_fail]['name']
         = text_field :user, 'name',:placeholder => 'Name'
         %br
         -if flash[:acct_fail]
-          %p= 'Email '+flash[:acct_fail]['email']
+          -if !!flash[:acct_fail]['email']
+            %p= 'Email '+flash[:acct_fail]['email']
         = text_field :user, 'email',:placeholder => 'Email'
         %br
         -if flash[:acct_fail]
-          %p= 'Password '+flash[:acct_fail]['password']
+          -if !!flash[:acct_fail]['password']
+            %p= 'Email '+flash[:acct_fail]['password']
         = password_field :user, 'password', :placeholder => 'Password'
         %br
         -if flash[:acct_fail]
-          %p= flash[:acct_fail]['password_confirmation']
+          -if !!flash[:acct_fail]['password_confirmation']
+            %p= 'Email '+flash[:acct_fail]['password_confirmation']
         = password_field :user, 'password_confirmation', :placeholder => 'PSW Confirm'
         %br
         = submit_tag 'Create my account'  
