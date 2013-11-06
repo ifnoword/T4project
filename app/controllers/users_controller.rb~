@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  layout nil
+  layout 'application',:except => :new
   def new 
-  end #new
+  end 
 
   def create
     puts params[:user].inspect

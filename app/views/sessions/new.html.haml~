@@ -1,6 +1,8 @@
 .middle
   .common_form
-    %h1 Employers
+    %h1 Employers sign in
+    -if flash[:login_fail]
+      %p= flash[:login_fail]
     = form_tag login_create_path do
       .text_style
         = text_field :session, 'email',:placeholder => 'Email'

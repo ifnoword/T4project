@@ -1,0 +1,9 @@
+ul.container{ 
+	width:235px;
+}
+
+ul.container li{
+	list-style:none;
+	text-align:left;
+}
+

@@ -11,9 +11,12 @@ label{
   line-height: 25px;
 }
 
-#common_form{
-    margin:0 auto 0 auto;
+#login_form{
     width:650px;
+}
+
+.common_form{
+    margin:0 auto 0 auto;
 
 background: #fefcea; /* Old browsers */
 background: -moz-linear-gradient(45deg,  #fefcea 0%, #fee101 68%); /* FF3.6+ */

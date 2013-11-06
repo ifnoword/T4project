@@ -3,6 +3,7 @@ ProjectTrial::Application.routes.draw do
   # first created -> highest priority.
   resources :jobs
   resources :users
+  resources :panels
 
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post

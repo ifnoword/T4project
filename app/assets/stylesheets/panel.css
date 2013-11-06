@@ -1,0 +1,20 @@
+ul.container{ 
+	width:235px;
+}
+
+ul.container li{
+	list-style:none;
+	text-align:left;
+}
+
+#panel_form{
+    width:1200px;
+}
+
+#accord{
+  float:left;
+}
+
+.clear{
+  clear:both;
+}

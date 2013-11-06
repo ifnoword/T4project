@@ -1,0 +1,91 @@
+$(document).ready(function(){
+	
+ 					   
+	$('#usermainCtn').height('580');
+	$('#loading').height('500');
+	$('iframe').height('500');
+			
+				// Hide loading image when iframe is loaded
+	$('iframe').load(function() {							  
+		$('#loading').fadeOut(400);
+		var h1=$('body', $('iframe:visible').contents()).height()+30;
+		var h3=0;
+		if(h1>500)
+		{
+			h3=580+h1-500;
+			$('iframe').height(h1);
+			$('#usermainCtn').height(h3);
+			$('#loading').height(h1);
+		}
+		else
+		{	
+			$('#usermainCtn').height('580');
+			$('#loading').height('500');
+			$('iframe').height('500');
+
+		}
+	});
+/////////////////////////
+ 
+	$('#accord').delegate('li.dropdown a,#mypp,#allnews', 'click', function(event) {
+		var self = $(this),
+			i = self.parent().index(),
+			href = self.attr('href');
+
+
+			// Show loading icon
+			$('#loading').fadeIn(100, function() {
+				// Setup iframes
+				$('iframe').attr('src', function() {
+					return href;
+				});
+
+			});
+		// Don't follow the link
+		event.preventDefault();
+	});
+
+ 
+	if($('#hiddenorder').val()=="order")
+		$('#orderclick').click();
+	else if($('#hiddenorder').val()=="reply")
+		$('#replyclick').click();
+	
+
+	/* Changing thedefault easing effect - will affect the slideUp/slideDown methods: */
+//	$.easing.def = "easeOutBounce";
+
+	/* Binding a click event handler to the links: */
+	$('li.button a').click(function(e){
+	
+		/* Finding the drop down list that corresponds to the current section: */
+		var dropDown = $(this).parent().next();
+		
+		/* Closing all other drop down sections, except the current one */
+		$('.dropdown').not(dropDown).slideUp('slow');
+		dropDown.slideToggle('slow');
+		
+		/* Preventing the default event (which would be to navigate the browser to the link's address) */
+		e.preventDefault();
+	})
+	
+});
+
+function change(){
+	var h1=$('body', $('iframe:visible').contents()).height()+30;
+		var h3=0;
+		if(h1>500)
+		{
+			h3=580+h1-500;
+			$('iframe').height(h1);
+			$('#usermainCtn').height(h3);
+			$('#loading').height(h1);
+		}
+		else
+		{	
+			$('#usermainCtn').height('580');
+			$('#loading').height('500');
+			$('iframe').height('500');
+
+		}
+}
