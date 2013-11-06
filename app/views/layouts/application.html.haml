@@ -11,7 +11,7 @@
     -if !@current_user
       -if current_page?(jobs_path)
         .account
-          =link_to 'Login/Register', login_path
+          =link_to 'Login/Register', login_path, :method=>:get
       -else
         .account
           =link_to 'Back', jobs_path
@@ -22,13 +22,9 @@
           Welcome!
           = "#{@current_user.email}"
         =link_to 'Sign Out', logout_path, :method=>:delete
-
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
-
-
-
 
     = yield

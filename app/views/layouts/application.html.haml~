@@ -22,13 +22,9 @@
           Welcome!
           = "#{@current_user.email}"
         =link_to 'Sign Out', logout_path, :method=>:delete
-
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
-
-
-
 
     = yield
