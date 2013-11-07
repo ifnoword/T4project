@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
       end
     end
 
-  def self.create_user! params
+  def self.create_user params
     errs=Hash.new	       
     user = User.new
     user.name = params[:name] 

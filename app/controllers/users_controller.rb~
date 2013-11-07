@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  layout nil
-  layout 'application',:except => :new
+ 
   def new 
   end 
 
   def create
     puts params[:user].inspect
-    @user = User.create_user!(params[:user])
+    @user = User.create_user(params[:user])
 	
     if @user.class == User  
       flash[:notice] = "#{@user.email} was successfully created."     
