@@ -1,107 +1,107 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/saasbook/Documents/seltproject11713/app/controllers/application_controller.rb": [
+      "/home/saasbook/Documents/CNProj3/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         1,
+        null,
+        1,
+        6,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/CNProj3/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Documents/CNProj3/app/helpers/jobs_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Documents/CNProj3/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Documents/CNProj3/app/controllers/jobs_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/CNProj3/app/models/job.rb": [
+        1,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/CNProj3/app/controllers/panels_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         1,
         0,
         null,
         null
       ],
-      "/home/saasbook/Documents/seltproject11713/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/home/saasbook/Documents/seltproject11713/app/helpers/jobs_helper.rb": [
-        1,
-        null
-      ],
-      "/home/saasbook/Documents/seltproject11713/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/home/saasbook/Documents/seltproject11713/app/controllers/jobs_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/saasbook/Documents/seltproject11713/app/models/job.rb": [
-        1,
-        null,
-        null
-      ],
-      "/home/saasbook/Documents/seltproject11713/app/controllers/panels_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/home/saasbook/Documents/seltproject11713/app/controllers/sessions_controller.rb": [
+      "/home/saasbook/Documents/CNProj3/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
+        2,
+        2,
+        1,
+        1,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
         null
       ],
-      "/home/saasbook/Documents/seltproject11713/app/controllers/users_controller.rb": [
+      "/home/saasbook/Documents/CNProj3/app/controllers/users_controller.rb": [
         1,
         null,
         1,
         null,
         null,
         1,
-        0,
-        0,
+        3,
+        3,
         null,
-        0,
-        0,
-        0,
+        3,
+        1,
+        1,
         null,
-        0,
-        0,
+        2,
+        2,
         null,
         null,
         null,
         null
       ],
-      "/home/saasbook/Documents/seltproject11713/app/models/user.rb": [
+      "/home/saasbook/Documents/CNProj3/app/models/user.rb": [
         1,
         1,
         null,
@@ -154,6 +154,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1383862052
+=======
+    "timestamp": 1383864581
+>>>>>>> rproj
   }
 }
