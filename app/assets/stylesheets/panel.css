@@ -18,3 +18,23 @@ ul.container li{
 .clear{
   clear:both;
 }
+
+ul li a{
+	display:block;
+	font-weight:bold;
+	font-size:18px;
+	height:40px;
+	width:100%;
+	text-align:center;
+	padding:auto 0 auto 0;
+}
+
+ul a, ul a:visited {
+	text-decoration:none;
+	outline:none;
+}
+ul a:hover{
+	text-decoration:none;
+	background-color:#FFF;
+
+}

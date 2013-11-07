@@ -14,3 +14,27 @@ ul.container li{
 #accord{
   float:left;
 }
+
+.clear{
+  clear:both;
+}
+
+ul li a{
+	display:block;
+	font-weight:bold;
+	font-size:18px;
+	height:40px;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+ul a, ul a:visited {
+	text-decoration:none;
+	outline:none;
+}
+ul a:hover{
+	text-decoration:none;
+	background-color:#FFF;
+
+}
