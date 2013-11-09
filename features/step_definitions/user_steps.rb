@@ -21,5 +21,22 @@ Then /^I should see a flash "(.*?)"$/ do |text|
 end
 
 
+Given(/^I have visited the Login page$/) do
+    visit login_path
+end
+
+When(/^I have login with email "(.*?)" and pws (.*?)$/) do |email , pwd|
+    visit login_path
+    fill_in 'session[email]', :with => email
+    fill_in 'session[password]', :with => pwd
+    click_button 'Login'
+end
 
 
+Then /^I should see a flash "(.*?)"$/ do |text|
+    page.should have_content(text)
+ end
+
+When(/^I click on "(.*?)" link$/) do |arg1|
+  click_on arg1
+end

@@ -7,4 +7,4 @@ Scenario: Login to an account of Name
 
  When I have login with email "testing@uiowa.edu"
  And I am on Name Home Page    
-
+ Then I should see email "testing@uiowa.edu"
