@@ -19,10 +19,7 @@ end
 
 Given /^my new account with name "(.*?)" and email "(.*?)" and pws "(.*?)"$/ do |name,email,pwd|
     tmp = {:email => email,:name => name, :password => pwd, :password_confirmation =>pwd}
-
     User.create_user!(tmp)
-    puts User.all
-    puts "&&&&&&"
 end
 
 When(/^I have login with email "(.*?)" and pws (.*?)$/) do |email , pwd|
@@ -34,11 +31,14 @@ end
 
 
 Then /^I should see email "(.*?)"$/ do |text|
-    puts text
-    puts "****"
-    puts page.body
     page.should have_content(text)
  end
 
+When /^I click the Sign Out link$/ do
+   click_link "Sign Out"
+end
 
+Then /^I should be redirected to home page to see the "(.*?)" again$/ do |text|
+   page.should have_content(text)
+end
 
