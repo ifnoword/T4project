@@ -1,0 +1,17 @@
+# Completed step definitions for basic features: Create an account, Login 
+
+When (/^I am on Name home page$/) do
+  visit jobs_path
+ end
+
+When /^I have created an account with email "(.*?)"$/ do |email|
+    #visit new_user_path
+    fill_in 'email', :with => email
+    click_button 'Create my account'
+ end
+
+Then(/^I should see email "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+
