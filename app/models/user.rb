@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
     end
 
   def self.create_user! params
+    puts params
+    puts "hahahahha"
     errs=Hash.new	       
     user = User.new
     user.name = params[:name] 
@@ -37,8 +39,10 @@ class User < ActiveRecord::Base
     if errs.size==0
       user.password_digest = Digest::SHA256.hexdigest(params[:email]+params[:password])
       user.save!
+      puts "login success!"
       return user
     else
+      puts errs
       return errs
     end
 end

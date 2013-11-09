@@ -14,15 +14,15 @@ When /^I have created an account with name "(.*?)" and email "(.*?)" and pws "(.
 end
 
 Then /^I should see a flash "(.*?)"$/ do |text|
-    #puts text
-    #puts text
-    visit jobs_path 
-    #page.html.should have_content(text)
+    page.should have_content(text)
 end
 
+Given /^my new account with name "(.*?)" and email "(.*?)" and pws "(.*?)"$/ do |name,email,pwd|
+    tmp = {:email => email,:name => name, :password => pwd, :password_confirmation =>pwd}
 
-Given(/^I have visited the Login page$/) do
-    visit login_path
+    User.create_user!(tmp)
+    puts User.all
+    puts "&&&&&&"
 end
 
 When(/^I have login with email "(.*?)" and pws (.*?)$/) do |email , pwd|
@@ -33,10 +33,12 @@ When(/^I have login with email "(.*?)" and pws (.*?)$/) do |email , pwd|
 end
 
 
-Then /^I should see a flash "(.*?)"$/ do |text|
+Then /^I should see email "(.*?)"$/ do |text|
+    puts text
+    puts "****"
+    puts page.body
     page.should have_content(text)
  end
 
-When(/^I click on "(.*?)" link$/) do |arg1|
-  click_on arg1
-end
+
+

@@ -3,9 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.login(params[:session]['email'], params[:session]['password'])
+    pwd = params[:session]['password'].gsub("\"","")
+    @user = User.login(params[:session]['email'], pwd)
     if !@user
-      flash[:login_fail]="Wrong Email or Password!"
+      flash[:login_fail]=params[:session]['password']
       redirect_to login_path
     else
       session[:current_user]=@user.email
