@@ -14,32 +14,32 @@ class User < ActiveRecord::Base
       end
     end
 
-  def self.create_user params
-    errs=Hash.new	       
+  def self.create_user! params
+    @errs=Hash.new	       
     user = User.new
     user.name = params[:name] 
     user.email = params[:email]
     if !user.valid?     
       user.errors.each do |key, value|
-        errs[key.to_s]=value
+        @errs[key.to_s]=value
       end
     end
     if params[:password].size < 6 
       if params[:password].size!=0
-        errs['password']="is too short (minimum is #{@@pw_len_min})"
+        @errs['password']="is too short (minimum is #{@@pw_len_min})"
       else
-        errs['password']="can't be blank"
+        @errs['password']="can't be blank"
       end
     end
     if params[:password]!=params[:password_confirmation]
-      errs['password_confirmation']="Passwords don't match"
+      @errs['password_confirmation']="Passwords don't match"
     end
-    if errs.size==0
+    if @errs.size==0
       user.password_digest = Digest::SHA256.hexdigest(params[:email]+params[:password])
       user.save!
       return user
     else
-      return errs
+      return @errs
     end
 end
 
