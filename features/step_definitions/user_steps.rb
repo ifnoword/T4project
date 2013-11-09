@@ -16,10 +16,9 @@ end
 Then /^I should see a flash "(.*?)"$/ do |text|
     #puts text
     #puts text
-    #visit(jobs_path)
-    page.html.should have_content(text)
- end
-
+    visit jobs_path 
+    #page.html.should have_content(text)
+end
 
 
 
