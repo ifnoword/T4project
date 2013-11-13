@@ -21,6 +21,8 @@
         %p
           Welcome!
           = "#{@current_user.email}"
+        =link_to "#{@current_user.name}", panels_path, :method=>:get
+        |
         =link_to 'Sign Out', logout_path, :method=>:delete
     - if flash[:notice]
       #notice.message= flash[:notice]

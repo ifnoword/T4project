@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
     pwd = params[:session]['password'].gsub("\"","")
     @user = User.login(params[:session]['email'], pwd)
     if !@user
-      flash[:login_fail]=params[:session]['password']
+      flash[:login_fail]="Wrong Email or Password!"
       redirect_to login_path
     else
       session[:current_user]=@user.email
+      session[:current_user]=@user.name
       redirect_to jobs_path
     end
   end
