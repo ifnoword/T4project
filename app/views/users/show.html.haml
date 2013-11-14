@@ -1,0 +1,21 @@
+%h2 ExternMe
+%div
+  %ul
+    %li
+    = link_to 'Edit Account', edit_user_path, :method=>:get
+    %li
+    = link_to 'Edit Profile', edit_user_path, :method=>:get
+    %li
+    = link_to 'Post a Jobs', new_job_path, :method=>:get
+    %li
+    = link_to 'Delete Account', 'delete', :method=>:delete
+
+%div
+  %b Welcome, current_user.company name
+
+  %p Email: "{@current_user.email}"
+  %p Phone: "{@current_user.phone number}
+  %p Location: "{@current_user.location}"
+
+  
+

@@ -1,0 +1,11 @@
+%h4 Preview your Job
+= link_to_function 'Edit', "history.back()"
+%p Compnay : #{@job_details[:name]}
+%p Job Title : #{@job_details[:title]}
+%p Job Description : #{@job_details[:description]}
+%p Job Location : #{@job_details[:location]}
+%p Email : #{@job_details[:email]}
+
+=button_to 'Confirm', jobs_path , :method => :post 
+
+
