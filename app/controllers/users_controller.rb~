@@ -3,9 +3,13 @@ class UsersController < ApplicationController
   def new 
   end 
 
+  def show 
+  end
+
+
   def create
     puts params[:user].inspect
-    @user = User.create_user(params[:user])
+    @user = User.create_user!(params[:user])
 	
     if @user.class == User  
       flash[:notice] = "#{@user.email} was successfully created."     

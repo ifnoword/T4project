@@ -3,6 +3,13 @@ class UsersController < ApplicationController
   def new 
   end 
 
+  def show 
+  end
+
+  def edit
+  end
+
+
   def create
     puts params[:user].inspect
     @user = User.create_user!(params[:user])
