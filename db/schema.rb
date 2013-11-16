@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106044842) do
+ActiveRecord::Schema.define(:version => 20131115185621) do
 
   create_table "jobs", :force => true do |t|
     t.string   "employer"
@@ -21,14 +21,33 @@ ActiveRecord::Schema.define(:version => 20131106044842) do
     t.text     "desire"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "link"
+    t.string   "click"
+    t.integer  "user_id"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "altemail"
+    t.text     "desc"
+    t.string   "zipcode"
+    t.string   "addr1"
+    t.string   "addr2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "tel"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

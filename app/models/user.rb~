@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_one :profiles
+  has_many :jobs
+
   validates :email, presence: true, 
                     format: { with: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ },
                     uniqueness: {case_sensitive: true}
@@ -39,6 +42,7 @@ class User < ActiveRecord::Base
     if errs.size==0
       user.password_digest = Digest::SHA256.hexdigest(params[:email]+params[:password])
       user.save!
+      puts "login success!"
       return user
     else
       puts errs

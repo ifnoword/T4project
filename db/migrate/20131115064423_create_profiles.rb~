@@ -1,0 +1,17 @@
+class CreateProfiles < ActiveRecord::Migration
+  def change
+    create_table :profiles do |t|
+      t.string :name #company name
+      t.string :altemail #alternative email
+      t.text :desc  #brief self-description
+      t.string :zipcode
+      t.string :addr1 #address line 1
+      t.string :addr2 #address line 2
+      t.string :city  
+      t.string :state
+      t.string :country
+      t.string :tel  #telephone number
+      t.timestamps
+    end
+  end
+end

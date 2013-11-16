@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_one :profile
+  has_many :jobs
+
   validates :email, presence: true, 
                     format: { with: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ },
                     uniqueness: {case_sensitive: true}
