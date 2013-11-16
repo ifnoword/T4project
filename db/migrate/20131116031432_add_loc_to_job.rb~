@@ -1,0 +1,4 @@
+class AddLocToJob < ActiveRecord::Migration
+  def change
+  end
+end
