@@ -11,10 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20131116031432) do
+=======
+ActiveRecord::Schema.define(:version => 20131117185550) do
+>>>>>>> 958a8db71fafc5be73d95088f0600a149f1549e8
 
   create_table "jobs", :force => true do |t|
-    t.string   "employer"
     t.string   "title"
     t.text     "desc"
     t.text     "reqs"

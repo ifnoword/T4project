@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
  
   def destroy
     session.delete(:current_user)
-    redirect_to jobs_path
+    redirect_to :back
   end
  
 
