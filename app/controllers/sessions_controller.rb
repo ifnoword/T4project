@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       redirect_to login_path
     else
       session[:current_user]=@user.email
-      session[:current_user]=@user.name
       redirect_to jobs_path
     end
   end

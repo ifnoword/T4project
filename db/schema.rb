@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115185621) do
+ActiveRecord::Schema.define(:version => 20131116031432) do
 
   create_table "jobs", :force => true do |t|
     t.string   "employer"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20131115185621) do
     t.string   "link"
     t.string   "click"
     t.integer  "user_id"
+    t.string   "city"
+    t.string   "state"
   end
 
   create_table "profiles", :force => true do |t|
