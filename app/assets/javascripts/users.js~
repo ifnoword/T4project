@@ -1,12 +1,15 @@
 $(document).ready(function(){
 	
+
  					   
 	$('#usermainCtn').height('580');
 	$('#loading').height('500');
 	$('iframe').height('500');
 			
 				// Hide loading image when iframe is loaded
-	$('iframe').load(function() {							  
+	$('iframe').load(function() {	
+		$('iframe:visible').contents().find(".account").hide()
+								  
 		$('#loading').fadeOut(400);
 		var h1=$('body', $('iframe:visible').contents()).height()+30;
 		var h3=0;
@@ -27,7 +30,8 @@ $(document).ready(function(){
 	});
 /////////////////////////
  
-	$('#accord').delegate('li a,#mypp,#allnews', 'click', function(event) {
+	$('#accord').delegate('li a', 'click', function(event) {
+
 		var self = $(this),
 			i = self.parent().index(),
 			href = self.attr('href');

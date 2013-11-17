@@ -5,10 +5,11 @@ class JobsController < ApplicationController
   end
   
   def new
+     render :layout => false
   end
   
   def create
-	 @job = Job.create!(params[:title])
+	 @job = Job.create!(params[:job])
 flash[:notice] = "#{@job[:title]} was successfully created."
     redirect_to '/users/show'
   end

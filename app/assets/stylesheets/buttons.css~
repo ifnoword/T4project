@@ -1,39 +1,3 @@
-input[type="text"],input[type="password"],textarea{
-  border:1px solid #b8bdc2;
-  font-size:20px;
-  padding:0 0 0 7px;
-}
-
-input{
-  height:35px;
-}
-textarea{
-  height:65px;
-  width:425px;
-}
-.common_form input{
-  text-align:center;
-}
-
-#search_box{
-  width:600px;
-  height:35px;
-  
-}
-
-
-#icon{
-  margin:100px 0 0 0;
-  
-}
-
-
-div.account{
-  text-align:right;
-  margin:20px 20px 0 0;
-}
-
-
 .common_button_search {
         -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
         -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -61,15 +25,19 @@ div.account{
         font-style:normal;
         height:40px;
         line-height:40px;
-        width:100px;
+	padding:0 20px 0 20px;
         text-decoration:none;
         text-align:center;
         text-shadow:1px 1px 0px #ffffff;
 }
-.common_button:hover {
+.common_button_search:hover {
         background-color:#e8e8e8;
 }
-.common_button:active {
+.common_button_search:active {
         position:relative;
         top:1px;
 }
+
+
+
+

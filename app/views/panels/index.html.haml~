@@ -6,15 +6,15 @@
         %li.menu
           %ul
             %li.button
-              =button_to "aaaaaa", new_panel_path,:method=>:get
+              =link_to 'aaaaaaaaa', new_panel_path
       %ul.container
         %li.menu
           %ul
             %li.button
-              =link_to 'bbbbbbbbb', login_path
+              =link_to 'bbbbbbbbb', edit_user_path
      
     #frame
-      %iframe{frameborder: "0", :src => new_panel_path, :width=> "500px"}
+      %iframe{frameborder: "0", :src => new_job_path, :width=> "500px"}
 
 
 

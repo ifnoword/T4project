@@ -2,7 +2,7 @@
   padding:20px 0 20px;
 }
 
-.text_style input{
+.text_style input,.text_style textarea{
   margin-bottom:20px;	
 }
 

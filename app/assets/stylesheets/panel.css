@@ -1,40 +1,48 @@
-ul.container{ 
-	width:235px;
-}
-
-ul.container li{
-	list-style:none;
-	text-align:left;
-}
-
-#panel_form{
-    width:1200px;
+#panel_div{
+  margin:0 auto 0 auto;
+  width:1500px;
 }
 
 #accord{
   float:left;
+  
+}
+
+#frame iframe{
+  width:1000px;
+  height:500px;
+}
+
+#accord ul.container{ 
+  width:235px;
+}
+
+#accord ul.container li{
+  list-style:none;
 }
 
 .clear{
   clear:both;
 }
 
-ul li a{
+#accord ul li a{
 	display:block;
 	font-weight:bold;
 	font-size:18px;
 	height:40px;
 	width:100%;
-	text-align:center;
-	padding:auto 0 auto 0;
+	text-align:left;
+
 }
 
-ul a, ul a:visited {
+#accord ul a, ul a:visited {
 	text-decoration:none;
 	outline:none;
+	color:black;
 }
-ul a:hover{
-	text-decoration:none;
+#accord ul a:hover{
+	text-decoration:underline;
 	background-color:#FFF;
-
 }
+
+

@@ -2,10 +2,9 @@
   %h1#icon Welcome to ExternMe.com
 
   .text_style
-    = link_to 'My Account', 'users/show', :method=>:get
     = form_tag jobs_path, :method => :post do
       = text_field :job_terms , 'title',:id => 'search_box'
       %br
-      = submit_tag 'Search',:class => 'common_button'  
+      = submit_tag 'Search',:class => 'common_button_search'  
 
 

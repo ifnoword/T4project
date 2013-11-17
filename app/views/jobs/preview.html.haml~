@@ -6,6 +6,6 @@
 %p Job Location : #{@job_details[:location]}
 %p Email : #{@job_details[:email]}
 
-=button_to 'Confirm', jobs_path , :method => :post 
+=button_to 'Confirm', jobs_path(@job_details) , :method => :post 
 
 

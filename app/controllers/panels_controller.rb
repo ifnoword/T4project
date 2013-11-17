@@ -8,10 +8,10 @@ class PanelsController < ApplicationController
   end
 
   def new
-	render :layout => false		#skip application.haml
+ 
   end
 
   def edit
-	render :layout => false		#skip application.haml
+	#render :layout => false		#skip application.haml
   end
 end

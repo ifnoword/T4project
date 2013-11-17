@@ -11,19 +11,18 @@
     -if !@current_user
       -if current_page?(jobs_path)
         .account
-          =link_to 'Employer Login/Register', login_path, :method=>:get
+          =link_to 'Login/Register', login_path, :method=>:get
       -else
         .account
           =link_to 'Back', jobs_path
-
     -else
       .account
         %p
-          Welcome!
-          = "#{@current_user.email}"
-        =link_to "#{@current_user.name}", panels_path, :method=>:get
-        |
+        Welcome, 
+        =link_to "#{@current_user.name}", users_path, :method=>:get
+        |  
         =link_to 'Sign Out', logout_path, :method=>:delete
+
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]

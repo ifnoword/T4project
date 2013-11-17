@@ -1,11 +1,11 @@
 -# edit.html.haml using partial
 
-%h4 Edit User Profile
+%h1 Edit User Profile
 
 = form_tag '/users/show' do
 
   = label :user, :phone, 'Phone Number'
   = text_field :user, 'phone'
-  = submit_tag 'Update'
+  = submit_tag 'Update',:class => 'common_button_search'  
 %br
-  = button_to 'Cancel', '/users/show', :method => :get
+  = button_to 'Cancel', '/users/show', :method => :get,:class => 'common_button_search'  

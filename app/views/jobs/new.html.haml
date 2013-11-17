@@ -1,19 +1,15 @@
 %h1 Post a New Job
-
-= form_tag 'preview' do
-
-  = label :job, :name, 'Company'
-  = text_field :job , 'name' , :placeholder => 'Your Company Name'
-
-  = label :job, :title, 'Job Title'
-  = text_field :job , 'title'
-
-  = label :job, :description, 'Job Description'
-  = text_area :job, 'description', :placeholder => 'Describe the role, responsibilities and required experience'
-
-  = label :job, :location, 'City, State , Postal Code'
-  = text_field :job, 'location'
-
-  = label :job, :email, 'Email'
-  = text_field :job, 'email', :placeholder => 'submissions will be send to this email'
-  = submit_tag 'Continue'
+.panel_form
+  = form_tag 'preview' do
+    .text_style
+      = text_field :job , 'name' , :placeholder => 'Your Company Name'
+      %br
+      = text_field :job , 'title' , :placeholder => 'Job Title'
+      %br
+      = text_area :job, 'description', :placeholder => 'Job Description'
+      %br
+      = text_field :job, 'location', :placeholder => 'City,State,Postal Code'
+      %br
+      = text_field :job, 'email', :placeholder => 'Contact Email'
+      %br
+      = submit_tag 'Continue',:class => 'common_button_search'  
