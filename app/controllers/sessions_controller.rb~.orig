@@ -1,0 +1,27 @@
+class SessionsController < ApplicationController
+  def new
+  end
+
+  def create
+    pwd = params[:session]['password'].gsub("\"","")
+    @user = User.login(params[:session]['email'], pwd)
+    if !@user
+      flash[:login_fail]="Wrong Email or Password!"
+      redirect_to login_path
+    else
+      session[:current_user]=@user.email
+<<<<<<< HEAD
+=======
+      #session[:current_user]=@user.name
+>>>>>>> 958a8db71fafc5be73d95088f0600a149f1549e8
+      redirect_to jobs_path
+    end
+  end
+ 
+  def destroy
+    session.delete(:current_user)
+    redirect_to :back
+  end
+ 
+
+end
