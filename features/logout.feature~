@@ -1,0 +1,8 @@
+Feature: Logout of an account 
+
+Background:  Given I have logged in with email "testing@uiowa.edu" and pws "123123"
+
+Scenario: 
+    When I click the Sign Out link
+    Then I should be redirected to home page to see the "Login/Register" again
+
