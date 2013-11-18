@@ -1,0 +1,24 @@
+%ul#jobdetails
+  %li
+    Job Tile:
+    = @job.title
+  %br
+  %li
+    Job Description:
+    = @job.desc
+  %br
+  %li
+    Requirements:
+    = @job.reqs
+  %br
+  %li
+    Desired Qualifications:
+    = @job.desire
+  %br
+  %li
+    Location:
+    = @job.city+' '+@job.city
+
+= link_to 'Edit', edit_job_path(@job)
+= link_to 'Delete', job_path(@job), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to job list',user_path , :method=>:get, :id=>@current_user

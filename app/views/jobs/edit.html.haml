@@ -1,32 +1,35 @@
-%h1 Post a New Job
+%h1 Edit a New Job
 .panel_form
-  = form_tag jobs_path do
+  = form_tag job_path, :method=>:put, :id=>@job do
     .text_style
       = label :job, :title, 'Job Title'
-      -str=''
-      -if !!flash.now[:new_job_fail]
-        -if flash.now[:new_job_fail].errors.messages[:title].size!=0
-          -str=flash.now[:new_job_fail].title
-          -flash.now[:new_job_fail].errors.messages[:title].each do |msg|
+      -str=@job.title
+      -if !!flash.now[:updt_job_fail]
+        -if flash.now[:updt_job_fail].errors.messages[:title].size!=0
+          -str=flash.now[:updt_job_fail].title
+          -flash.now[:updt_job_fail].errors.messages[:title].each do |msg|
             %p='Job title '+ msg
       = text_field :job , 'title', :placeholder => str
 
       = label :job, :desc, 'Job Description'
-      -str='Describe the role and responsibilities'
-      -if !!flash.now[:new_job_fail]
-        -if flash.now[:new_job_fail].errors.messages[:desc].size!=0
-          -str=flash.now[:new_job_fail].desc
-          -flash.now[:new_job_fail].errors.messages[:desc].each do |msg|
+      -str=@job.desc
+      -if !!flash.now[:updt_job_fail]
+        -if flash.now[:updt_job_fail].errors.messages[:desc].size!=0
+          -str=flash.now[:updt_job_fail].desc
+          -flash.now[:updt_job_fail].errors.messages[:desc].each do |msg|
             %p='Job descptioin '+ msg
       = text_area :job, 'desc', :placeholder => str
 
       = label :job, :reqs, 'Job Requirements'
-      = text_area :job, 'reqs', :placeholder => 'Describe the requirement of the job'
+      -str=@job.reqs
+      = text_area :job, 'reqs', :placeholder => str
   
       = label :job, :desire, 'Desired Qualifications'
-      = text_area :job, 'desire', :placeholder => 'Describe the desired qualifications'
+      -str=@job.desire
+      = text_area :job, 'desire', :placeholder =>str
 
       = label :job, :city, 'City'
+      -str=@job.city
       = text_field :job, 'city'
 
       = label :job, :state, 'State'
@@ -41,6 +44,8 @@
 			  'West Virginia', 'Wisconsin', 'Wyoming']
 
       = label :job, :link, 'Link of the job on your website'
-      = text_field :job, 'link', :placeholder => "Leave it blank when you don't have one"
+      -str=@job.link
+      = text_field :job, 'link', :placeholder => str
 
-      = submit_tag 'Save the Job'
+      = submit_tag 'Save the change'
+      =button_to 'Cancel',user_path , :method=>:get, :id=>@current_user

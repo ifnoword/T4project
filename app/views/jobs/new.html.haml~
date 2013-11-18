@@ -1,15 +1,47 @@
 %h1 Post a New Job
 .panel_form
-  = form_tag 'preview' do
+  = form_tag jobs_path do
     .text_style
-      = text_field :job , 'name' , :placeholder => 'Your Company Name'
-      %br
-      = text_field :job , 'title' , :placeholder => 'Job Title'
-      %br
-      = text_area :job, 'description', :placeholder => 'Job Description'
-      %br
-      = text_field :job, 'location', :placeholder => 'City,State,Postal Code'
-      %br
-      = text_field :job, 'email', :placeholder => 'Contact Email'
-      %br
-      = submit_tag 'Continue',:class => 'common_button_search'  
+      = label :job, :title, 'Job Title'
+      -str=''
+      -if !!flash.now[:new_job_fail]
+        -if flash.now[:new_job_fail].errors.messages[:title].size!=0
+          -str=flash.now[:new_job_fail].title
+          -flash.now[:new_job_fail].errors.messages[:title].each do |msg|
+            %p='Job title '+ msg
+      = text_field :job , 'title', :placeholder => str
+
+      = label :job, :desc, 'Job Description'
+      -str='Describe the role and responsibilities'
+      -if !!flash.now[:new_job_fail]
+        -if flash.now[:new_job_fail].errors.messages[:desc].size!=0
+          -str=flash.now[:new_job_fail].desc
+          -flash.now[:new_job_fail].errors.messages[:desc].each do |msg|
+            %p='Job descptioin '+ msg
+      = text_area :job, 'desc', :placeholder => str
+
+      = label :job, :reqs, 'Job Requirements'
+      = text_area :job, 'reqs', :placeholder => 'Describe the requirement of the job'
+  
+      = label :job, :desire, 'Desired Qualifications'
+      = text_area :job, 'desire', :placeholder => 'Describe the desired qualifications'
+
+      = label :job, :city, 'City'
+      = text_field :job, 'city'
+
+      = label :job, :state, 'State'
+      = select :job, :state, ['Unknown','Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
+			  'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho',
+			  'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+			  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 
+			  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+			  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+			  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
+			  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+			  'West Virginia', 'Wisconsin', 'Wyoming']
+
+      = label :job, :link, 'Link of the job on your website'
+      = text_field :job, 'link', :placeholder => "Leave it blank when you don't have one"
+
+      = submit_tag 'Save the Job'
+  =link_to 'Cancel and Back to job list', user_path , :method=>:get, :id=>@current_user

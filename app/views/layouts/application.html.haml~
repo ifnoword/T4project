@@ -14,7 +14,7 @@
           =link_to 'Login/Register', login_path, :method=>:get
       -else
         .account
-          =link_to 'Back', :back
+          =link_to 'Back', jobs_path
     -else
       .account
         %p

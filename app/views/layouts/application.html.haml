@@ -19,7 +19,7 @@
       .account
         %p
         Welcome, 
-        =link_to "#{@current_user.name}", users_path, :method=>:get
+        =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
         |  
         =link_to 'Sign Out', logout_path, :method=>:delete
 
