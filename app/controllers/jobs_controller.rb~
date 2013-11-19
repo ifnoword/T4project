@@ -1,4 +1,17 @@
 class JobsController < ApplicationController
+  before_filter :sign_in, except: [:index, :show]
+  before_filter :correct_user, except: [:index, :show]
+
+  def sign_in
+    flash[:warning]='Please log in!'
+    redirect_to login_path unless !!@current_user
+  end
+
+  def correct_user
+    flash[:warning]='No Authenrization!'
+    owner= Job.find(params[:id]).user
+    redirect_to jobs_path unless @current_user.id==owner.id
+  end
 
   def index
   end
@@ -44,7 +57,6 @@ class JobsController < ApplicationController
 
     flash[:notice] = "Job #{@job.title} is deleted."
     redirect_to user_path(@current_user)
-    end
   end
   def preview
     @job_details = params[:job]
