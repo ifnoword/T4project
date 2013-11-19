@@ -68,7 +68,7 @@ describe JobsController do
   describe 'delete job' do
     it 'should delete job from database' do
       pending("need to someone test with respect to a certain session") #pending
-      @current_user = "this_user"
+      @current_user = User.create_user!(:email => "test@test.com", :password => "password", :password_confirmation => "password")
       fake_job = double('job1')
       fake_user = double('user1')
       fake_job.should_receive(:title)
