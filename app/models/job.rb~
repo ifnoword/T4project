@@ -12,6 +12,7 @@ class Job < ActiveRecord::Base
     job.link = params[:link]
     job.city = params[:city]
     job.state = params[:state]
+    job.companyname = params[:companyname]
 
     if job.valid?
       job.save!
@@ -21,7 +22,17 @@ class Job < ActiveRecord::Base
   end
 
   def self.update_attrbs params, job
-    job.update_attributes(params)
+    job.title = params[:title]
+    job.desc = params[:desc]
+    job.reqs = params[:reqs]
+    job.link = params[:link]
+    job.city = params[:city]
+    job.state = params[:state]
+
+    if job.valid?
+      job.save!
+    end
+
     return job
 
   end

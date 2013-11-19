@@ -12,6 +12,7 @@ class Job < ActiveRecord::Base
     job.link = params[:link]
     job.city = params[:city]
     job.state = params[:state]
+    job.companyname = params[:companyname]
 
     if job.valid?
       job.save!
@@ -27,6 +28,7 @@ class Job < ActiveRecord::Base
     job.link = params[:link]
     job.city = params[:city]
     job.state = params[:state]
+    job.companyname = params[:companyname]
 
     if job.valid?
       job.save!

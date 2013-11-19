@@ -42,10 +42,20 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
 
-    flash[:notice] = "Job #{@job.title} is deleted."
+    flash[:notice] = "Job #{@job.title} was deleted."
     redirect_to user_path(@current_user)
   end
   def preview
     @job_details = params[:job]
+  end
+
+  def dosearch
+
+    search = params[:search][:title]
+
+    @jobs = Job.find(:all, :conditions => ["title like ?", "%#{search}%"]).concat(Job.find(:all, :conditions => ["companyname like ?", "%#{search}%"])).concat(Job.find(:all, :conditions => ["city like ?", "%#{search}%"]))
+
+
+
   end
 end

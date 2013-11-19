@@ -1,0 +1,14 @@
+%h1 Test search page!
+
+%table#jobs
+  %thead
+    %tr
+      %th Job Title
+      %th Company name
+
+  %tbody
+    - @jobs.each do |job|
+      %tr
+        %td= job[:title]
+        %td= job[:companyname]
+

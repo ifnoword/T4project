@@ -13,6 +13,13 @@ class UsersController < ApplicationController
  
   end
 
+  def update
+    @current_user[:tel] = params[:user][:phone]
+    @current_user.save!
+    flash[:notice] = "Phone number was successfully updated."     
+    redirect_to '/users/show'
+
+  end
 
   def create
     puts params[:user].inspect

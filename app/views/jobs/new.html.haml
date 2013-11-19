@@ -2,6 +2,9 @@
 .panel_form
   = form_tag jobs_path do
     .text_style
+      = label :job, :companyname, 'Company name'
+      = text_field :job, 'companyname'
+
       = label :job, :title, 'Job Title'
       -str=''
       -if !!flash.now[:new_job_fail]
