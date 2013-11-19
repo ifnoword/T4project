@@ -28,4 +28,20 @@ describe UsersController do
       end
     end
   end
+  
+  describe 'editing a profile' do
+    it 'should generate the edit page with the current info' do
+      post :edit, {:id => "1"}
+      response.should render_template('edit')
+    end
+    it 'should update the database with the new values and redirect to users profile' do
+      @current_user = double('user3')
+      fake_user = double('user2')
+      fake_user.should_receive(:update_attributes!)
+      fake_user.stub(:name).and_return("this_user")
+      User.should_receive(:find).with("1").and_return(fake_user)
+      post :update, {:id => "1", :user => "this_user"}
+      response.should redirect_to(user_path(@current_user))
+    end
+  end
 end

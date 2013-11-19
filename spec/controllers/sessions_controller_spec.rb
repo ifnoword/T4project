@@ -18,7 +18,7 @@ describe SessionsController do
   
   describe 'logout' do
     it 'should destroy session and go to home page' do
-      @request.env["HTTP_REFERER"] = 'http://test.com/jobs/new'
+      @request.env["HTTP_REFERER"] = 'http://test.host/jobs'
       delete :destroy
       response.should redirect_to(:back)
     end

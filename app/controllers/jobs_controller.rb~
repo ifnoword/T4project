@@ -44,7 +44,6 @@ class JobsController < ApplicationController
 
     flash[:notice] = "Job #{@job.title} is deleted."
     redirect_to user_path(@current_user)
-    end
   end
   def preview
     @job_details = params[:job]
