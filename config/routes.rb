@@ -9,8 +9,12 @@ ProjectTrial::Application.routes.draw do
   match '/login_create', to: 'sessions#create', via: :post
   match '/logout', to: 'sessions#destroy', via: :delete
   match '/jobs/preview' , to: 'jobs#preview' , via: :post
+
   match '/jobs/search', to: 'jobs#dosearch', via: :post
   match '/users/update', to: 'users#update', via: :post
+
+  match 'users/:id/myjobs' => 'users#myjobs', :as => :myjobs, via: :get
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

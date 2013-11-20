@@ -1,8 +1,20 @@
 class UsersController < ApplicationController
- 
-  def index
-
+  before_filter :sign_in, :except => :new
+  before_filter :correct_user, :except => :new
+  def sign_in
+    flash[:warning]='Please log in!'
+    redirect_to login_path unless !!@current_user
   end
+
+  def correct_user
+    flash[:warning]='No Authenrization!'
+    owner= User.find params[:id]
+    redirect_to jobs_path unless @current_user.id==owner.id
+  end
+
+  def index
+  end
+  
   def new 
   end 
 
@@ -34,5 +46,9 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     end
   end #create
+  
+  def myjobs
+    @user=@current_user
+  end
 
 end

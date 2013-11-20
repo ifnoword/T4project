@@ -1,4 +1,17 @@
 class JobsController < ApplicationController
+  before_filter :sign_in, except: [:index]
+  before_filter :correct_owner, except: [:index]
+
+  def sign_in
+    flash[:warning]='Please log in!'
+    redirect_to login_path unless !!@current_user
+  end
+
+  def correct_owner
+    flash[:warning]='No Authenrization!'
+    owner= Job.find(params[:id]).user
+    redirect_to jobs_path unless @current_user.id==owner.id
+  end
 
   def index
   end
