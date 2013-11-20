@@ -1,11 +1,21 @@
 -# edit.html.haml using partial
 
-%h1 Edit User Profile
+%h1 Edit User Account
 
-= form_tag '/users/update' do
+= form_tag user_path, :method=>:put, :id=>@user do
 
-  = label :user, :phone, 'Phone Number'
-  = text_field :user, 'phone'
+  = label :user, :email, 'Email'
+  = text_field :user, 'email'
+
+  = label :user, :oldpwd, 'Current Password (requried)'
+  = password_field :user, 'oldpwd'
+
+  = label :user, :newpwd, 'New Password'
+  = password_field :user, 'newpwd'
+
+  = label :user, :newpwdcomf, 'New Password Conformation'
+  = password_field :user, 'newpwdcomf'
+
   = submit_tag 'Update',:class => 'common_button_search'  
 %br
-  = button_to 'Cancel', '/users/show', :method => :get,:class => 'common_button_search'  
+  = button_to 'Cancel',user_path, :method => :get, :id=>@user, :class => 'common_button_search'  

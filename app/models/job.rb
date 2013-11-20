@@ -3,12 +3,14 @@ class Job < ActiveRecord::Base
   # attr_accessible :title, :body
   validates :title, presence: true, length: {maximum: 70}
   validates :desc, presence: true, length: {minimum: 70}
+  validates :companyname, presence: true
 
   def self.create_job(params, user)
     job=user.jobs.build
     job.title = params[:title]
     job.desc = params[:desc]
     job.reqs = params[:reqs]
+    job.desire = params[:desire]
     job.link = params[:link]
     job.city = params[:city]
     job.state = params[:state]
@@ -26,6 +28,7 @@ class Job < ActiveRecord::Base
     job.desc = params[:desc]
     job.reqs = params[:reqs]
     job.link = params[:link]
+    job.desire = params[:desire]
     job.city = params[:city]
     job.state = params[:state]
     job.companyname = params[:companyname]

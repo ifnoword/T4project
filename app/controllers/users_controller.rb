@@ -2,14 +2,18 @@ class UsersController < ApplicationController
   before_filter :sign_in, except: [:new, :create]
   before_filter :correct_user, except:[:new, :create]
   def sign_in
-    flash[:warning]='Please log in!'
-    redirect_to login_path unless !!@current_user
+    if !@current_user
+      flash[:warning]='Please log in!'
+      redirect_to login_path
+    end
   end
 
   def correct_user
-    flash[:warning]='No Authenrization!'
     owner= User.find params[:id]
-    redirect_to jobs_path unless @current_user.id==owner.id
+    if @current_user.id!=owner.id
+      flash[:warning]='No Authenrization!'
+      redirect_to jobs_path
+    end
   end
 
   def index
@@ -22,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def edit
- 
+    @user = @current_user
   end
 
   def update
@@ -48,6 +52,10 @@ class UsersController < ApplicationController
   
   def myjobs
     @user=@current_user
+  end
+  
+  def destroy
+    # DON'T touch the function now!!!!!!!
   end
 
 end

@@ -2,6 +2,15 @@
 .panel_form
   = form_tag job_path, :method=>:put, :id=>@job do
     .text_style
+      = label :job, :companyname, 'Company Name'
+      -str=@job.companyname
+      -if !!flash.now[:updt_job_fail]
+        -if flash.now[:updt_job_fail].errors.messages[:companyname].size!=0
+          -str=flash.now[:updt_job_fail].companyname
+          -flash.now[:updt_job_fail].errors.messages[:companyname].each do |msg|
+            %p='Job title '+ msg
+      = text_field :job , 'title', :placeholder => str
+
       = label :job, :title, 'Job Title'
       -str=@job.title
       -if !!flash.now[:updt_job_fail]
@@ -30,7 +39,7 @@
 
       = label :job, :city, 'City'
       -str=@job.city
-      = text_field :job, 'city'
+      = text_field :job, 'city', :placeholder =>str
 
       = label :job, :state, 'State'
       = select :job, :state, ['Unknown','Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
@@ -48,4 +57,4 @@
       = text_field :job, 'link', :placeholder => str
 
       = submit_tag 'Save the change'
-      =button_to 'Cancel',users_path , :method=>:get
+      =button_to 'Cancel',user_path , :method=>:get, :id=>@current_user
