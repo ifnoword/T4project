@@ -1,0 +1,42 @@
+%h1 My Profile
+%ul#jobdetails
+  %li
+    Name:
+    = @profile.name
+  %br
+  %li
+    Personal descpriton:
+    = @profile.desc
+  %br
+  %h3 Contact Info.
+  %li
+    Alternate Email:
+    = @profile.altemail
+  %br
+  %li
+    Telephone:
+    = @profile.tel
+  %br
+  %h4 Address
+  %li
+    Address line 1:
+    = @profile.addr1
+  %br
+  %li
+    Address line 2:
+    = @profile.addr2
+  %br
+  %li
+    City:
+    = @profile.city
+  %br
+  %li
+    state:
+    = @profile.state
+  %br
+  %li
+    Zipcode:
+    = @profile.zipcode
+
+
+= link_to 'Edit', edit_profile_path(@profile)

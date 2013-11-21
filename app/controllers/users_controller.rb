@@ -30,10 +30,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    @current_user[:tel] = params[:user][:phone]
-    @current_user.save!
-    flash[:notice] = "Phone number was successfully updated."     
-    redirect_to '/users/show'
+    user= User.find params[:id]
+    user= User.update_attrbs(params[:user], user)
+    if user.class == User
+      flash[:notice] = "Your account was successfully updated."
+      redirect_to edit_user_path(user)
+    else
+      flash.now[:updt_acct_fail] = user
+      render :action=>:edit, :id=> @current_user
+    end
 
   end
 

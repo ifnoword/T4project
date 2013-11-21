@@ -4,13 +4,12 @@
       %li.button
         = link_to 'Edit Account', edit_user_path(@current_user) 
       %li.button
-        = link_to 'Edit Profile', edit_user_path(@current_user) 
+        = link_to 'My Profile', profile_path(@current_user.profile) 
       %li.button
         = link_to 'Post a Jobs', new_job_path 
       %li.button
         = link_to 'My Jobs', myjobs_path(@current_user) 
-      %li.button
-        = link_to 'Delete Account', user_path(@current_user), :method=>:delete 
+
 
 
   #frame

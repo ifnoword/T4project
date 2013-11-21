@@ -22,7 +22,10 @@
   %li
     Location:
     = @job.city+' '+@job.city
+  %br
+  %li
+    Link:
+    = @job.link
 
 = link_to 'Edit', edit_job_path(@job)
 = link_to 'Delete', job_path(@job), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to job list',user_path , :method=>:get, :id=>@current_user

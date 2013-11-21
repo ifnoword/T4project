@@ -5,17 +5,17 @@
       = label :job, :companyname, 'Company Name'
       -str=@job.companyname
       -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].companyname
         -if flash.now[:updt_job_fail].errors.messages[:companyname].size!=0
-          -str=flash.now[:updt_job_fail].companyname
           -flash.now[:updt_job_fail].errors.messages[:companyname].each do |msg|
             %p='Job title '+ msg
-      = text_field :job , 'title', :placeholder => str
+      = text_field :job , 'companyname', :placeholder => str
 
       = label :job, :title, 'Job Title'
       -str=@job.title
       -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].title
         -if flash.now[:updt_job_fail].errors.messages[:title].size!=0
-          -str=flash.now[:updt_job_fail].title
           -flash.now[:updt_job_fail].errors.messages[:title].each do |msg|
             %p='Job title '+ msg
       = text_field :job , 'title', :placeholder => str
@@ -23,22 +23,28 @@
       = label :job, :desc, 'Job Description'
       -str=@job.desc
       -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].desc
         -if flash.now[:updt_job_fail].errors.messages[:desc].size!=0
-          -str=flash.now[:updt_job_fail].desc
           -flash.now[:updt_job_fail].errors.messages[:desc].each do |msg|
             %p='Job descptioin '+ msg
       = text_area :job, 'desc', :placeholder => str
 
       = label :job, :reqs, 'Job Requirements'
       -str=@job.reqs
+      -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].reqs
       = text_area :job, 'reqs', :placeholder => str
   
       = label :job, :desire, 'Desired Qualifications'
       -str=@job.desire
+      -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].desire
       = text_area :job, 'desire', :placeholder =>str
 
       = label :job, :city, 'City'
       -str=@job.city
+      -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].city
       = text_field :job, 'city', :placeholder =>str
 
       = label :job, :state, 'State'
@@ -54,6 +60,8 @@
 
       = label :job, :link, 'Link of the job on your website'
       -str=@job.link
+      -if !!flash.now[:updt_job_fail]
+        -str=flash.now[:updt_job_fail].link
       = text_field :job, 'link', :placeholder => str
 
       = submit_tag 'Save the change'
