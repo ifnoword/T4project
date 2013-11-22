@@ -1,31 +1,35 @@
 #panel_div{
   margin:0 auto 0 auto;
-  width:1500px;
+  width:1400px;
 }
 
-#accord{
+.update_my_profile label,.panel_form label{
   float:left;
+  width:280px;
+}
+
+#leftPanelList{
+  float:left;
+  padding-left:30px;
+  padding-top:10px;
   
 }
 
 #frame iframe{
-  width:1000px;
+  width:1100px;
   height:500px;
 }
 
-#accord ul.container{ 
-  width:235px;
+#leftPanelList ul.container{ 
+  width:185px;
 }
 
-#accord ul.container li{
+#leftPanelList ul.container li{
   list-style:none;
 }
 
-.clear{
-  clear:both;
-}
 
-#accord ul li a{
+#leftPanelList ul li a{
 	display:block;
 	font-weight:bold;
 	font-size:18px;
@@ -35,12 +39,12 @@
 
 }
 
-#accord ul a, ul a:visited {
+#leftPanelList ul a, ul a:visited {
 	text-decoration:none;
 	outline:none;
 	color:black;
 }
-#accord ul a:hover{
+#leftPanelList ul a:hover{
 	text-decoration:underline;
 	background-color:#FFF;
 }

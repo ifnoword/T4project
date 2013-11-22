@@ -1,0 +1,15 @@
+.my_profile ul li, .my_new_job ul li{
+  padding:10px 0;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.form_title{
+  padding:10px 0 0 0;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.form_title hr{
+  width:150px;
+}

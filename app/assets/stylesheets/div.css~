@@ -1,0 +1,12 @@
+#div_inner{
+  float:left;
+  padding-right:20px;
+}
+
+.div_add_job_submit{
+  padding-left:565px;
+}
+
+.div_edit_profile_submit{
+  padding-left:555px;
+}

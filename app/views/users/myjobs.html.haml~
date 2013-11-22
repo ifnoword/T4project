@@ -12,9 +12,11 @@
       - @user.jobs.each do |job|
         %tr
           %td= link_to "#{job.title}", job_path(job)
-          %td= job.desc[0,19]
+          %td= job.desc[0,50]
           %td= job.created_at
           %td= job.updated_at
-          %td= link_to "Edit", edit_job_path(job)
-          %td= link_to "Delete", job_path(job), :method => :delete, :confirm => 'Are you sure?'
+          %td= button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
+          %td= button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
+
+
 

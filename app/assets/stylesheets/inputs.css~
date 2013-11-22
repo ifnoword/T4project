@@ -1,0 +1,39 @@
+.text_style{
+  padding:20px 0 20px;
+}
+
+.text_style input,.text_style textarea,.text_style select{
+  margin-bottom:20px;	
+}
+
+label{
+  display: block;
+  line-height: 25px;
+}
+
+
+
+input[type="text"],input[type="password"],textarea{
+  border:1px solid #b8bdc2;
+  font-size:15px;
+  padding:0 0 0 7px;
+}
+
+select{
+  font-size:20px;
+  padding:0 0 0 7px;
+  width:435px;
+}
+
+input{
+  height:35px;
+  
+}
+textarea{
+  height:65px;
+  width:425px;
+}
+.common_form input{
+  text-align:center;
+}
+

@@ -10,7 +10,7 @@
           -flash.now[:new_job_fail].errors.messages[:companyname].each do |msg|
             %p='Job title '+ msg
       = text_field :job, 'companyname'
-
+      .clear
       = label :job, :title, 'Job Title'
       -str=''
       -if !!flash.now[:new_job_fail]
@@ -19,7 +19,7 @@
           -flash.now[:new_job_fail].errors.messages[:title].each do |msg|
             %p='Job title '+ msg
       = text_field :job , 'title', :placeholder => str
-
+      .clear
       = label :job, :desc, 'Job Description'
       -str='Describe the role and responsibilities'
       -if !!flash.now[:new_job_fail]
@@ -28,25 +28,25 @@
           -flash.now[:new_job_fail].errors.messages[:desc].each do |msg|
             %p='Job descptioin '+ msg
       = text_area :job, 'desc', :placeholder => str
-
+      .clear
       = label :job, :reqs, 'Job Requirements'
       -str= 'Describe the requirements of the job'
       -if !!flash.now[:new_job_fail]
         -str=flash.now[:new_job_fail].reqs
       = text_area :job, 'reqs', :placeholder => str
-  
+      .clear
       = label :job, :desire, 'Desired Qualifications'
       -str= 'Describe the desired qualification about the job.'
       -if !!flash.now[:new_job_fail]
         -str=flash.now[:new_job_fail].desire
       = text_area :job, 'desire', :placeholder => str
-
+      .clear
       = label :job, :city, 'City'
       -str= ''
       -if !!flash.now[:new_job_fail]
         -str=flash.now[:new_job_fail].city
       = text_field :job, 'city',:placeholder => str
-
+      .clear
       = label :job, :state, 'State'
       = select :job, :state, ['Unknown','Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
 			  'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho',
@@ -57,11 +57,12 @@
 			  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
 			  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
 			  'West Virginia', 'Wisconsin', 'Wyoming']
-
-      = label :job, :link, 'Link of the job on your website'
+      .clear
+      = label :job, :link, 'Job-link on your website'
       -str= "Leave it blank when you don't have one"
       -if !!flash.now[:new_job_fail]
         -str=flash.now[:new_job_fail].link
       = text_field :job, 'link', :placeholder => str
-
-      = submit_tag 'Save the Job'
+      .clear
+      .div_add_job_submit
+        = submit_tag 'Save the Job',:class => 'common_button_search'

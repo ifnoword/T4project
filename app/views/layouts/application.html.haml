@@ -16,13 +16,26 @@
         .account
           =link_to 'Back', jobs_path
     -else
-      .account
-        %p
-        Welcome, 
-        =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
-        |  
-        =link_to 'Sign Out', logout_path, :method=>:delete
+      -if current_page?(jobs_path)
+        .accountLoggedin
+          %div.account_info
+            Welcome, 
+            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+            |
+            =link_to 'Sign Out', logout_path, :method=>:delete
+      -else
+        .accountLoggedin
+          %div.account_logo
+            =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+          %div.account_info
+            Welcome, 
+            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+            |
+            =link_to 'Sign Out', logout_path, :method=>:delete
 
+
+
+      .clear
     - if flash[:notice]
       #notice.message= flash[:notice]
     - if flash[:warning]

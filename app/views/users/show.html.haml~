@@ -1,5 +1,5 @@
 #panel_div
-  #accord
+  #leftPanelList
     %ul.container
       %li.button
         = link_to 'Edit Account', edit_user_path(@current_user) 
@@ -9,12 +9,11 @@
         = link_to 'Post a Jobs', new_job_path 
       %li.button
         = link_to 'My Jobs', myjobs_path(@current_user) 
-      %li.button
-        = link_to 'Delete Account', user_path(@current_user), :method=>:delete 
+
 
 
   #frame
-    %iframe{frameborder: "0", :src => new_job_path, :width=> "1000px"}
+    %iframe{frameborder: "0", :src => new_job_path, :width=> "1400px"}
 
 %div
   %b Welcome, current_user.company name

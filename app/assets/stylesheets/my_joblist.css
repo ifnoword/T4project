@@ -1,0 +1,10 @@
+#my_joblist{
+  width:100%;
+
+}
+
+#my_joblist th,#my_joblist td{
+  padding:0 5px;
+}
+
+

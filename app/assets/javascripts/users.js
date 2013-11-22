@@ -9,7 +9,7 @@ $(document).ready(function(){
 				// Hide loading image when iframe is loaded
 	$('iframe').load(function() {	
 		//hide the .account inside,but when javascript disable, it will show again.
-		$('iframe:visible').contents().find(".account").hide()
+		$('iframe:visible').contents().find(".accountLoggedin").hide()
 								  
 		$('#loading').fadeOut(400);
 		var h1=$('body', $('iframe:visible').contents()).height()+30;
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	});
 /////////////////////////
  
-	$('#accord').delegate('li a', 'click', function(event) {
+	$('#leftPanelList').delegate('li a', 'click', function(event) {
 
 		var self = $(this),
 			i = self.parent().index(),

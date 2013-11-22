@@ -1,5 +1,5 @@
 #panel_div
-  #accord
+  #leftPanelList
     %ul.container
       %li.button
         = link_to 'Edit Account', edit_user_path(@current_user) 
@@ -13,7 +13,7 @@
 
 
   #frame
-    %iframe{frameborder: "0", :src => new_job_path, :width=> "1000px"}
+    %iframe{frameborder: "0", :src => new_job_path}
 
 %div
   %b Welcome, current_user.company name

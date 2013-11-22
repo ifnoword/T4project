@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
-html{
+*{
  margin: 0;
  padding: 0;
 }
@@ -29,7 +29,7 @@ a:visited{
 a,.account a:link{
   text-decoration:none;
 }
-a,.account a:hover{
+a:hover,.account a:hover{
   text-decoration:underline;
   color:#CC0000;
 }

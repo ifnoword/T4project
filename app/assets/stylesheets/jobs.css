@@ -1,36 +1,33 @@
-input[type="text"],input[type="password"],textarea{
-  border:1px solid #b8bdc2;
-  font-size:20px;
-  padding:0 0 0 7px;
-}
-
-input{
-  height:35px;
-}
-textarea{
-  height:65px;
-  width:425px;
-}
-.common_form input{
-  text-align:center;
-}
-
 #search_box{
   width:600px;
   height:35px;
-  
 }
-
 
 #icon{
-  margin:100px 0 0 0;
-  
+  margin:100px 0 0 0;  
 }
 
-
-div.account{
+.account{
   text-align:right;
-  margin:20px 20px 0 0;
+  padding:20px 20px 0 0;
+}
+
+.accountLoggedin{
+  background-color:#F1F1F1;
+  width:100%;
+  height:50px;
+  margin-bottom:30px;
+}
+
+.account_info{
+  padding-right:20px;
+  line-height: 50px;
+  vertical-align:middle;
+  float:right;
+}
+
+.account_logo{
+  float:left;
 }
 
 

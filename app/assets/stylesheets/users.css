@@ -1,16 +1,3 @@
-.text_style{
-  padding:20px 0 20px;
-}
-
-.text_style input,.text_style textarea{
-  margin-bottom:20px;	
-}
-
-label{
-  display: block;
-  line-height: 25px;
-}
-
 #login_form{
     width:650px;
 }
@@ -19,7 +6,7 @@ label{
 }
 .common_form{
     margin:0 auto 0 auto;
-
+    padding:20px 0 20px 0;
 background: #fefcea; /* Old browsers */
 background: -moz-linear-gradient(45deg,  #fefcea 0%, #fee101 68%); /* FF3.6+ */
 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fefcea), color-stop(68%,#fee101)); /* Chrome,Safari4+ */
