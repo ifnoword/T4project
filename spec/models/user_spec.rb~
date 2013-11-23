@@ -35,8 +35,8 @@ describe User do
 
       @user2 = User.create_user!(@params)
 
-      @user2.has_key?('name').should == true
-      @user2.has_key?('email').should == true
+      @user2.has_key?('name').should == false #error. name is too long
+      @user2.has_key?('email').should == false #error. email is invalid
     end
 
     it 'should check if the password is empty' do
@@ -82,6 +82,60 @@ describe User do
 
   end#create user
 
-
+  describe 'update user' do
+    it 'should update database' do
+      fake_user = double('user1')
+      fake_email = double('email1')
+      fake_errors = double('errors1')
+      fake_key = double('key1')
+      fake_password = double('password1')
+      fake_errs = double('errs1')
+      fake_errs.should_receive(:size).and_return(0)
+      fake_errs.stub(:[]=)
+      fake_password.should_receive(:size).at_least(:once).and_return(5)
+      fake_password.should_receive(:match).and_return(false)
+      fake_key.stub(:to_s).and_return(1)
+      fake_email.should_receive(:size).at_least(:once).and_return(1)
+      fake_email.should_receive(:match).and_return(false)
+      fake_email.should_receive(:+).at_least(:once).and_return("this")
+      fake_user.should_receive(:email).at_least(:once).and_return(fake_email)
+      fake_user.should_receive(:email=)
+      fake_user.should_receive(:valid?).and_return(false)
+      fake_user.should_receive(:errors).at_least(:once).and_return(fake_errors)
+      fake_user.should_receive(:password_digest=)
+      fake_user.should_receive(:save!)
+      fake_errors.stub(:each).and_return(fake_key, "this")
+      fake_user.should_receive(:password_digest).and_return(nil)
+      Hash.should_receive(:new).and_return(fake_errs)
+      retval = User.update_attrbs({:email => fake_email, :password => fake_password, :password_confirmation => nil, :oldpassword => "this"}, fake_user)
+      retval == fake_user
+    end
+    it 'should print errors' do
+      fake_user = double('user1')
+      fake_email = double('email1')
+      fake_errors = double('errors1')
+      fake_key = double('key1')
+      fake_password = double('password1')
+      fake_errs = double('errs1')
+      fake_errs.should_receive(:size).and_return(1)
+      fake_errs.stub(:[]=)
+      fake_password.should_receive(:size).at_least(:once).and_return(5)
+      fake_password.should_receive(:match).and_return(false)
+      fake_key.stub(:to_s).and_return(1)
+      fake_email.should_receive(:size).at_least(:once).and_return(1)
+      fake_email.should_receive(:match).and_return(false)
+      fake_email.should_receive(:+).at_least(:once).and_return("this")
+      fake_user.should_receive(:email).at_least(:once).and_return(fake_email)
+      fake_user.should_receive(:email=)
+      fake_user.should_receive(:valid?).and_return(false)
+      fake_user.should_receive(:errors).at_least(:once).and_return(fake_errors)
+      fake_user.should_receive(:save!)
+      fake_errors.stub(:each).and_return(fake_key, "this")
+      fake_user.should_receive(:password_digest).and_return(nil)
+      Hash.should_receive(:new).and_return(fake_errs)
+      retval = User.update_attrbs({:email => fake_email, :password => fake_password, :password_confirmation => nil, :oldpassword => "this"}, fake_user)
+      retval == fake_errs
+    end
+  end
   
 end#User
