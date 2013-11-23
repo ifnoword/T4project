@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   def update
     user= User.find params[:id]
     user= User.update_attrbs(params[:user], user)
+    puts "test******"
     if user.class == User
       flash[:notice] = "Your account was successfully updated."
       redirect_to edit_user_path(user)

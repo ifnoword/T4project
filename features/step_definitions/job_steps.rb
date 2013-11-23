@@ -39,5 +39,5 @@ When /^I delete the job which job title is "(.*?)" and click the confirm button$
   click_link "My Jobs"
   click_link jt
   click_button 'Delete'
-  page.driver.browser.accept_js_confirms
+  puts page.body
 end

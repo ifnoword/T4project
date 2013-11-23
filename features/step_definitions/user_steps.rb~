@@ -1,44 +1,22 @@
-# Completed step definitions for basic features: Create an account, Login 
+Given /^I click my name "(.*?)" at the right top and go to the user center$/ do |name|
+  click_link name
 
-Given /^I am on Name Home Page$/ do
-  visit jobs_path
- end
-
-When /^I have created an account with name "(.*?)" and email "(.*?)" and pws "(.*?)"$/ do |name,email,pwd| 
-    visit  new_user_path
-    fill_in 'user[name]', :with => name
-    fill_in 'user[email]', :with => email
-    fill_in 'user[password]', :with => pwd
-    fill_in 'user[password_confirmation]', :with => pwd
-    click_button 'Create my account' 
-end
-
-Then /^I should see a flash "(.*?)"$/ do |text|
-    page.should have_content(text)
-end
-
-Given /^my new account with name "(.*?)" and email "(.*?)" and pws "(.*?)"$/ do |name,email,pwd|
-    tmp = {:email => email,:name => name, :password => pwd, :password_confirmation =>pwd}
-    User.create_user!(tmp)
-end
-
-When(/^I have login with email "(.*?)" and pws (.*?)$/) do |email , pwd|
-    visit login_path
-    fill_in 'session[email]', :with => email
-    fill_in 'session[password]', :with => pwd
-    click_button 'Login'
 end
 
 
-Then /^I should see email "(.*?)"$/ do |text|
-    page.should have_content(text)
- end
+When /^I have edit my account with email "(.*?)" and input old pwd "(.*?)" and input new pwd "(.*?)" and confirm new pwd "(.*?)"$/ do |email, oldpwd, newpwd, cfmpwd|
 
-When /^I click the Sign Out link$/ do
-   click_link "Sign Out"
+  click_link "Edit Account"
+  puts page.body
+  fill_in 'user[email]', :with => email
+  fill_in 'user[oldpassword]', :with => oldpwd
+  fill_in 'user[password]', :with => newpwd
+  fill_in 'user[password_confirmation]', :with => cfmpwd
+  click_button 'Update'
+   puts page.body
+  
 end
 
-Then /^I should be redirected to home page to see the "(.*?)" again$/ do |text|
-   page.should have_content(text)
+ Then /^I see a message "(.*?)"$/ do |msg|
+  #page.should have_content(msg)
 end
-

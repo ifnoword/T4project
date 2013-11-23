@@ -6,7 +6,7 @@
       %li.button
         = link_to 'My Profile', profile_path(@current_user.profile) 
       %li.button
-        = link_to 'Post a Jobs', new_job_path 
+        = link_to 'Post a Job', new_job_path 
       %li.button
         = link_to 'My Jobs', myjobs_path(@current_user) 
 
@@ -15,11 +15,4 @@
   #frame
     %iframe{frameborder: "0", :src => new_job_path}
 
-%div
-  %b Welcome, current_user.company name
-
-  %p Email: "{@current_user.email}"
-  %p Phone: "{@current_user.phone number}
-  %p Location: "{@current_user.location}"
-  
 
