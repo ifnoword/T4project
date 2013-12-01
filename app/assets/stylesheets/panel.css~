@@ -1,6 +1,10 @@
 #panel_div{
   margin:0 auto 0 auto;
   width:1400px;
+  position:relative;
+  z-index:1;
+  padding-bottom:100px;
+  background-color:#fff;
 }
 
 .update_my_profile label,.panel_form label{
@@ -12,7 +16,8 @@
   float:left;
   padding-left:30px;
   padding-top:10px;
-  
+  width:220px;
+
 }
 
 #frame iframe{
@@ -21,7 +26,7 @@
 }
 
 #leftPanelList ul.container{ 
-  width:175px;
+  
 }
 
 #leftPanelList ul.container li{

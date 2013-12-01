@@ -1,18 +1,57 @@
 #panel_div
   #leftPanelList
-    %ul.container
-      %li.button
-        = link_to 'Edit Account', edit_user_path(@current_user) 
-      %li.button
-        = link_to 'My Profile', profile_path(@current_user.profile) 
-      %li.button
-        = link_to 'Post a Jobs', new_job_path 
-      %li.button
-        = link_to 'My Jobs', myjobs_path(@current_user) 
-
-
-
+    %ul#navigationMenu
+      %li
+        = link_to content_tag(:span,'Edit Account'), edit_user_path(@current_user), :class=>'home'
+      %li
+        = link_to content_tag(:span,'My Profile'), profile_path(@current_user.profile), :class=>'about'
+      %li
+        = link_to content_tag(:span,'Post a Job'), new_job_path, :class=>'services'
+      %li
+        = link_to content_tag(:span,'My Jobs'), myjobs_path(@current_user), :class=>'portfolio'
+      %li
+        = link_to content_tag(:span,'XXX'), myjobs_path(@current_user), :class=>'contact'
+ 
   #frame
     %iframe{frameborder: "0", :src => new_job_path}
+
+
+
+%footer
+  %ul
+    %li
+      %p.home ExternMe Links
+      =link_to "Home Page",jobs_path,:class=>'logo'
+    %li
+      %p.services Team
+      %ul
+        %li
+          %a{href: "#"} Adam Snyder
+        %li
+          %a{href: "#"} Alexander Lenth
+        %li
+          %a{href: "#"} Naveen Dewda
+        %li
+          %a{href: "#"} Xinmei Zhang
+        %li
+          %a{href: "#"} Hao Zheng
+    %li
+      %p.reachus Reach us
+      %ul
+        %li
+          %a{href: "#"} Email
+        %li
+          %a{href: "#"} Twitter
+        %li
+          %a{href: "#"} Facebook
+    %li
+      %p.clients Clients
+      %ul
+        %li
+          %a{href: "#"} Login Area
+        %li
+          %a{href: "#"} Support Center
+        %li
+          %a{href: "#"} FAQ
 
 

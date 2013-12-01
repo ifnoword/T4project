@@ -11,8 +11,8 @@
         = link_to 'Delete Account', 'delete' 
 
 
-  -##frame
-    -##iframe{frameborder: "0", :src => new_job_path, :width=> "1000px"}
+  #frame
+    %iframe{frameborder: "0", :src => new_job_path, :width=> "1000px"}
 
 %div
   %b Welcome, @current_user.company name
