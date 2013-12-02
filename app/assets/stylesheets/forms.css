@@ -18,11 +18,12 @@ background: -ms-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* IE10+ */
 background: linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#fee101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-
-    
     box-shadow:0 2px 5px rgba(0,0,0,0.5);
     border:1px solid #eee;
 }
+
+
+
 
 /*-------------------------
         The Login Form

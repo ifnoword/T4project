@@ -1,0 +1,121 @@
+#login_form{
+    width:650px;
+}
+#reg_form{
+    width:650px;
+}
+.common_form{
+    margin:50px auto 0 auto;
+    padding:50px 0 50px 0;
+
+
+background: #fefcea; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #fefcea 0%, #fee101 68%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fefcea), color-stop(68%,#fee101)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* IE10+ */
+background: linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#fee101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.5);
+    border:1px solid #eee;
+}
+
+.panel_form{
+
+
+}
+
+
+
+/*-------------------------
+        The Login Form
+--------------------------*/
+
+
+#login-register{
+        background-color:#242424;
+        padding: 65px 75px;
+        width:500px;
+        height:320px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-235px 0 0 -325px;
+
+        box-shadow:0 2px 5px rgba(0,0,0,0.5);
+}
+
+#login-register h1{
+        font-size:36px;
+}
+
+#login-register input{
+        font: inherit;
+        font-size: 18px;
+        line-height: 30px;
+        background-color: #363636;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        display: block;
+        width: 450px;
+        margin: 45px 0 15px;
+        outline: none;
+}
+
+#login-register p{
+        line-height:1.4;
+}
+
+#login-register button{
+        display:inline-block;
+        margin-top:50px;
+       
+        font:inherit;
+        font-weight:bold;
+        font-size:20px;
+
+        cursor:pointer;
+
+        background-color:#5ca1cd;
+        color:#fff;
+        padding:20px 45px;
+
+        border:none;
+        border-bottom:3px solid #3f84b0;
+        border-radius:3px;
+}
+
+#login-register button:hover{
+        background-color:#61a8d5;
+}
+
+#login-register.loggedIn button{
+        cursor: default;
+        background-color: #555 !important;
+        border-bottom-color: #444 !important;
+        color: #aaa !important;
+}
+
+#login-register span{
+        line-height:1.4;
+        font-size: 12px;
+        position: absolute;
+        bottom: 95px;
+        width: 225px;
+        height: 20px;
+        right: 80px;
+        color: #85bb2f;
+        background:url('../img/preloader.gif') 0 -1000px no-repeat;
+}
+
+#login-register.error span{
+        color: #ee5ea5;
+}
+
+#login-register.loading span{
+        color: transparent;
+        background-position: 0 100%;
+}

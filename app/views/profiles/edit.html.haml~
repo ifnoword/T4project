@@ -19,7 +19,9 @@
           -flash.now[:updt_profile_fail].errors.messages[:desc].each do |msg|
             %p='Personal description '+ msg
       = text_area :profile , 'desc', :placeholder => str
-      %h3 Contact Info.
+      .form_title
+        Contact Info. 
+        %hr 
       = label :profile, :altemail, 'Alternate Email'
       -str=@profile.altemail
       -if !!flash.now[:updt_profile_fail]
@@ -34,7 +36,9 @@
       -if !!flash.now[:updt_profile_fail]
         -str=flash.now[:updt_profile_fail].tel
       = text_field :profile, 'tel', :placeholder => str
-      %h4 Address  
+      .form_title
+        Address  
+        %hr
       = label :profile, :addr1, 'Address Line 1'
       -str= @profile.addr1
       -if !!flash.now[:updt_profile_fail]

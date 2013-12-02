@@ -1,10 +1,11 @@
-.middle
-  %h1#icon Welcome to ExternMe.com
-
-  .text_style
-    = form_tag 'jobs/search', :method => :post do
-      = text_field :search, 'title',:id => 'search_box'
-      %br
-      = submit_tag 'Search',:class => 'common_button_search'  
+.radientBG
+  .middle
+    #title_logo 
+      Welcome to ExternMe.com
+    .text_style
+      = form_tag 'jobs/search', :method => :post do
+        = text_field :search, 'title',:id => 'search_box'
+        %br
+        = submit_tag 'Search',:class => 'common_button_search'  
 
 

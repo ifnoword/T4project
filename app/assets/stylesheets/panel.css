@@ -1,10 +1,11 @@
 #panel_div{
   margin:0 auto 0 auto;
-  width:1400px;
+  width:100%;
+  height:100%;
   position:relative;
   z-index:1;
   padding-bottom:50px;
-  background-color:#fff;
+  background:url('cubeBG.jpg') #fefefe;
 }
 
 .update_my_profile label,.panel_form label{
@@ -14,8 +15,8 @@
 
 #leftPanelList{
   float:left;
-  padding-left:30px;
-  padding-top:10px;
+  padding-left:60px;
+  padding-top:60px;
   width:220px;
 
 }
@@ -36,7 +37,6 @@
 
 #leftPanelList ul li a{
 	display:block;
-	font-weight:bold;
 	font-size:18px;
 	height:40px;
 	width:100%;

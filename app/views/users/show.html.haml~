@@ -20,10 +20,10 @@
 %footer
   %ul
     %li
-      %p.home ExternMe Links
+      %p.home Links
       =link_to "Home Page",jobs_path,:class=>'logo'
     %li
-      %p.services Team
+      %p.services Team Member
       %ul
         %li
           %a{href: "#"} Adam Snyder

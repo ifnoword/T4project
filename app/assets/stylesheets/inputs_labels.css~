@@ -13,6 +13,10 @@ label{
   font-size:18px;
 }
 
+.edit_my_account label{
+  padding:10px 0;
+}
+
 input[type="text"],input[type="password"],textarea{
   border:1px solid #b8bdc2;
   font-size:17px;

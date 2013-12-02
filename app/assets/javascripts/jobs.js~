@@ -1,6 +1,6 @@
 $(function() {
 	//over the input
-        $( "input[type='text'],input[type='password']" ).mouseover(function(){
+        $( "input[type='text'],input[type='password'],textarea" ).mouseover(function(){
 			if(!$(this).is(":focus")){
                                 $(this).css("border-color","#a3a3a3"); 
 			}

@@ -1,0 +1,13 @@
+.panel_form,.my_profile,.edit_my_account,.update_my_profile,#my_joblist{
+   padding:50px 0 0 20px;
+}
+
+.radientBG{
+
+   width:100%;
+ 
+   position:absolute;
+   top:30%;
+}
+
+

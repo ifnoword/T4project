@@ -1,4 +1,4 @@
-.my_profile ul li{
+.my_profile ul li, .my_new_job ul li{
   padding:10px 0;
   font-weight:bold;
   font-size:18px;

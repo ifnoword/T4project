@@ -2,7 +2,7 @@ $(function() {
 	//over the input
         $( "input[type='text'],input[type='password'],textarea" ).mouseover(function(){
 			if(!$(this).is(":focus")){
-                                $(this).css("border-color","#a3a3a3"); 
+                                $(this).css("border-color","#8C8C8C"); 
 			}
                 }).mouseout(function(){
 			if(!$(this).is(":focus")){

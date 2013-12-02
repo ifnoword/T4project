@@ -36,4 +36,4 @@
       = @profile.zipcode
 
 
-  = button_to 'Edit', edit_profile_path(@profile) ,:class => 'common_button_search',:method =>get
+  = button_to 'Edit', edit_profile_path(@profile) ,:class => 'common_button_search',:method => :get

@@ -26,7 +26,8 @@
       -if !!flash.now[:updt_acct_fail]['password_confirmation']
         %p= flash.now[:updt_acct_fail]['password_confirmation']
     = password_field :user, 'password_confirmation'
-    %br%br%br 
+    %br
+    %br
     = submit_tag 'Update',:class => 'common_button_search'  
    
   

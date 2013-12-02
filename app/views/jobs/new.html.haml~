@@ -58,7 +58,7 @@
 			  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
 			  'West Virginia', 'Wisconsin', 'Wyoming']
       .clear
-      = label :job, :link, 'Job link on your website'
+      = label :job, :link, 'Job-link on your website'
       -str= "Leave it blank when you don't have one"
       -if !!flash.now[:new_job_fail]
         -str=flash.now[:new_job_fail].link
