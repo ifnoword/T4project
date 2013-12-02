@@ -1,64 +1,66 @@
-%h1 Update My Profile
 .update_my_profile
-  = form_tag profile_path, :method=>:put, :id=>@profile do
-    .text_style
-      = label :profile, :name, 'Name'
-      -str=@profile.name
-      -if !!flash.now[:updt_profile_fail]
-        -str=flash.now[:updt_profile_fail].name
-        -if flash.now[:updt_profile_fail].errors.messages[:name].size!=0
-          -flash.now[:updt_profile_fail].errors.messages[:name].each do |msg|
-            %p='Name '+ msg
-      = text_field :profile, 'name'
-      .clear
-      = label :profile, :desc, 'Personal Description'
-      -str=@profile.desc
-      -if !!flash.now[:updt_profile_fail]
-        -str=flash.now[:updt_profile_fail].desc
-        -if flash.now[:updt_profile_fail].errors.messages[:desc].size!=0
-          -flash.now[:updt_profile_fail].errors.messages[:desc].each do |msg|
-            %p='Personal description '+ msg
-      = text_area :profile , 'desc', :placeholder => str
-      .form_title
-        Contact Info. 
-        %hr 
-      = label :profile, :altemail, 'Alternate Email'
-      -str=@profile.altemail
-      -if !!flash.now[:updt_profile_fail]
-      -str=flash.now[:updt_profile_fail].altemail
-        -if flash.now[:updt_profile_fail].errors.messages[:altemail].size!=0
-          -flash.now[:updt_profile_fail].errors.messages[:altemail].each do |msg|
-            %p='Alternate Email '+ msg
-      = text_field :profile, 'altemail', :placeholder => str
-      .clear
-      = label :profile, :tel, 'Telephone'
-      -str= @profile.tel
-      -if !!flash.now[:updt_profile_fail]
-        -str=flash.now[:updt_profile_fail].tel
-      = text_field :profile, 'tel', :placeholder => str
-      .form_title
-        Address  
-        %hr
-      = label :profile, :addr1, 'Address Line 1'
-      -str= @profile.addr1
-      -if !!flash.now[:updt_profile_fail]
-        -str=flash.now[:updt_profile_fail].addr1
-      = text_field :profile, 'addr1', :placeholder => str
-      .clear
-      = label :profile, :addr2, 'Address Line 2'
-      -str= @profile.addr2
-      -if !!flash.now[:updt_profile_fail]
-        -str=flash.now[:updt_profile_fail].addr2
-      = text_field :profile, 'addr2', :placeholder => str
-      .clear
-      = label :profile, :city, 'City'
-      -str= @profile.city
-      -if !!flash.now[:updt_profile_fai]
-        -str=flash.now[:updt_profile_fai].city
-      = text_field :profile, 'city',:placeholder => str
-      .clear
-      = label :profile, :state, 'State'
-      = select :profile, :state, ['Unknown','Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
+  .list_table
+    #Raleway_font
+      Update My Profile
+    = form_tag profile_path, :method=>:put, :id=>@profile do
+      .text_style
+        = label :profile, :name, 'Name'
+        -str=@profile.name
+        -if !!flash.now[:updt_profile_fail]
+          -str=flash.now[:updt_profile_fail].name
+          -if flash.now[:updt_profile_fail].errors.messages[:name].size!=0
+            -flash.now[:updt_profile_fail].errors.messages[:name].each do |msg|
+              %p='Name '+ msg
+        = text_field :profile, 'name'
+        .clear
+        = label :profile, :desc, 'Personal Description'
+        -str=@profile.desc
+        -if !!flash.now[:updt_profile_fail]
+          -str=flash.now[:updt_profile_fail].desc
+          -if flash.now[:updt_profile_fail].errors.messages[:desc].size!=0
+            -flash.now[:updt_profile_fail].errors.messages[:desc].each do |msg|
+              %p='Personal description '+ msg
+        = text_area :profile , 'desc', :placeholder => str
+        .form_title
+          Contact Info. 
+          %hr 
+        = label :profile, :altemail, 'Alternate Email'
+        -str=@profile.altemail
+        -if !!flash.now[:updt_profile_fail]
+        -str=flash.now[:updt_profile_fail].altemail
+          -if flash.now[:updt_profile_fail].errors.messages[:altemail].size!=0
+            -flash.now[:updt_profile_fail].errors.messages[:altemail].each do |msg|
+              %p='Alternate Email '+ msg
+        = text_field :profile, 'altemail', :placeholder => str
+        .clear
+        = label :profile, :tel, 'Telephone'
+        -str= @profile.tel
+        -if !!flash.now[:updt_profile_fail]
+          -str=flash.now[:updt_profile_fail].tel
+        = text_field :profile, 'tel', :placeholder => str
+        .form_title
+          Address  
+          %hr
+        = label :profile, :addr1, 'Address Line 1'
+        -str= @profile.addr1
+        -if !!flash.now[:updt_profile_fail]
+          -str=flash.now[:updt_profile_fail].addr1
+        = text_field :profile, 'addr1', :placeholder => str
+        .clear
+        = label :profile, :addr2, 'Address Line 2'
+        -str= @profile.addr2
+        -if !!flash.now[:updt_profile_fail]
+          -str=flash.now[:updt_profile_fail].addr2
+        = text_field :profile, 'addr2', :placeholder => str
+        .clear
+        = label :profile, :city, 'City'
+        -str= @profile.city
+        -if !!flash.now[:updt_profile_fai]
+          -str=flash.now[:updt_profile_fai].city
+        = text_field :profile, 'city',:placeholder => str
+        .clear
+        = label :profile, :state, 'State'
+        = select :profile, :state, ['Unknown','Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
 			  'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho',
 			  'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
 			  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 
@@ -67,15 +69,15 @@
 			  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
 			  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
 			  'West Virginia', 'Wisconsin', 'Wyoming']
-      .clear
-      = label :profile, :zipcode, 'Zipcode'
-      -str= @profile.zipcode
-      -if !!flash.now[:updt_profile_fail]
-        -str=flash.now[:updt_profile_fail].zipcode
-        -if flash.now[:updt_profile_fail].errors.messages[:zipcode].size!=0
-          -flash.now[:updt_profile_fail].errors.messages[:zipcode].each do |msg|
-            %p='Zipcode '+ msg
-      = text_field :profile, 'zipcode', :placeholder => str
-      .clear
-      .div_edit_profile_submit
-        = submit_tag 'Save Changes',:class => 'common_button_search'
+        .clear
+        = label :profile, :zipcode, 'Zipcode'
+        -str= @profile.zipcode
+        -if !!flash.now[:updt_profile_fail]
+          -str=flash.now[:updt_profile_fail].zipcode
+          -if flash.now[:updt_profile_fail].errors.messages[:zipcode].size!=0
+            -flash.now[:updt_profile_fail].errors.messages[:zipcode].each do |msg|
+              %p='Zipcode '+ msg
+        = text_field :profile, 'zipcode', :placeholder => str
+        .clear
+        .div_edit_profile_submit
+          = submit_tag 'Save Changes',:class => 'common_button_search'

@@ -4,7 +4,7 @@
   height:100%;
   position:relative;
   z-index:1;
-  padding-bottom:50px;
+  padding-bottom:150px;
   background:url('cubeBG.jpg') #fefefe;
 }
 
@@ -17,7 +17,7 @@
   float:left;
   padding-left:60px;
   padding-top:60px;
-  width:220px;
+  width:200px;
 
 }
 
@@ -37,7 +37,6 @@
 
 #leftPanelList ul li a{
 	display:block;
-	font-weight:bold;
 	font-size:18px;
 	height:40px;
 	width:100%;

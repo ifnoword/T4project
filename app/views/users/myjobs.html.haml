@@ -1,22 +1,26 @@
-#my_joblist
-  %table#myjobs
-    %thead
-      %tr
-        %th Job Title
-        %th Description
-        %th Created At
-        %th Updated At
-        %th 
-        %th 
-    %tbody
-      - @user.jobs.each do |job|
+.my_joblist
+  .list_table
+    #Raleway_font
+      My Job List
+    .form_title
+    %table#myjobs
+      %thead
         %tr
-          %td= link_to "#{job.title}", job_path(job)
-          %td= job.desc[0,50]
-          %td= job.created_at
-          %td= job.updated_at
-          %td= button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
-          %td= button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
+          %th Job Title
+          %th Description
+          %th Created At
+          %th Updated At
+          %th 
+          %th 
+      %tbody
+        - @user.jobs.each do |job|
+          %tr
+            %td= link_to "#{job.title}", job_path(job)
+            = content_tag(:td, job.desc[0,50], :class => 'desc')
+            = content_tag(:td, job.created_at, :class => 'normal')
+            = content_tag(:td, job.updated_at, :class => 'normal')
+            %td= button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
+            %td= button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
 
 
 

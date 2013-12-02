@@ -1,6 +1,6 @@
-%h1 Edit My Account
-
 .edit_my_account
+  #Raleway_font
+    Edit My Account
   = form_tag user_path(@current_user), :method=>:put do
 
     = label :user, :email, 'Email'

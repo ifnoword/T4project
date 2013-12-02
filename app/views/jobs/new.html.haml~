@@ -1,5 +1,6 @@
-%h1 Post a New Job
 .panel_form
+  #Raleway_font
+    Post a New Job
   = form_tag jobs_path do
     .text_style
       = label :job, :companyname, 'Company name'

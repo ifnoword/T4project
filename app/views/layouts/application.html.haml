@@ -13,8 +13,11 @@
         .account
           =link_to 'Login/Register', login_path, :method=>:get
       -else
-        .account
-          =link_to 'Back', jobs_path
+        .accountLoggedin
+          %div.account_logo
+            =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+          %div.account_info
+            =link_to 'Back to home page', jobs_path
     -else
       -if current_page?(jobs_path)
         .accountLoggedin
