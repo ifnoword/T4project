@@ -12,7 +12,7 @@ class JobsController < ApplicationController
   def correct_owner
     owner= Job.find(params[:id]).user
     if @current_user.id!=owner.id
-      flash[:warning]='No Authenrization!'
+      flash[:warning]="You can't access that page!"
       redirect_to jobs_path
     end
   end
@@ -72,7 +72,10 @@ class JobsController < ApplicationController
 
     @jobs = Job.find(:all, :conditions => ["title like ?", "%#{search}%"]).concat(Job.find(:all, :conditions => ["companyname like ?", "%#{search}%"])).concat(Job.find(:all, :conditions => ["city like ?", "%#{search}%"]))
 
-
+    if(@jobs.size == 0)
+      flash[:notice] = "No jobs match the search terms."
+      redirect_to jobs_path
+    end
 
   end
 end

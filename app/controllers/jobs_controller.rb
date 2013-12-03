@@ -72,7 +72,10 @@ class JobsController < ApplicationController
 
     @jobs = Job.find(:all, :conditions => ["title like ?", "%#{search}%"]).concat(Job.find(:all, :conditions => ["companyname like ?", "%#{search}%"])).concat(Job.find(:all, :conditions => ["city like ?", "%#{search}%"]))
 
-
+    if(@jobs.size == 0)
+      flash[:notice] = "No jobs match the search terms."
+      redirect_to jobs_path
+    end
 
   end
 end
