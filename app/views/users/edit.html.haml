@@ -10,7 +10,7 @@
           %p='Email '+flash.now[:updt_acct_fail]['email']
       = text_field :user, 'email'
 
-      = label :user, :oldpassword, 'Current Password (requried)'
+      = label :user, :oldpassword, 'Current Password'
       -if flash.now[:updt_acct_fail]
         -if !!flash.now[:updt_acct_fail]['oldpassword']
           %p=flash.now[:updt_acct_fail]['oldpassword']
@@ -22,7 +22,7 @@
           %p= 'New password '+flash.now[:updt_acct_fail]['password']
       = password_field :user, 'password'
 
-      = label :user, :password_confirmation, 'New Password Conformation'
+      = label :user, :password_confirmation, 'New Password Confirmation'
       -if flash.now[:updt_acct_fail]
         -if !!flash.now[:updt_acct_fail]['password_confirmation']
           %p= flash.now[:updt_acct_fail]['password_confirmation']

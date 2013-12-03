@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
       end
     end
     if user.password_digest!=Digest::SHA256.hexdigest(oldemail+params[:oldpassword])
-      errs['oldpassword']="Please enter your correct current password"
+      errs['oldpassword']="Please enter your current password"
     end
     if errs.size==0
       pwd=params[:oldpassword]

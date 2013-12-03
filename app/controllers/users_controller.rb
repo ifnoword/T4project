@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def correct_user
     owner= User.find params[:id]
     if @current_user.id!=owner.id
-      flash[:warning]='No Authenrization!'
+      flash[:warning]="You can't access that page!"
       redirect_to jobs_path
     end
   end

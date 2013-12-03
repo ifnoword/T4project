@@ -12,7 +12,7 @@ class JobsController < ApplicationController
   def correct_owner
     owner= Job.find(params[:id]).user
     if @current_user.id!=owner.id
-      flash[:warning]='No Authenrization!'
+      flash[:warning]="You can't access that page!"
       redirect_to jobs_path
     end
   end
