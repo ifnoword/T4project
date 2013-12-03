@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_filter :sign_in, except: [:index]
-  before_filter :correct_owner, except: [:index, :new, :create]
+  before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
 
   def sign_in
     if !@current_user
