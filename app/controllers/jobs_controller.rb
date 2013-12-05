@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_filter :sign_in, except: [:index]
-  before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
+ # before_filter :sign_in, except: [:index, :dosearch]
+ # before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
 
   def sign_in
     if !@current_user
@@ -67,12 +67,25 @@ class JobsController < ApplicationController
   end
 
   def dosearch
-
+    dropdown = params[:search][:dropdown]
     search = params[:search][:title]
+ 
+  case dropdown
 
-    @jobs = Job.find(:all, :conditions => ["title like ?", "%#{search}%"]).concat(Job.find(:all, :conditions => ["companyname like ?", "%#{search}%"])).concat(Job.find(:all, :conditions => ["city like ?", "%#{search}%"]))
+  when "Title"
+  	@jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(5)
 
-    if(@jobs.size == 0)
+  when "Company"  
+	@jobs = Job.where(["companyname like ?", "%#{search}%"]).page(params[:page]).per(5)
+
+  when "Location"
+	@jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(5)
+  else	
+ 
+        @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(5)    
+  end 
+
+   if(@jobs.size == 0)
       flash[:notice] = "No jobs match the search terms."
       redirect_to jobs_path
     end

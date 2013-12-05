@@ -3,8 +3,9 @@
     #Raleway_font
       Welcome to ExternMe.com
     .text_style
-      = form_tag 'jobs/search', :method => :post do
-        = text_field :search, 'title',:id => 'search_box'
+      = form_tag jobs_search_path, :method => :post do
+        = select :search, :dropdown ,['Title', 'Company', 'Location','Everything']
+        = text_field :search, 'title',:id => 'search_box'      
         %br
         = submit_tag 'Search',:class => 'common_button_search'  
 

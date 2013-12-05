@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'multi_json', '~>1.8.1'
 gem 'cucumber_factory'
+gem 'kaminari'
 #gem 'devise', '3.1.1'
 #gem 'bcrypt-ruby', '3.0.1'
 # Bundle edge Rails instead:

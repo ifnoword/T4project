@@ -1,9 +1,11 @@
 class Job < ActiveRecord::Base
+  
   belongs_to :user
   # attr_accessible :title, :body
   validates :title, presence: true, length: {maximum: 70}
   validates :desc, presence: true, length: {minimum: 70}
   validates :companyname, presence: true
+
 
   def self.create_job(params, user)
     job=user.jobs.build

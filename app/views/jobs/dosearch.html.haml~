@@ -1,11 +1,10 @@
 %h1 Test search page!
-= "Search by:"
-= "Title"
-= check_box_tag "test", 1, true
-= "Company name"
-= check_box_tag "test", 1, true
-= "Location"
-= check_box_tag "test", 1, true
+.text_style
+  = form_tag 'jobs/search', :method => :post do
+    = select :search, :dropdown ,['Title', 'Company', 'Location','Everything']
+    = text_field :search, 'title',:id => 'search_box'      
+    %br
+    = submit_tag 'Search',:class => 'common_button_search'
 
 %table#jobs
   %thead
@@ -22,3 +21,6 @@
         %td= job[:companyname]
         %td= job[:city]
         %td= link_to job[:link], job[:link], :target => 'blank'
+
+= paginate @jobs
+
