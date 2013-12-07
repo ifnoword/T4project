@@ -1,11 +1,8 @@
 class JobsController < ApplicationController
-<<<<<<< HEAD
+
   before_filter :sign_in, except: [:index, :dosearch]
   before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
-=======
- # before_filter :sign_in, except: [:index, :dosearch]
- # before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
->>>>>>> NDlocal
+ 
 
   def sign_in
     if !@current_user

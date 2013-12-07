@@ -1,5 +1,5 @@
 .middle
-  .common_form#login_form
+  #login-register
     #Raleway_font
       Employers sign in
     -if flash[:login_fail]
@@ -11,7 +11,7 @@
         = password_field :session, 'password', :placeholder => 'Password'
         %br
         = submit_tag 'Login',:class => 'common_button_search'
-    %h3 
+    .linkto_reg 
       Not a memeber? 
       =link_to 'Create an account', new_user_path
 

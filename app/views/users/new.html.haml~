@@ -1,5 +1,5 @@
-.middle
-  .common_form#reg_form
+.login-reg-bg
+  #login-register
     #Raleway_font
       Create an account
     = form_tag users_path do
@@ -22,6 +22,6 @@
         -if flash[:acct_fail]
           -if !!flash[:acct_fail]['password_confirmation']
             %p= flash[:acct_fail]['password_confirmation']
-        = password_field :user, 'password_confirmation', :placeholder => 'PSW Confirm'
+        = password_field :user, 'password_confirmation', :placeholder => 'Confirm password'
         %br
         = submit_tag 'Create my account',:class => 'common_button_search'  

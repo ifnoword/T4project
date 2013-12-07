@@ -1,6 +1,11 @@
 class JobsController < ApplicationController
+<<<<<<< HEAD
+  before_filter :sign_in, except: [:index, :dosearch]
+  before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
+=======
  # before_filter :sign_in, except: [:index, :dosearch]
  # before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
+>>>>>>> NDlocal
 
   def sign_in
     if !@current_user
@@ -73,16 +78,16 @@ class JobsController < ApplicationController
   case dropdown
 
   when "Title"
-  	@jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(1)
+  	@jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(5)
 
   when "Company"  
-	@jobs = Job.where(["companyname like ?", "%#{search}%"]).page(params[:page]).per(1)
+	@jobs = Job.where(["companyname like ?", "%#{search}%"]).page(params[:page]).per(5)
 
   when "Location"
-	@jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(1)
+	@jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(5)
   else	
  
-        @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(1)    
+        @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(5)    
   end 
 
    if(@jobs.size == 0)

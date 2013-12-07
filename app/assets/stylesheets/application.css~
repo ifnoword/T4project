@@ -25,7 +25,7 @@ body{
   z-index:0;
 
 }
-.middle {
+.login-reg-bg {
   text-align: center;
 }
 
@@ -34,7 +34,7 @@ a:visited{
 }
 .account a,.account a:visited{
   color:black;
-  font-weight:bold;
+ 
 }
 a,.account a:link{
   text-decoration:none;
@@ -42,6 +42,10 @@ a,.account a:link{
 a:hover,.account a:hover{
   text-decoration:underline;
   color:#CC0000;
+}
+
+.linkto_reg{
+  font-size:20px;
 }
 
 @font-face {
@@ -72,4 +76,10 @@ a:hover,.account a:hover{
   src: local('Raleway Bold'), local('Raleway-Bold'), url(http://themes.googleusercontent.com/static/fonts/raleway/v6/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
 }
 
+@font-face {
+  font-family: 'Playball';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playball'), local('Playball-Regular'), url(http://themes.googleusercontent.com/static/fonts/playball/v3/QS5qjU-Gc2sqWEq5kDfWQfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
 

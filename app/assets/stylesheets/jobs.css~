@@ -4,7 +4,7 @@
 }
 
 #Raleway_font {
-  font:35px 'Playball', sans-serif;
+  font:35px 'Raleway', sans-serif;
 }
 
 .account{
@@ -24,6 +24,8 @@
   line-height: 50px;
   vertical-align:middle;
   float:right;
+  position:absolute;
+  right:20px;
 }
 
 .account_logo{
