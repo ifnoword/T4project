@@ -36,6 +36,20 @@ $(function() {
 
 
 
+	//home page, click label
+	$( "#l_All" ).click(function() {
+		$( "#search_radio_All" ).prop( "checked", true );
+	});
+	$( "#l_Title" ).click(function() {
+		$( "#search_radio_Title" ).prop( "checked", true );
+	});
+	$( "#l_Company" ).click(function() {
+		$( "#search_radio_Company" ).prop( "checked", true );
+	});
+	$( "#l_Location" ).click(function() {
+		$( "#search_radio_Location" ).prop( "checked", true );
+	});
+
 
 });
 

@@ -7,24 +7,21 @@ $(document).ready(function(){
 	$('iframe').height('500');
 			
 				// Hide loading image when iframe is loaded
-	$('iframe').load(function() {	
+	var method = $('iframe').load(function() {	
 		//hide the .account inside,but when javascript disable, it will show again.
-		$('iframe:visible').contents().find(".accountLoggedin").hide()
-								  
-		$('#loading').fadeOut(400);
-		var h1=$('body', $('iframe:visible').contents()).height()+30;
+		$('iframe').contents().find(".accountLoggedin").hide()
+		
+		$(this).fadeIn(300);	  
+
+		var h1=$('body', $('iframe').contents()).height()+50;
 		var h3=0;
 		if(h1>500)
 		{
 			h3=580+h1-500;
 			$('iframe').height(h1);
-			$('#usermainCtn').height(h3);
-			$('#loading').height(h1);
 		}
 		else
 		{	
-			$('#usermainCtn').height('580');
-			$('#loading').height('500');
 			$('iframe').height('500');
 
 		}
@@ -41,9 +38,10 @@ $(document).ready(function(){
 			// Show loading icon
 		//	$('#loading').fadeIn(100, function() {
 				// Setup iframes
-				$('iframe').attr('src', function() {
+				$('iframe').fadeOut(200).attr('src', function() {
+					
 					return href;
-				});
+				}).load(function() {method()});
 
 		//	});
 		// Don't follow the link

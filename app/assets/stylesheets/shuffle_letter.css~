@@ -1,0 +1,21 @@
+
+/*----------------------------
+        Container & textbox
+-----------------------------*/
+
+
+#container_sl{
+        color: #555;
+ 
+        margin: 0 auto;
+ 
+        width: 650px;
+        position:relative;
+ 
+       
+        font-family:'Open Sans Condensed',sans-serif;
+        text-shadow:1px 1px 0 rgba(255,255,255,0.5);
+}
+ 
+
+ 

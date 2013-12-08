@@ -30,6 +30,17 @@ select{
   width:435px;
 }
 
+.account_logo select{
+  width: 85px;
+  font-size:13px;
+  padding:5px 0;
+  color:#666;
+   line-height: 1;
+  text-align:center;
+  
+}
+
+
 input,select{
   height:35px;
   line-height: 35px;

@@ -1,0 +1,28 @@
+$(function(){
+
+        // container is the DOM element;
+        var container = $("#container_sl");
+
+        // Shuffle the contents of container
+
+	container.shuffleLetters();
+ 
+
+
+       setTimeout(function(){
+
+                // Shuffle the container with custom text
+
+               // container.shuffleLetters({
+
+             //           "text": "<a>Test it for yourself!</a>"
+
+            //    });
+
+ 
+
+        },3000);
+
+       
+
+});
