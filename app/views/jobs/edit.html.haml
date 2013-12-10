@@ -10,7 +10,7 @@
           -str=flash.now[:updt_job_fail].companyname
           -if flash.now[:updt_job_fail].errors.messages[:companyname].size!=0
             -flash.now[:updt_job_fail].errors.messages[:companyname].each do |msg|
-              %p='Job title '+ msg
+              %p='Company name '+ msg
         = text_field :job , 'companyname', :placeholder => str
         .clear
         = label :job, :title, 'Job Title'
@@ -28,7 +28,7 @@
           -str=flash.now[:updt_job_fail].desc
           -if flash.now[:updt_job_fail].errors.messages[:desc].size!=0
             -flash.now[:updt_job_fail].errors.messages[:desc].each do |msg|
-              %p='Job descptioin '+ msg
+              %p='Job description '+ msg
         = text_area :job, 'desc', :placeholder => str
         .clear
         = label :job, :reqs, 'Job Requirements'

@@ -10,7 +10,7 @@
           -str=flash.now[:updt_job_fail].companyname
           -if flash.now[:updt_job_fail].errors.messages[:companyname].size!=0
             -flash.now[:updt_job_fail].errors.messages[:companyname].each do |msg|
-              %p='Job title '+ msg
+              %p='Company name '+ msg
         = text_field :job , 'companyname', :placeholder => str
         .clear
         = label :job, :title, 'Job Title'
@@ -28,7 +28,7 @@
           -str=flash.now[:updt_job_fail].desc
           -if flash.now[:updt_job_fail].errors.messages[:desc].size!=0
             -flash.now[:updt_job_fail].errors.messages[:desc].each do |msg|
-              %p='Job descptioin '+ msg
+              %p='Job description '+ msg
         = text_area :job, 'desc', :placeholder => str
         .clear
         = label :job, :reqs, 'Job Requirements'
@@ -66,6 +66,7 @@
           -str=flash.now[:updt_job_fail].link
         = text_field :job, 'link', :placeholder => str
         .clear
+        .form_title
         #div_twobtn_float_left 
           = submit_tag 'Save the changes',:class => 'common_button_search'
         =button_to 'Cancel',user_path , :method=>:get, :id=>@current_user,:class => 'common_button_search'

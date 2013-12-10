@@ -1,10 +1,5 @@
-%h1 Test search page!
+%h1 Search results
 .text_style
-  = form_tag jobs_search_path, :method => :post do
-    = select :search, :dropdown ,['Title', 'Company', 'Location','Everything']
-    = text_field :search, 'title',:id => 'search_box'      
-    %br
-    = submit_tag 'Search',:class => 'common_button_search'
 
 %table#jobs
   %thead
