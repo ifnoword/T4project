@@ -1,0 +1,63 @@
+#login_form{
+    width:650px;
+}
+#reg_form{
+    width:650px;
+}
+.common_form{
+    margin:50px auto 0 auto;
+    padding:50px 0 50px 0;
+    background: #fefcea; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #fefcea 0%, #fee101 68%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fefcea), color-stop(68%,#fee101)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* IE10+ */
+    background: linear-gradient(45deg,  #fefcea 0%,#fee101 68%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#fee101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.5);
+    border:1px solid #eee;
+}
+
+
+
+
+/*-------------------------
+        The Login Form
+--------------------------*/
+
+
+#login-register{
+        color:#fff;
+        background-color:#363636;
+        margin:50px auto 100px auto;
+        padding:50px;
+        width:500px;
+ 
+        box-shadow:0 2px 5px rgba(0,0,0,0.5);
+}
+ 
+#login-register input{
+  	margin:5px 0;
+
+}
+
+#login-register input[type="text"], #login-register input[type="password"]{
+ 
+        font-size: 18px;
+        line-height: 30px;
+        background-color: #494f50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        display: block;
+        width: 450px;
+        outline: none;
+}
+ 
+
+#login-register p{
+        color: #FF3C35;
+}
+

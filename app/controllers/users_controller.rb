@@ -1,17 +1,12 @@
 class UsersController < ApplicationController
   before_filter :sign_in, except: [:new, :create]
   before_filter :correct_user, except:[:new, :create]
-  def sign_in
-    if !@current_user
-      flash[:warning]='Please log in!'
-      redirect_to login_path
-    end
-  end
+  Perpage = 1
 
   def correct_user
     owner= User.find params[:id]
     if @current_user.id!=owner.id
-      flash[:warning]='No Authenrization!'
+      flash[:warning]="You can't access that page!"
       redirect_to jobs_path
     end
   end
@@ -48,7 +43,8 @@ class UsersController < ApplicationController
     @user = User.create_user!(params[:user])
 	
     if @user.class == User  
-      flash[:notice] = "#{@user.email} was successfully created."     
+      flash[:notice] = "#{@user.email} was successfully created."
+      session[:current_user]=@user.email    
       redirect_to jobs_path     
     else 
       flash[:acct_fail] = @user
@@ -57,7 +53,8 @@ class UsersController < ApplicationController
   end #create
   
   def myjobs
-    @user=@current_user
+    
+    @jobs=Kaminari.paginate_array(@current_user.jobs).page(params[:page]).per(Perpage)
   end
   
   def destroy

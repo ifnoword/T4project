@@ -1,0 +1,17 @@
+.panel_form,.my_profile,.my_new_job, .edit_my_account,.update_my_profile,#my_joblist{
+   /*-----
+      since they are put in iframe, should not use margin here
+   ------*/
+   padding:50px 0 0 20px;
+   
+}
+
+
+
+.radientBG{
+   width:100%;
+   position:absolute;
+   top:30%;
+}
+
+

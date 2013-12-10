@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     user.email = params[:email]
     if !user.valid?     
       user.errors.each do |key, value|
-        errs[key]=value
+        errs[key.to_s]=value
       end
     end
     if params[:password].size < 6 

@@ -1,12 +1,19 @@
-#my_joblist{
-  width:100%;
 
-}
-
-#my_joblist th,#my_joblist td{
+.my_joblist th,.my_joblist td{
   padding:0 5px;
 }
 
-#my_joblist table td{
-  margin:10px 0;
+.my_joblist td.desc{
+  width:400px;
 }
+
+.my_joblist td.normal{
+  width:100px;
+  background-color:black;
+}
+
+.my_joblist td{
+  word-wrap:break-word;
+}
+
+

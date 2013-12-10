@@ -13,8 +13,11 @@
         .account
           =link_to 'Login/Register', login_path, :method=>:get
       -else
-        .account
-          =link_to 'Back', jobs_path
+        .accountLoggedin
+          %div.account_logo
+            =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+          %div.account_info
+            =link_to 'Back to home page', jobs_path
     -else
       -if current_page?(jobs_path)
         .accountLoggedin
@@ -27,7 +30,14 @@
         .accountLoggedin
           %div.account_logo
             =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+            = form_tag jobs_search_path, :method => :post do
+              = select :search, :radio ,['All','Title', 'Company', 'Location']
+              = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
+              = submit_tag 'Search',:class => 'common_button_bar_search'
+              = image_tag("325.gif", :alt => "loading",:id=>'preload')
+
           %div.account_info
+            
             Welcome, 
             =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
             |

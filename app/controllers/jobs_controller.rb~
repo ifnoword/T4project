@@ -1,18 +1,12 @@
 class JobsController < ApplicationController
-  before_filter :sign_in, except: [:index]
-  before_filter :correct_owner, except: [:index, :new, :create]
-
-  def sign_in
-    if !@current_user
-    flash[:warning]='Please log in!'
-    redirect_to login_path 
-    end
-  end
+  before_filter :sign_in, except: [:index, :dosearch]
+  before_filter :correct_owner, except: [:index, :new, :create, :dosearch,:show]
+  Perpage = 2
 
   def correct_owner
     owner= Job.find(params[:id]).user
     if @current_user.id!=owner.id
-      flash[:warning]='No Authenrization!'
+      flash[:warning]="You can't access that page!"
       redirect_to jobs_path
     end
   end
@@ -36,8 +30,8 @@ class JobsController < ApplicationController
   end
   
   def show
-   id = params[:id]
-   @job = Job.find(id)
+   #id = params[:id]
+   #@job = Job.find(id)
   end 
   
   def edit
@@ -60,19 +54,31 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     flash[:notice] = "Job #{@job.title} was deleted."
     @job.destroy
-    redirect_to user_path(@current_user)
+    redirect_to myjobs_path(@current_user)
   end
   def preview
     @job_details = params[:job]
   end
 
   def dosearch
-
+    radio = params[:search][:radio]
     search = params[:search][:title]
+ 
+    case radio
+    when "Title"
+      @jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
+    when "Company"  
+      @jobs = Job.where(["companyname like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
+    when "Location"
+      @jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
+    else	
+      @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(Perpage)    
+    end 
 
-    @jobs = Job.find(:all, :conditions => ["title like ?", "%#{search}%"]).concat(Job.find(:all, :conditions => ["companyname like ?", "%#{search}%"])).concat(Job.find(:all, :conditions => ["city like ?", "%#{search}%"]))
-
-
+   if(@jobs.size == 0)
+      flash[:notice] = "No jobs match the search terms."
+      redirect_to jobs_path
+    end
 
   end
 end

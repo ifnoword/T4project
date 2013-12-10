@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/controllers/application_controller.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/controllers/application_controller.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         null,
@@ -12,6 +16,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/helpers/application_helper.rb": [
         1,
         null
@@ -25,6 +30,21 @@
         null
       ],
       "/home/saasbook/Desktop/project/app/controllers/jobs_controller.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Desktop/sprint2/app/helpers/jobs_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Desktop/sprint2/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Desktop/sprint2/app/controllers/jobs_controller.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         1,
@@ -104,7 +124,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/models/job.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/models/job.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         null,
@@ -149,7 +173,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/controllers/panels_controller.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/controllers/panels_controller.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         null,
         1,
@@ -168,7 +196,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/controllers/profiles_controller.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/controllers/profiles_controller.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         null,
@@ -193,7 +225,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/models/profile.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/models/profile.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         null,
@@ -239,7 +275,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/controllers/sessions_controller.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/controllers/sessions_controller.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         null,
@@ -264,7 +304,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/controllers/users_controller.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/controllers/users_controller.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         1,
@@ -333,7 +377,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/saasbook/Desktop/project/app/models/user.rb": [
+=======
+      "/home/saasbook/Desktop/sprint2/app/models/user.rb": [
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
         1,
         1,
         1,
@@ -431,6 +479,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1385185579
+=======
+    "timestamp": 1385185569
+>>>>>>> b511819652886964253a2dd0e0dc636960176f49
   }
 }

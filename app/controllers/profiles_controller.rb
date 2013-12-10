@@ -1,4 +1,14 @@
 class ProfilesController < ApplicationController
+  before_filter :sign_in, only: [:edit,:update]
+  before_filter :correct_user, only:[:edit, :update]
+  def correct_user
+    owner= Profile.find(params[:id]).user
+    if @current_user.id!=owner.id
+      flash[:warning]="You can't access that page!"
+      redirect_to jobs_path
+    end
+  end
+
   def new
   end
   def show

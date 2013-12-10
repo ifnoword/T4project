@@ -1,11 +1,12 @@
 .middle
-  .common_form#reg_form
-    %h1 Create an account
+  #login-register
+    #Raleway_font
+      Create an account
     = form_tag users_path do
       .text_style
         -if flash[:acct_fail]
           -if !!flash[:acct_fail]['name']
-            %p= 'Username '+flash[:acct_fail]['name']
+            %p= 'Name '+flash[:acct_fail]['name']
         = text_field :user, 'name',:placeholder => 'Name'
         %br
         -if flash[:acct_fail]
@@ -21,6 +22,6 @@
         -if flash[:acct_fail]
           -if !!flash[:acct_fail]['password_confirmation']
             %p= flash[:acct_fail]['password_confirmation']
-        = password_field :user, 'password_confirmation', :placeholder => 'PSW Confirm'
+        = password_field :user, 'password_confirmation', :placeholder => 'Confirm password'
         %br
-        = submit_tag 'Create my account',:class => 'common_button'  
+        = submit_tag 'Create my account',:class => 'common_button_search'  

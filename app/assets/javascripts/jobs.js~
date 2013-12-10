@@ -1,8 +1,8 @@
 $(function() {
 	//over the input
-        $( "input[type='text'],input[type='password']" ).mouseover(function(){
+        $( "input[type='text'],input[type='password'],textarea" ).mouseover(function(){
 			if(!$(this).is(":focus")){
-                                $(this).css("border-color","#a3a3a3"); 
+                                $(this).css("border-color","#8C8C8C"); 
 			}
                 }).mouseout(function(){
 			if(!$(this).is(":focus")){
@@ -35,6 +35,20 @@ $(function() {
 	}).focus();
 
 
+
+	//home page, click label
+	$( "#l_All" ).click(function() {
+		$( "#search_radio_All" ).prop( "checked", true );
+	});
+	$( "#l_Title" ).click(function() {
+		$( "#search_radio_Title" ).prop( "checked", true );
+	});
+	$( "#l_Company" ).click(function() {
+		$( "#search_radio_Company" ).prop( "checked", true );
+	});
+	$( "#l_Location" ).click(function() {
+		$( "#search_radio_Location" ).prop( "checked", true );
+	});
 
 
 });

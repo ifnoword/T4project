@@ -5,10 +5,16 @@
     %tr
       %th Job Title
       %th Company name
+      %th City
+      %th More Info
 
   %tbody
     - @jobs.each do |job|
       %tr
         %td= job[:title]
         %td= job[:companyname]
+        %td= job[:city]
+        %td= link_to job[:link], job[:link], :target => 'blank'
+
+= paginate @jobs, :params=>{:controller=>'jobs',:action=>'dosearch', :method=>:post}
 
