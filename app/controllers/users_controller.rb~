@@ -52,6 +52,7 @@ class UsersController < ApplicationController
       redirect_to jobs_path     
     else 
       flash[:acct_fail] = @user
+      flash[:notice] = "That email address has already been used!"
       redirect_to new_user_path
     end
   end #create
