@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if @user.class == User  
       flash[:notice] = "#{@user.email} was successfully created."
       session[:current_user]=@user.email    
-      redirect_to jobs_path     
+      redirect_to edit_profile_path(@user.profile)     
     else 
       flash[:acct_fail] = @user
       flash[:notice] = "That email address has already been used!"

@@ -64,6 +64,9 @@
         -str=@job.link
         -if !!flash.now[:updt_job_fail]
           -str=flash.now[:updt_job_fail].link
+          -if flash.now[:updt_job_fail].errors.messages[:link].size!=0
+            -flash.now[:updt_job_fail].errors.messages[:link].each do |msg|
+              %p='Website link '+ msg
         = text_field :job, 'link', :placeholder => str
         .clear
         .form_title
