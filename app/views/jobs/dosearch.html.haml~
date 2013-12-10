@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-%h1 Test search page!
-=======
+
 %h1 Search results
 .text_style
->>>>>>> 8d21066a1c9c2d426a51b5fff2e9785b0276e345
 
 %table#jobs
   %thead
