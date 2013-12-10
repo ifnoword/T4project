@@ -69,10 +69,10 @@ class JobsController < ApplicationController
   end
 
   def dosearch
-    dropdown = params[:search][:dropdown]
+    radio = params[:search][:radio]
     search = params[:search][:title]
  
-  case dropdown
+  case radio
 
   when "Title"
   	@jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(5)
