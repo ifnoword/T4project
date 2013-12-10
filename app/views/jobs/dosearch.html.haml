@@ -1,12 +1,14 @@
-%h1 Test search page!
+
+%h1 Search results
+.text_style
 
 %table#jobs
   %thead
     %tr
       %th Job Title
       %th Company name
-      %th City
-      %th More Info
+      %th Location
+      %th Apply on Company Website
 
   %tbody
     - @jobs.each do |job|

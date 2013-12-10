@@ -1,7 +1,20 @@
 class JobsController < ApplicationController
   before_filter :sign_in, except: [:index, :dosearch]
-  before_filter :correct_owner, except: [:index, :new, :create, :dosearch,:show]
+<<<<<<< HEAD
+  before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
   Perpage = 2
+=======
+  #before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
+  before_filter :correct_owner, only: [:preview, :edit, :update]
+ 
+
+  def sign_in
+    if !@current_user
+    flash[:warning]='Please log in!'
+    redirect_to login_path 
+    end
+  end
+>>>>>>> 8d21066a1c9c2d426a51b5fff2e9785b0276e345
 
   def correct_owner
     owner= Job.find(params[:id]).user
@@ -30,8 +43,8 @@ class JobsController < ApplicationController
   end
   
   def show
-   #id = params[:id]
-   #@job = Job.find(id)
+   id = params[:id]
+   @job = Job.find(id)
   end 
   
   def edit
@@ -64,6 +77,7 @@ class JobsController < ApplicationController
     radio = params[:search][:radio]
     search = params[:search][:title]
  
+<<<<<<< HEAD
     case radio
     when "Title"
       @jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
@@ -74,6 +88,22 @@ class JobsController < ApplicationController
     else	
       @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(Perpage)    
     end 
+=======
+  case radio
+
+  when "Title"
+  	@jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(5)
+
+  when "Company"  
+	@jobs = Job.where(["companyname like ?", "%#{search}%"]).page(params[:page]).per(5)
+
+  when "Location"
+	@jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(5)
+  else	
+ 
+        @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(2)    
+  end 
+>>>>>>> 8d21066a1c9c2d426a51b5fff2e9785b0276e345
 
    if(@jobs.size == 0)
       flash[:notice] = "No jobs match the search terms."

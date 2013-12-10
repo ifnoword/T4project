@@ -18,8 +18,7 @@ class User < ActiveRecord::Base
     end
 
   def self.create_user! params
-    puts params
-    puts "hahahahha"
+
     errs=Hash.new	       
     user = User.new
     user.name = params[:name] 
@@ -46,21 +45,20 @@ class User < ActiveRecord::Base
       puts "login success!"
       return user
     else
-      puts errs
+
       return errs
     end
   end
 
   def self.update_attrbs (params, user)
-    puts params
-    puts "hahahahha"
+
     errs=Hash.new	       
     oldemail=user.email
     if params[:email].size!=0 && !params[:email].match(/^\s+$/)
       user.email = params[:email]
     end
     if !user.valid?
-      puts user.errors     
+
       user.errors.each do |key, value|
         errs[key.to_s]=value
       end
@@ -86,7 +84,7 @@ class User < ActiveRecord::Base
       user.save!
       return user
     else
-      puts errs
+
       return errs
     end
   end

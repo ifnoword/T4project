@@ -77,7 +77,7 @@ describe JobsController do
       Job.should_receive(:find).with("job_id").and_return(fake_job)
       controller.instance_variable_set(:@current_user, fake_user)
       delete :destroy, {:id => "job_id"}
-      response.should redirect_to(user_path(fake_user))
+      response.should redirect_to(myjobs_path(fake_user))
     end
   end
   describe 'preview job' do
@@ -88,10 +88,46 @@ describe JobsController do
   end
 
   describe 'search' do
-    it 'should use find method to search job database' do
-      Job.should_receive(:find).exactly(3).times.and_return("this")
-      post :dosearch, {:search => {:title => "that"}}
+    before(:each) do
+      @fake_result = double('result1')
+      @fake_page = double('page1')
+      @fake_list = double('list1')
+      @fake_result.should_receive(:page).with("1").and_return(@fake_page)
+      @fake_page.should_receive(:per).and_return(@fake_list)
+    end
+    it 'should use where method to search job database' do
+      @fake_list.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["title like ? or companyname like ? or city like ?", "%that%" , "%that%", "%that%"]).and_return(@fake_result)
+      post :dosearch, {:search => {:title => "that", :radio => nil}, :page => 1}
       response.should render_template('dosearch')
     end
+    it 'should redirect to jobs path when no results' do
+      @fake_list.should_receive(:size).and_return(0)
+      Job.should_receive(:where).and_return(@fake_result)
+      post :dosearch, {:search => {:title => "that", :radio => nil}, :page => 1}
+      response.should redirect_to(jobs_path)
+    end
+    it 'should only search title for title option' do
+      @fake_list.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["title like ?", "%that%"]).and_return(@fake_result)
+      post :dosearch, {:search => {:title => "that", :radio => "Title"}, :page => 1}
+      response.should render_template('dosearch')
+    end
+    it 'should only search company for company option' do
+      @fake_list.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["companyname like ?", "%that%"]).and_return(@fake_result)
+      post :dosearch, {:search => {:title => "that", :radio => "Company"}, :page => 1}
+      response.should render_template('dosearch')
+    end
+    it 'should only search location for location option' do
+      @fake_list.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["city like ?", "%that%"]).and_return(@fake_result)
+      post :dosearch, {:search => {:title => "that", :radio => "Location"}, :page => 1}
+      response.should render_template('dosearch')
+    end
+  end
+
+  describe 'sign in check' do
+    it 'should check if user is signed in'
   end
 end

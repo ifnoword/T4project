@@ -1,12 +1,17 @@
+<<<<<<< HEAD
 %h1 Test search page!
+=======
+%h1 Search results
+.text_style
+>>>>>>> 8d21066a1c9c2d426a51b5fff2e9785b0276e345
 
 %table#jobs
   %thead
     %tr
       %th Job Title
       %th Company name
-      %th City
-      %th More Info
+      %th Location
+      %th Apply on Company Website
 
   %tbody
     - @jobs.each do |job|
@@ -16,5 +21,5 @@
         %td= job[:city]
         %td= link_to job[:link], job[:link], :target => 'blank'
 
-= paginate @jobs, :params=>{:controller=>'jobs',:action=>'dosearch', :method=>:post}
+= paginate @jobs
 

@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_filter :sign_in, except: [:index, :dosearch]
-  before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
+  #before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
+  before_filter :correct_owner, only: [:preview, :edit, :update]
   Perpage = 2
 
   def correct_owner
@@ -73,7 +74,7 @@ class JobsController < ApplicationController
       @jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
     else	
       @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(Perpage)    
-    end 
+   end 
 
    if(@jobs.size == 0)
       flash[:notice] = "No jobs match the search terms."
