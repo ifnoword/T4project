@@ -1,12 +1,9 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
   # attr_accessible :title, :body
-  validates :altemail, format: { with: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ },
-                    :allow_blank => true
-  validates :zipcode, format: { with: /^[0-9]*$/ }, length: {maximum: 10}
-                    :allow_blank => true
-  validates :tel, format: { with: /^[0-9]*$/ }, length: {maximum: 17}
-                    :allow_blank => true
+  validates :altemail, format: { with: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ }, :allow_blank => true
+  validates :zipcode, format: { with: /^[0-9]*$/ }, length: {maximum: 10},:allow_blank => true
+  validates :tel, format: { with: /^[0-9]*$/ }, length: {maximum: 17}, :allow_blank => true
   def self.creat_profile params, user
     profile=user.build_profile
     profile[:name]=params[:name]

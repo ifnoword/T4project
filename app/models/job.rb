@@ -5,7 +5,8 @@ class Job < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 70}
   validates :desc, presence: true, length: {minimum: 70}
   validates :companyname, presence: true
-  validates :link, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+  validates :link, presence: true, format: {with: /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+#:uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 
   def self.create_job(params, user)
     job=user.jobs.build

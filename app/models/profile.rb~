@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
                     :allow_blank => true
   validates :zipcode, format: { with: /^[0-9]*$/ }, length: {maximum: 10}
                     :allow_blank => true
-  validates :tel, format: { with: /^[0-9]*$/ }, length: {maximum: 15}
+  validates :tel, format: { with: /^[0-9]*$/ }, length: {maximum: 17}
                     :allow_blank => true
   def self.creat_profile params, user
     profile=user.build_profile
