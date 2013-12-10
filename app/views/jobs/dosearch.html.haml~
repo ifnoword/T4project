@@ -1,6 +1,6 @@
 %h1 Test search page!
 .text_style
-  = form_tag 'jobs/search', :method => :post do
+  = form_tag jobs_search_path, :method => :post do
     = select :search, :dropdown ,['Title', 'Company', 'Location','Everything']
     = text_field :search, 'title',:id => 'search_box'      
     %br
@@ -12,7 +12,7 @@
       %th Job Title
       %th Company name
       %th City
-      %th More Info
+      %th Apply on Company Website
 
   %tbody
     - @jobs.each do |job|
