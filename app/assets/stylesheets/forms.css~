@@ -58,6 +58,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
  
 
 #login-register p{
-        color: #E86C68;
+        color: #FF3C35;
 }
 

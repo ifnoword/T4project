@@ -13,6 +13,12 @@ border:1px solid #c1c9d8;
 box-shadow:1px 1px 1px #ccc;
 }
 
+
+.smallwords{
+	color:#666;
+        font-size:11px;
+}
+
 #preload{
     margin-right: -26px;
     visibility:hidden;
@@ -59,7 +65,7 @@ box-shadow:1px 1px 1px #ccc;
 }
 
 .account_logo form{
-  width:400px;
+  width:500px;
   line-height: 50px;
   position:absolute;
   left:350px;
