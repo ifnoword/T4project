@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :sign_in, except: [:new, :create]
   before_filter :correct_user, except:[:new, :create]
-  Perpage = 1
+  Perpage = 20
 
   def correct_user
     owner= User.find params[:id]

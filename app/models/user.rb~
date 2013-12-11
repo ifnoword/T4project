@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
 
     errs=Hash.new	       
     oldemail=user.email
+    user.name=params[:name]
     if params[:email].size!=0 && !params[:email].match(/^\s+$/)
       user.email = params[:email]
     end
