@@ -25,8 +25,13 @@
         = label :job, :desc, 'Job Description'
         -str='Describe the role and responsibilities'
         -if !!flash.now[:new_job_fail]
+<<<<<<< HEAD
           -str=flash.now[:new_job_fail].desc
           -if flash.now[:new_job_fail].errors.messages[:desc].size!=0
+=======
+          -if flash.now[:new_job_fail].errors.messages[:desc].size!=0
+            -str=flash.now[:new_job_fail].desc
+>>>>>>> ededba658f7e505ce4ea2ce6e00464aa795b6f41
             -flash.now[:new_job_fail].errors.messages[:desc].each do |msg|
               %p='Job descptioin '+ msg
         = text_area :job, 'desc', :placeholder => str

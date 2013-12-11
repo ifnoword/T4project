@@ -30,7 +30,8 @@ $(function() {
 	"Scala",
 	"Scheme"
 	];
-	$( "#search_box" ).autocomplete({
+
+	$( ".radientBG #search_box" ).autocomplete({
 		source: availableTags
 	}).focus();
 

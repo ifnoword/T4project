@@ -1,7 +1,7 @@
 .radios{
   width:280px;
   position:relative;
-  left:450px;
+  left:470px;
 }
 
 .radios label,.radios input{
@@ -10,10 +10,12 @@
 
 }
 
-.radios label{
+.radios label {
 	color:#666;
         cursor:pointer;
         font-size:11px;
+        line-height:14px;
+        vertical-align:middle;
         position:relative;
         right:-2px;
         top:-2px;

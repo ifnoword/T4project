@@ -57,7 +57,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 }
  
 
-#login-register p{
+#login-register p, .text_style p{
         color: #FF3C35;
 }
 

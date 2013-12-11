@@ -13,6 +13,12 @@ border:1px solid #c1c9d8;
 box-shadow:1px 1px 1px #ccc;
 }
 
+
+.smallwords{
+	color:#666;
+        font-size:12px;
+}
+
 #preload{
     margin-right: -26px;
     visibility:hidden;
