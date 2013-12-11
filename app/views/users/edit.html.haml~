@@ -3,13 +3,17 @@
     #Raleway_font
       Edit My Account
     = form_tag user_path(@current_user), :method=>:put do
+      = label :user, :name, 'Nick Name'
+      -if flash.now[:updt_acct_fail]
+        -if !!flash.now[:updt_acct_fail]['name']
+          %p='Email '+flash.now[:updt_acct_fail]['name']
+      = text_field :user, 'email', :value=>@current_user.name
 
       = label :user, :email, 'Email'
       -if flash.now[:updt_acct_fail]
         -if !!flash.now[:updt_acct_fail]['email']
           %p='Email '+flash.now[:updt_acct_fail]['email']
-      -str = @current_user.email
-      = text_field :user, 'email', str
+      = text_field :user, 'email', :value=>@current_user.email
 
       = label :user, :oldpassword, 'Current Password'
       -if flash.now[:updt_acct_fail]

@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
     if errs.size==0
       user.password_digest = Digest::SHA256.hexdigest(params[:email]+params[:password])
       user.save!
-      user.create_profile!
+      user.create_profile!s
       puts "login success!"
       return user
     else
@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
 
     errs=Hash.new	       
     oldemail=user.email
+    user.name=params[:name]
     if params[:email].size!=0 && !params[:email].match(/^\s+$/)
       user.email = params[:email]
     end

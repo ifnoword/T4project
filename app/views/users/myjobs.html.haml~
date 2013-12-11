@@ -13,10 +13,10 @@
           .myjobs_item
             = link_to "#{job.title}", job_path(job)
             = content_tag(:td, job.desc[0,50], :class => 'desc')
-            = content_tag(:td, job.updated_at.strptime('%Y-%m-%d'), :class => 'normal')
+            = content_tag(:td, job.updated_at.strftime('%Y-%m-%d'), :class => 'normal')
             = button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
             = button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
-    = paginate @jobs
+    = paginate @jobs :params =>{:controller=>'users',:action=>'myjobs'}
 
 
 

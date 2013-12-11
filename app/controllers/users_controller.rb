@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :sign_in, except: [:new, :create]
   before_filter :correct_user, except:[:new, :create]
-  Perpage = 1
+  Perpage = 20
 
   def correct_user
     owner= User.find params[:id]
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if @user.class == User  
       flash[:notice] = "#{@user.email} was successfully created."
       session[:current_user]=@user.email    
-      redirect_to edit_profile_path(@user.profile)     
+      redirect_to user_path(@user)     
     else 
       flash[:acct_fail] = @user
       flash[:notice] = "That email address has already been used!"

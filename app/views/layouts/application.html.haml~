@@ -23,7 +23,7 @@
         .accountLoggedin
           %div.account_info
             Welcome, 
-            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+            =link_to "#{@current_user.profile.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
             |
             =link_to 'Sign Out', logout_path, :method=>:delete
       -else
@@ -31,7 +31,7 @@
           %div.account_logo
             =link_to image_tag("externme.png", :alt => "home page"),jobs_path
             = form_tag jobs_search_path, :method => :post do
-              = select :search, :dropdown ,['All','Title', 'Company', 'Location']
+              = select :search, :radio ,['All','Title', 'Company', 'Location']
               = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
               = submit_tag 'Search',:class => 'common_button_bar_search'
               = image_tag("325.gif", :alt => "loading",:id=>'preload')

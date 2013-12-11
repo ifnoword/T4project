@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   before_filter :sign_in, except: [:index, :dosearch]
   #before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
   before_filter :correct_owner, only: [:preview, :edit, :update]
-  Perpage = 2
+  Perpage = 5
 
   def correct_owner
     owner= Job.find(params[:id]).user
@@ -37,8 +37,6 @@ class JobsController < ApplicationController
   
   def edit
     @job = Job.find params[:id]
-    puts "*******************************************"
-    puts @job.errors.messages
   end
   
   def update
