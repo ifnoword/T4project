@@ -18,7 +18,7 @@
       .clear
       %li
         %span Requirements:
-        -if @job.reqs.size==0 or @job.reqs.match(/^\s+$/)
+        -if !@job.reqs or @job.reqs.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.reqs
@@ -26,7 +26,7 @@
       .clear
       %li
         %span Desired Qualifications:
-        -if @job.desire.size==0 or @job.desire.match(/^\s+$/)
+        -if !@job.desire or @job.desire.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.desire
@@ -34,11 +34,11 @@
       .clear
       %li
         %span Location:
-        -if @job.city.size==0 or @job.city.match(/^\s+$/)
+        -if !@job.city or @job.city.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.city
-        = 'State: '+@job.state+', City: '+str
+        = str+', '+ @job.state
       .clear
       %li
         %span Link:

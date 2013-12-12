@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
     if errs.size==0
       user.password_digest = Digest::SHA256.hexdigest(params[:email]+params[:password])
       user.save!
-      user.create_profile!
+      Profile.create_profile(user)
       puts "login success!"
       return user
     else

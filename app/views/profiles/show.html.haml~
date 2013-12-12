@@ -4,13 +4,12 @@
       My Profile
     %ul.manager
       %li
-<<<<<<< HEAD
-        Real Name:
-        = @profile.name
-=======
         %span Real Name:
-
->>>>>>> 960728304fd960612a8dd89f680045486c7da282
+        -if @profile.name.size==0 or @profile.name.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.name
+        = str
       %li
         %span Personal descpriton:
         -if @profile.desc.size==0 or @profile.desc.match(/^\s+$/)

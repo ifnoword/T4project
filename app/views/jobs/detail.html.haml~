@@ -5,28 +5,6 @@
     .form_title
     %ul.manager
       %li
-<<<<<<< HEAD
-        Company Name:
-        = @job.companyname
-      %li
-        Job Title:
-        = @job.title
-      %li
-        Job Description:
-        = @job.desc
-      %li
-        Requirements:
-        = @job.reqs
-      %li
-        Desired Qualifications:
-        = @job.desire
-      %li
-        At  
-        = 'State: '+@job.state+',  City: '+@job.state
-    .form_title
-    #div_twobtn_float_left
-      = button_to 'Apply Now', @job.link, :class => 'common_button_search',:method => :get
-=======
         %span Company Name:
         = @job.companyname
       %li
@@ -37,20 +15,20 @@
         = @job.desc
       %li
         %span Requirements:
-        -if @job.reqs.size==0 or @job.reqs.match(/^\s+$/)
+        -if !@job.reqs or @job.reqs.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.reqs
         = str
       %li
         %span Desired Qualifications:
-        -if @job.desire.size==0 or @job.desire.match(/^\s+$/)
+        -if !@job.desire or @job.desire.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.desire
         = str
       %li
-        -if @job.city.size==0 or @job.city.match(/^\s+$/)
+        -if !@job.city or @job.city.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.city
@@ -59,5 +37,4 @@
     .form_title
     #div_twobtn_float_left
       = button_to 'Apply Now', @job.link, :class => 'common_button_search',:method => :get, :target => '_blank'
->>>>>>> 960728304fd960612a8dd89f680045486c7da282
     = button_to 'Contact Provider', profile_path(@job.user.profile), :method => :get, :class => 'common_button_search'

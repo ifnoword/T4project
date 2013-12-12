@@ -4,18 +4,17 @@ class Profile < ActiveRecord::Base
   validates :altemail, format: { with: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ }, :allow_blank => true
   validates :zipcode, format: { with: /^[0-9]*$/ }, length: {maximum: 10},:allow_blank => true
   validates :tel, format: { with: /^[0-9]*$/ }, length: {maximum: 17}, :allow_blank => true
-  def self.creat_profile params, user
+  def self.create_profile user
     profile=user.build_profile
-    profile[:name]=params[:name]
-    profile[:altemail]=params[:altemail]
-    profile[:desc]=params[:desc]
-    profile[:zipcode]=params[:zipcode]
-    profile[:addr1]=params[:addr1]
-    profile[:addr2]=params[:addr2]
-    profile[:city]=params[:city]
-    profile[:state]=params[:state]
-    #profile[:country]=params[:country]
-    profile[:tel]=params[:tel]
+    profile[:name]=""
+    profile[:altemail]=""
+    profile[:desc]=""
+    profile[:zipcode]=""
+    profile[:addr1]=""
+    profile[:addr2]=""
+    profile[:city]=""
+    profile[:state]=""
+    profile[:tel]=""
     if profile.valid?
       profile.save!
     end
