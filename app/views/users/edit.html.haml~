@@ -6,8 +6,8 @@
       = label :user, :name, 'Nick Name'
       -if flash.now[:updt_acct_fail]
         -if !!flash.now[:updt_acct_fail]['name']
-          %p='Email '+flash.now[:updt_acct_fail]['name']
-      = text_field :user, 'email', :value=>@current_user.name
+          %p='Nick Name '+flash.now[:updt_acct_fail]['name']
+      = text_field :user, 'name', :value=>@current_user.name
 
       = label :user, :email, 'Email'
       -if flash.now[:updt_acct_fail]
