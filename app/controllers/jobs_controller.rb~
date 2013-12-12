@@ -81,7 +81,7 @@ class JobsController < ApplicationController
       jobs=Job.where(["LOWER(city) like ? or LOWER(state) like ?", "%#{search.downcase}%", "%#{search.downcase}%"])
       @jobs = jobs.page(params[:page]).per(Perpage)
     else
-      jobs=Job.where(["LOWER(title) like ? or LOWER(companyname) like ? or LOWER(city) like ?  or LOWER(desc) like ? or LOWER(reqs) like ? or LOWER(state) like ?", "%#{search.downcase}%" , "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%"])	
+      jobs=Job.where(["LOWER(title) like ? or LOWER(companyname) like ? or LOWER(city) like ? or LOWER(reqs) like ? or LOWER(state) like ?", "%#{search.downcase}%" , "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%"])	
       @jobs = jobs.page(params[:page]).per(Perpage)    
    end 
    @size = jobs.size
