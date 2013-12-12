@@ -1,7 +1,7 @@
 #panel_div{
-  margin:0 auto 0 auto;
+
   width:100%;
-  height:950px;
+  height:1000px;
   background:url('cubeBG.jpg') #fefefe;
 
   z-index:2;

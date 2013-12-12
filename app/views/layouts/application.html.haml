@@ -16,7 +16,7 @@
         .accountLoggedin
           %div.account_logo
             =link_to image_tag("externme.png", :alt => "home page"),jobs_path
-            = form_tag jobs_search_path, :method => :get do
+            = form_tag jobs_search_path,:class=>'bar_form', :method => :get do
               = select :search, :radio ,['All','Title', 'Company', 'Location']
               = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
               = submit_tag 'Search',:class => 'common_button_bar_search'
@@ -33,7 +33,7 @@
         .accountLoggedin
           %div.account_logo
             =link_to image_tag("externme.png", :alt => "home page"),jobs_path
-            = form_tag jobs_search_path, :method => :get do
+            = form_tag jobs_search_path,:class=>'bar_form', :method => :get do
               = select :search, :radio ,['All','Title', 'Company', 'Location']
               = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
               = submit_tag 'Search',:class => 'common_button_bar_search'
@@ -52,5 +52,5 @@
       #notice.message= flash[:notice]
     - if flash[:warning]
       #warning.message= flash[:warning]
-
+    .clear
     = yield
