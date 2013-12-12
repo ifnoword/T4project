@@ -13,14 +13,28 @@
         .account
           =link_to 'Login/Register', login_path, :method=>:get
       -else
-        .accountLoggedin
-          %div.account_logo
-            =link_to image_tag("externme.png", :alt => "home page"),jobs_path
-            = form_tag jobs_search_path,:class=>'bar_form', :method => :get do
-              = select :search, :radio ,['All','Title', 'Company', 'Location']
-              = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
-              = submit_tag 'Search',:class => 'common_button_bar_search'
-
+        -if !current_page?(login_path)
+          .accountLoggedin
+            %div.account_logo
+              =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+              = form_tag jobs_search_path,:class=>'bar_form', :method => :get do
+                = select :search, :radio ,['All','Title', 'Company', 'Location']
+                = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
+                = submit_tag 'Search',:class => 'common_button_bar_search'
+              .layout_move
+                %div.account_info
+                  =link_to 'Login/Register', login_path, :method=>:get
+        -else
+          .accountLoggedin
+            %div.account_logo
+              =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+              = form_tag jobs_search_path,:class=>'bar_form', :method => :get do
+                = select :search, :radio ,['All','Title', 'Company', 'Location']
+                = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
+                = submit_tag 'Search',:class => 'common_button_bar_search'
+              .layout_move
+                %div.account_info
+                  =link_to 'Back to home page', jobs_path, :method=>:get
     -else
       -if current_page?(jobs_path)
         .accountLoggedin

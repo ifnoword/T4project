@@ -13,28 +13,18 @@
 
 
 
-#frame #notice{
-  font:30px 'Raleway', sans-serif;
-  margin:10px auto 0 auto;
-  padding:10px 0;
-  width:500px;
-  text-align:left;
-  color:#5C7911;
-  background-color:rgba(203,255,203,0.5);
-  border:1px solid #85b585;
-  box-shadow:0 2px 5px rgba(0,0,0,0.5);
-}
 
 #notice{
   font:20px 'Raleway', sans-serif;
   margin:10px auto 0 auto;
   padding:10px 0;
-  width:500px;
+  width:45%;
   text-align:center;
   color:#5C7911;
   background-color:rgba(203,255,203,0.5);
   border:1px solid #85b585;
   box-shadow:0 2px 5px rgba(0,0,0,0.5);
+  z-index:100;
 
 }
 

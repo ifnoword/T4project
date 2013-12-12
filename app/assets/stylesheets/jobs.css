@@ -71,7 +71,12 @@
   height:55px;
 }
 
-
+.layout_move .account_info{
+  line-height: 50px;
+  position:absolute;
+  vertical-align:middle;
+  right:20px;
+}
 
 .account_info{
   

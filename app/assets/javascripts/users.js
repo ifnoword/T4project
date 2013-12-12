@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
-		
+	var notice = $(this).find("#notice");
+	if(notice){
+		setTimeout(function() {
+		      notice.fadeOut(3000);
+		}, 3000);
+	}
 				   
 	$('#usermainCtn').height('580');
 	$('#loading').height('500');
@@ -12,7 +17,7 @@ $(document).ready(function(){
 		$('iframe').contents().find(".accountLoggedin").hide()
 		
 		//location of the panel
-		$('iframe').contents().find(".panel_form,.my_profile,.my_new_job,.my_joblist,.emailus_selt,.edit_my_account,.update_my_profile,#my_joblist").css({"margin": "0", "padding": "50px 0 0 50px"});
+		$('iframe').contents().find(".panel_form,.my_profile,.my_new_job,.my_joblist,.emailus_selt,.edit_my_account,.update_my_profile,#my_joblist").css({"margin": "0", "padding": "10px 0 0 50px"});
 
 		//fix the css of flash
 		$('iframe').contents().find("#notice").css({"margin": "0 0 0 50px"});

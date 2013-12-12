@@ -74,7 +74,7 @@
 
 
 .account_info{
-  font-family: 'Open Sans',Arial, Helvetica, sans-serif;
+  
   line-height: 50px;
   position:absolute;
   vertical-align:middle;
