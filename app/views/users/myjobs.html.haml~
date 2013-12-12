@@ -6,14 +6,6 @@
     #myjobs
       #myjobs_body
         - @jobs.each do |job|
-<<<<<<< HEAD
-          .myjobs_item
-            = link_to "#{job.title}", job_path(job)
-            = content_tag(:td, job.desc[0,50], :class => 'desc')
-            = content_tag(:td, job.updated_at.strftime('%Y-%m-%d'), :class => 'normal')
-            = button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
-            = button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
-=======
           %ul.manager
             %li
               .myjobs_item
@@ -26,7 +18,6 @@
                   = button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
                 = button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
                 .clear
->>>>>>> 960728304fd960612a8dd89f680045486c7da282
     = paginate @jobs
 
 
