@@ -8,13 +8,6 @@
           #{@size} 
           results:
   - @jobs.each do |job|
-<<<<<<< HEAD
-    .result
-      =link_to job[:title], detail_path(job), :target => 'blank'
-      %td= job[:companyname]
-      %td= job[:city]
-      %td= link_to job[:link], job[:link], :target => 'blank'
-=======
     #file-manager
       %ul.manager
         %li
@@ -30,8 +23,5 @@
           .city#Raleway_font
             At 
             = job[:state]
-          
->>>>>>> 960728304fd960612a8dd89f680045486c7da282
-
 = paginate @jobs
 
