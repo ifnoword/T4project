@@ -61,7 +61,7 @@
 			  'West Virginia', 'Wisconsin', 'Wyoming']
         .clear
         = label :job, :link, 'Job-link on your website'
-        -str= "Leave it blank when you don't have one"
+        -str= "Put the application link here"
         -if !!flash.now[:new_job_fail]
           -str=flash.now[:new_job_fail].link
           -if flash.now[:new_job_fail].errors.messages[:link].size!=0
