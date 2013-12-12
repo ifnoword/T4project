@@ -11,8 +11,12 @@ $(document).ready(function(){
 		//hide the .account inside,but when javascript disable, it will show again.
 		$('iframe').contents().find(".accountLoggedin").hide()
 		
-
+		//location of the panel
 		$('iframe').contents().find(".panel_form,.my_profile,.my_new_job,.my_joblist,.emailus_selt,.edit_my_account,.update_my_profile,#my_joblist").css({"margin": "0", "padding": "50px 0 0 50px"});
+
+		//fix the css of flash
+		$('iframe').contents().find("#notice").css({"margin": "0 0 0 50px"});
+
 		$(this).fadeIn(300);	  
 
 		var h1=$('body', $('iframe').contents()).height()+50;

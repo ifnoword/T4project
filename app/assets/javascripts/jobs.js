@@ -1,6 +1,10 @@
 $(function() {
 
-	$('.home_page_form').submit(function(){
+	
+
+
+
+	$('.home_page_form,.bar_form').submit(function(){
 		if($('#search_box').val()==""){
 			return false;		
 		}
