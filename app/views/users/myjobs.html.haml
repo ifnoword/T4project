@@ -12,7 +12,7 @@
                 %span.title= link_to "#{job.title}", job_path(job)
                 %span.date= content_tag(:td, job.updated_at.strftime('%Y-%m-%d'), :class => 'normal')
                 .clear
-                = content_tag(:div, job.descp[0,50], :class => 'desc')
+                = content_tag(:div, job.descp[0,110]+'...', :class => 'desc')
               .form_title
                 #div_twobtn_float_left
                   = button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
