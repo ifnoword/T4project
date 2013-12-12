@@ -3,8 +3,8 @@ $(document).ready(function(){
 	var notice = $(this).find("#notice");
 	if(notice){
 		setTimeout(function() {
-		      notice.fadeOut(3000);
-		}, 3000);
+		      notice.slideUp(500);
+		}, 5000);
 	}
 				   
 	$('#usermainCtn').height('580');
@@ -20,7 +20,7 @@ $(document).ready(function(){
 		$('iframe').contents().find(".panel_form,.my_profile,.my_new_job,.my_joblist,.emailus_selt,.edit_my_account,.update_my_profile,#my_joblist").css({"margin": "0", "padding": "10px 0 0 50px"});
 
 		//fix the css of flash
-		$('iframe').contents().find("#notice").css({"margin": "0 0 0 50px"});
+		$('iframe').contents().find("#notice").css({"margin-left": "50px"});
 
 		$(this).fadeIn(300);	  
 
