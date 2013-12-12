@@ -19,7 +19,7 @@
             By 
             = job[:companyname]
           .desc
-            =job[:desc]
+            =job.desc[0,101]
           .city#Raleway_font
             At 
             = job[:state]
