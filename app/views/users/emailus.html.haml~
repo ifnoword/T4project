@@ -1,0 +1,15 @@
+.panel_form
+  .list_table
+    #Raleway_font
+      Email us
+    %ul.manager
+      %li
+        =mail_to "adam-snyder@uiowa.edu"
+      %li
+        =mail_to "alexander-lenth@uiowa.edu"
+      %li
+        =mail_to "naveen-dewda@uiowa.edu"
+      %li
+        =mail_to "xinmei-zhang@uiowa.edu"
+      %li
+        =mail_to "hao-zheng@uiowa.edu"

@@ -4,36 +4,76 @@
       My Profile
     %ul.manager
       %li
+<<<<<<< HEAD
         Real Name:
         = @profile.name
+=======
+        %span Real Name:
+
+>>>>>>> 960728304fd960612a8dd89f680045486c7da282
       %li
-        Personal descpriton:
-        = @profile.desc
+        %span Personal descpriton:
+        -if @profile.desc.size==0 or @profile.desc.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.desc
+        = str
+      .clear
       .form_title
         Contact Info.
       %li
-        Alternate Email:
-        = @profile.altemail
+        %span Alternate Email:
+        -if @profile.altemail.size==0 or @profile.altemail.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.altemail
+        = str
       %li
-        Telephone:
-        = @profile.tel
+        %span Telephone:
+        -if @profile.tel.size==0 or @profile.tel.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.tel
+        = str
+      .clear
       .form_title
         Address
       %li
-        Address line 1:
-        = @profile.addr1
+        %span Address line 1:
+        -if @profile.addr1.size==0 or @profile.addr1.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.addr1
+        = str
       %li
-        Address line 2:
-        = @profile.addr2
+        %span Address line 2:
+        -if @profile.addr2.size==0 or @profile.addr2.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.addr2
+        = str
       %li
-        City:
-        = @profile.city
+        %span City:
+        -if @profile.city.size==0 or @profile.city.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.city
+        = str
       %li
-        state:
-        = @profile.state
+        %span state:
+        -if @profile.state.size==0 or @profile.state.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.state
+        = str
       %li
-        Zipcode:
-        = @profile.zipcode
+        %span Zipcode:
+        -if @profile.zipcode.size==0 or @profile.zipcode.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@profile.zipcode
+        = str
+      .clear
       .form_title
-
-    = button_to 'Edit', edit_profile_path(@profile) ,:class => 'common_button_search',:method => :get
+    -if @current_user && @current_user==@profile.user
+      = button_to 'Edit', edit_profile_path(@profile) ,:class => 'common_button_search',:method => :get

@@ -20,16 +20,15 @@
               = select :search, :radio ,['All','Title', 'Company', 'Location']
               = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
               = submit_tag 'Search',:class => 'common_button_bar_search'
-          %div.account_info
-            =link_to 'Back to home page', jobs_path
+
     -else
       -if current_page?(jobs_path)
         .accountLoggedin
           %div.account_info
             Welcome, 
-            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get , :class=>'username'
             |
-            =link_to 'Sign Out', logout_path, :method=>:delete
+            =button_to 'Sign Out', logout_path, :method=>:delete ,:class=>'logout'
       -else
         .accountLoggedin
           %div.account_logo
@@ -42,9 +41,9 @@
           %div.account_info
             
             Welcome, 
-            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get ,:class=>'username'
             |
-            =link_to 'Sign Out', logout_path, :method=>:delete
+            =button_to 'Sign Out', logout_path, :method=>:delete,:class=>'logout'
 
 
 

@@ -8,12 +8,13 @@
       %li
         = link_to content_tag(:span,'Post a Job'), new_job_path, :class=>'services'
       %li
-        = link_to content_tag(:span,'My Jobs'), myjobs_path(@current_user), :method=>:post, :class=>'portfolio'
+        = link_to content_tag(:span,'My Jobs'), myjobs_path(@current_user), :class=>'portfolio'
       %li
-        = link_to content_tag(:span,'XXX'), myjobs_path(@current_user), :method=>:post, :class=>'contact'
+        = link_to content_tag(:span,'Email us'), myjobs_path(@current_user), :class=>'contact'
  
   #frame
-    %iframe{frameborder: "0", :src => new_job_path}
+    %iframe{frameborder: "0"}
+
 
 
 

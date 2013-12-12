@@ -1,9 +1,10 @@
-.panel_form,.my_profile,.my_new_job, .edit_my_account,.update_my_profile,#my_joblist{
+.panel_form,.my_profile,.my_new_job,.my_joblist,.emailus_selt, .edit_my_account,.update_my_profile,#my_joblist{
    /*-----
       since they are put in iframe, should not use margin here
    ------*/
-   padding:50px 0 0 20px;
-   
+   margin:50px auto 100px auto;
+
+
 }
 
 
@@ -13,5 +14,6 @@
    position:absolute;
    top:30%;
 }
+
 
 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :sign_in, except: [:new, :create]
   before_filter :correct_user, except:[:new, :create]
-  Perpage = 1
+  Perpage = 4
 
   def correct_user
     owner= User.find params[:id]
@@ -56,7 +56,11 @@ class UsersController < ApplicationController
     
     @jobs=Kaminari.paginate_array(@current_user.jobs).page(params[:page]).per(Perpage)
   end
-  
+
+  def emailus
+
+  end
+
   def destroy
     # DON'T touch the function now!!!!!!!
   end

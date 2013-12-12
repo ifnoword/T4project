@@ -1,12 +1,11 @@
 #panel_div{
   margin:0 auto 0 auto;
   width:100%;
-  height:800px;
-
-
-  z-index:1;
-  padding-bottom:150px;
+  height:1000px;
   background:url('cubeBG.jpg') #fefefe;
+
+  z-index:2;
+
 }
 
 .update_my_profile label,.panel_form label{
@@ -16,12 +15,14 @@
 
 #leftPanelList{
   position:absolute;
-  top:10%;
-  left:0%;
-  padding-left:60px;
-  padding-top:60px;
+  top:20%;
+  left:5%;
   width:200px;
 
+}
+
+.emailus_selt #Raleway_font{
+  padding-bottom:10px;
 }
 
 #frame iframe{

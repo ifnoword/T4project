@@ -10,10 +10,11 @@
       %li
         = link_to content_tag(:span,'My Jobs'), myjobs_path(@current_user), :class=>'portfolio'
       %li
-        = link_to content_tag(:span,'XXX'), myjobs_path(@current_user), :class=>'contact'
+        = link_to content_tag(:span,'Email us'), emailus_path(@current_user), :class=>'contact'
  
   #frame
-    %iframe{frameborder: "0", :src => new_job_path}
+    %iframe{frameborder: "0"}
+
 
 
 

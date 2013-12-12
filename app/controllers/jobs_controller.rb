@@ -72,14 +72,19 @@ class JobsController < ApplicationController
  
     case radio
     when "Title"
-      @jobs = Job.where(["title like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
-    when "Company"  
-      @jobs = Job.where(["companyname like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
+      jobs=Job.where(["title like ?", "%#{search}%"])
+      @jobs = jobs.page(params[:page]).per(Perpage)
+    when "Company"
+      jobs=Job.where(["companyname like ?", "%#{search}%"])  
+      @jobs = jobs.page(params[:page]).per(Perpage)
     when "Location"
-      @jobs = Job.where(["city like ?", "%#{search}%"]).page(params[:page]).per(Perpage)
-    else	
-      @jobs = Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"]).page(params[:page]).per(Perpage)    
+      jobs=Job.where(["city like ?", "%#{search}%"])
+      @jobs = jobs.page(params[:page]).per(Perpage)
+    else
+      jobs=Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"])	
+      @jobs = jobs.page(params[:page]).per(Perpage)    
    end 
+   @size = jobs.size
 
    if(@jobs.size == 0)
       flash[:notice] = "No jobs match the search terms."

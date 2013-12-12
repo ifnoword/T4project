@@ -16,7 +16,11 @@
         .accountLoggedin
           %div.account_logo
             =link_to image_tag("externme.png", :alt => "home page"),jobs_path
+<<<<<<< HEAD
             = form_tag jobs_search_path, :method => :post do
+=======
+            = form_tag jobs_search_path, :method => :get do
+>>>>>>> 960728304fd960612a8dd89f680045486c7da282
               = select :search, :radio ,['All','Title', 'Company', 'Location']
               = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
               = submit_tag 'Search',:class => 'common_button_bar_search'
@@ -27,14 +31,18 @@
         .accountLoggedin
           %div.account_info
             Welcome, 
+<<<<<<< HEAD
             =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+=======
+            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get , :class=>'username'
+>>>>>>> 960728304fd960612a8dd89f680045486c7da282
             |
-            =link_to 'Sign Out', logout_path, :method=>:delete
+            =button_to 'Sign Out', logout_path, :method=>:delete ,:class=>'logout'
       -else
         .accountLoggedin
           %div.account_logo
             =link_to image_tag("externme.png", :alt => "home page"),jobs_path
-            = form_tag jobs_search_path, :method => :post do
+            = form_tag jobs_search_path, :method => :get do
               = select :search, :radio ,['All','Title', 'Company', 'Location']
               = text_field :search, 'title',:id => 'search_box', :class=>'barSearchBox'      
               = submit_tag 'Search',:class => 'common_button_bar_search'
@@ -42,9 +50,9 @@
           %div.account_info
             
             Welcome, 
-            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get
+            =link_to "#{@current_user.name}", user_path(User.find_by_email(@current_user.email)), :method=>:get ,:class=>'username'
             |
-            =link_to 'Sign Out', logout_path, :method=>:delete
+            =button_to 'Sign Out', logout_path, :method=>:delete,:class=>'logout'
 
 
 

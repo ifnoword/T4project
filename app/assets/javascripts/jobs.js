@@ -1,4 +1,11 @@
 $(function() {
+
+	$('.home_page_form').submit(function(){
+		if($('#search_box').val()==""){
+			return false;		
+		}
+	});
+
 	//over the input
         $( "input[type='text'],input[type='password'],textarea" ).mouseover(function(){
 			if(!$(this).is(":focus")){
@@ -14,7 +21,7 @@ $(function() {
                         $(this).css("border-color","#b8bdc2"); 
         }); 
 
-
+/*
 	var availableTags = [
 	"ActionScript",
 	"AppleScript",
@@ -35,7 +42,7 @@ $(function() {
 		source: availableTags
 	}).focus();
 
-
+*/
 
 	//home page, click label
 	$( "#l_All" ).click(function() {

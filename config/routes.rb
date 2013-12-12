@@ -2,7 +2,6 @@ ProjectTrial::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   match '/jobs/search', to: 'jobs#dosearch', via: :get
-  match '/jobs/:id/detail' => 'jobs#detail', :as => :detail, via: :get
   resources :jobs
   resources :users
   resources :panels
@@ -12,8 +11,9 @@ ProjectTrial::Application.routes.draw do
   match '/login_create', to: 'sessions#create', via: :post
   match '/logout', to: 'sessions#destroy', via: :delete
   match '/jobs/preview' , to: 'jobs#preview' , via: :post
+  match 'jobs/:id/detail' => 'jobs#detail', :as => :detail, via: :get
   match 'users/:id/myjobs' => 'users#myjobs', :as => :myjobs, via: :get
-
+  match 'users/:id/emailus' => 'users#emailus', :as => :emailus, via: :get
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

@@ -16,6 +16,8 @@
  padding: 0;
 }
 
+
+
 .clear{
   clear:both;
 }
@@ -23,6 +25,7 @@
 body{
   font-family: 'Open Sans',Arial, Helvetica, sans-serif;
   z-index:0;
+  background:url('cubeBG.jpg') #fefefe;
 
 }
 .middle{

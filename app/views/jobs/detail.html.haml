@@ -5,24 +5,36 @@
     .form_title
     %ul.manager
       %li
-        Company Name:
+        %span Company Name:
         = @job.companyname
       %li
-        Job Title:
+        %span Job Title:
         = @job.title
       %li
-        Job Description:
+        %span Job Description:
         = @job.desc
       %li
-        Requirements:
-        = @job.reqs
+        %span Requirements:
+        -if @job.reqs.size==0 or @job.reqs.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@job.reqs
+        = str
       %li
-        Desired Qualifications:
-        = @job.desire
+        %span Desired Qualifications:
+        -if @job.desire.size==0 or @job.desire.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@job.desire
+        = str
       %li
-        At  
-        = 'State: '+@job.state+',  City: '+@job.state
+        -if @job.city.size==0 or @job.city.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@job.city
+        = str+', '+@job.state
+    .clear
     .form_title
     #div_twobtn_float_left
-      = button_to 'Apply Now', @job.link, :class => 'common_button_search',:method => :get
+      = button_to 'Apply Now', @job.link, :class => 'common_button_search',:method => :get, :target => '_blank'
     = button_to 'Contact Provider', profile_path(@job.user.profile), :method => :get, :class => 'common_button_search'

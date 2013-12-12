@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	
 
- 					   
+		
+				   
 	$('#usermainCtn').height('580');
 	$('#loading').height('500');
 	$('iframe').height('500');
@@ -11,6 +11,8 @@ $(document).ready(function(){
 		//hide the .account inside,but when javascript disable, it will show again.
 		$('iframe').contents().find(".accountLoggedin").hide()
 		
+
+		$('iframe').contents().find(".panel_form,.my_profile,.my_new_job,.my_joblist,.emailus_selt,.edit_my_account,.update_my_profile,#my_joblist").css({"margin": "0", "padding": "50px 0 0 50px"});
 		$(this).fadeIn(300);	  
 
 		var h1=$('body', $('iframe').contents()).height()+50;
@@ -49,6 +51,8 @@ $(document).ready(function(){
 	});
 
  
+	$('.services').click(); 
+
 	
 });
 
