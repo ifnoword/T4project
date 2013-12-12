@@ -1,27 +1,49 @@
 .my_new_job
   .list_table
+    #Raleway_font
+      Posted Job
+    .form_title
     %ul.manager
       %li
-        Company Name:
+        %span Company Name:
         = @job.companyname
+      .clear
       %li
-        Job Title:
+        %span Job Title:
         = @job.title
+      .clear
       %li
-        Job Description:
+        %span Job Description:
         = @job.desc
+      .clear
       %li
-        Requirements:
-        = @job.reqs
+        %span Requirements:
+        -if @job.reqs.size==0 or @job.reqs.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@job.reqs
+        = str
+      .clear
       %li
-        Desired Qualifications:
-        = @job.desire
+        %span Desired Qualifications:
+        -if @job.desire.size==0 or @job.desire.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@job.desire
+        = str
+      .clear
       %li
-        Location:
-        = @job.city+' '+@job.city
+        %span Location:
+        -if @job.city.size==0 or @job.city.match(/^\s+$/)
+          -str='NULL'
+        -else
+          -str=@job.city
+        = 'State: '+@job.state+', City: '+str
+      .clear
       %li
-        Link:
+        %span Link:
         = @job.link
+    .clear
     .form_title
     #div_twobtn_float_left
       = button_to 'Edit', edit_job_path(@job) ,:class => 'common_button_search',:method => :get

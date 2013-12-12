@@ -1,15 +1,94 @@
-.panel_form .list_table{
+.panel_form,.panel_form .list_table{
   width: 740px;
 }
-.edit_my_account .list_table{
+.edit_my_account,.edit_my_account .list_table{
   width: 450px;
 }
-.update_my_profile .list_table{
+.update_my_profile,.update_my_profile .list_table{
   width: 640px;
 }
-.my_joblist .list_table{
-  width: 940px;
+.my_joblist,.my_joblist .list_table{
+  width: 640px;
 }
+.my_new_job,.my_new_job .list_table{
+  width: 450px;
+}
+.my_profile,.my_profile .list_table{
+  width: 450px;
+}
+.emailus_selt,.emailus_selt .list_table{
+  width: 300px;
+}
+
+/*-------------------------
+        search result
+--------------------------*/
+#search_results span{
+  display:block;
+
+  float:left;
+}
+#search_results span.title{
+  width:50%;
+}
+
+#search_results span.date{
+
+  text-align:right;
+  position:relative;
+  left:315px;
+}
+#search_results .company{
+  font-weight:bold;
+  padding:5px 0 10px 0;
+}
+#search_results .desc{
+
+  width:100%;
+}
+#search_results .city{
+  width:100%;
+  text-align:right;
+  padding-top:10px;
+
+}
+/*-------------------------
+        job list 
+--------------------------*/
+
+.my_joblist span{
+  display:block;
+  float:left;
+
+}
+
+.my_joblist span.title{
+  width:50%;
+  font-weight:bold;
+}
+.my_joblist .desc{
+  padding-left:5px;
+}
+.my_joblist span.date{
+
+  text-align:right;
+  position:relative;
+  left:215px;
+  top:10px;
+}
+
+.my_profile span,.my_new_job span{
+
+  width:200px;
+  float:left;
+
+}
+
+.my_joblist li{
+  margin:0 0 10px 0;
+}
+
+
 /*-------------------------
         shared list table
 --------------------------*/
@@ -26,7 +105,7 @@ ul.manager li{
 background:url("bg_gradient.gif") repeat-x center bottom #F5F5F5;
 border:1px solid #DDD;
 border-top-color:#FFF;
-padding:10px 0 10px 15px;
+padding:10px 10px 10px 15px;
 list-style:none;
 position:relative;
 word-wrap:break-word;

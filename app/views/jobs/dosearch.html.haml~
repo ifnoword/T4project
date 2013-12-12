@@ -1,24 +1,29 @@
 
-%h1 Search results
-.text_style
-
-
-
-%table#jobs
-  %thead
-    %tr
-      %th Job Title
-      %th Company name
-      %th Location
-      %th Apply on Company Website
-
-  %tbody
-    - @jobs.each do |job|
-      %tr
-        %td= job[:title]
-        %td= job[:companyname]
-        %td= job[:city]
-        %td= link_to job[:link], job[:link], :target => 'blank'
+#search_results
+  #file-manager
+    %ul.manager
+      %li
+        .title 
+          There are 
+          #{@size,:class=>'yy'} 
+          results:
+  - @jobs.each do |job|
+    #file-manager
+      %ul.manager
+        %li
+          %span.title
+            = link_to job[:title], detail_path(job), :target => '_self'
+          %span.date= content_tag(:td, job.updated_at.strftime('%Y-%m-%d'), :class => 'normal')
+          .clear
+          .company
+            By 
+            = job[:companyname]
+          .desc
+            =job[:desc]
+          .city#Raleway_font
+            At 
+            = job[:state]
+          
 
 = paginate @jobs
 

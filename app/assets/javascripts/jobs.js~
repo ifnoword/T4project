@@ -1,4 +1,11 @@
 $(function() {
+
+	$('.home_page_form').submit(function(){
+		if($('#search_box').val()==""){
+			return false;		
+		}
+	});
+
 	//over the input
         $( "input[type='text'],input[type='password'],textarea" ).mouseover(function(){
 			if(!$(this).is(":focus")){
@@ -30,7 +37,8 @@ $(function() {
 	"Scala",
 	"Scheme"
 	];
-	$( "#search_box" ).autocomplete({
+
+	$( ".radientBG #search_box" ).autocomplete({
 		source: availableTags
 	}).focus();
 

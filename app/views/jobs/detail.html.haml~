@@ -1,4 +1,8 @@
 .my_new_job
+  #file-manager
+    %ul.manager
+      %li
+        .title Job Detail:
   .list_table
     #Raleway_font
       Posted Job
@@ -7,15 +11,12 @@
       %li
         %span Company Name:
         = @job.companyname
-      .clear
       %li
         %span Job Title:
         = @job.title
-      .clear
       %li
         %span Job Description:
         = @job.desc
-      .clear
       %li
         %span Requirements:
         -if @job.reqs.size==0 or @job.reqs.match(/^\s+$/)
@@ -23,7 +24,6 @@
         -else
           -str=@job.reqs
         = str
-      .clear
       %li
         %span Desired Qualifications:
         -if @job.desire.size==0 or @job.desire.match(/^\s+$/)
@@ -31,20 +31,14 @@
         -else
           -str=@job.desire
         = str
-      .clear
       %li
-        %span Location:
         -if @job.city.size==0 or @job.city.match(/^\s+$/)
           -str='NULL'
         -else
           -str=@job.city
-        = str+', '+ @job.state
-      .clear
-      %li
-        %span Link:
-        = @job.link
+        = str+', '+@job.state
     .clear
     .form_title
     #div_twobtn_float_left
-      = button_to 'Edit', edit_job_path(@job) ,:class => 'common_button_search',:method => :get
-    = button_to 'Delete', job_path(@job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
+      = button_to 'Apply Now', @job.link, :class => 'common_button_search',:method => :get, :target => '_blank'
+    = button_to 'Contact Provider', profile_path(@job.user.profile), :method => :get, :class => 'common_button_search'

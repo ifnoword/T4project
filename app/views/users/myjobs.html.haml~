@@ -4,19 +4,21 @@
       My Job List
     .form_title
     #myjobs
-      #myjobs_heads
-        %p Title
-        %p Description
-        %p Updated At
       #myjobs_body
         - @jobs.each do |job|
-          .myjobs_item
-            = link_to "#{job.title}", job_path(job)
-            = content_tag(:td, job.desc[0,50], :class => 'desc')
-            = content_tag(:td, job.updated_at.strftime('%Y-%m-%d'), :class => 'normal')
-            = button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
-            = button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
-    = paginate @jobs :params =>{:controller=>'users',:action=>'myjobs'}
+          %ul.manager
+            %li
+              .myjobs_item
+                %span.title_j= link_to "#{job.title}", job_path(job)
+                %span.date= content_tag(:td, job.updated_at.strftime('%Y-%m-%d'), :class => 'normal')
+                .clear
+                = content_tag(:div, job.desc[0,50], :class => 'desc')
+              .form_title
+                #div_twobtn_float_left
+                  = button_to 'Edit', edit_job_path(job) ,:class => 'common_button_search',:method => :get
+                = button_to 'Delete', job_path(job), :method => :delete, :confirm => 'Are you sure?' ,:class => 'common_button_search'
+                .clear
+    = paginate @jobs
 
 
 
