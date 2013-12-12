@@ -6,7 +6,7 @@
     .text_style
       .smallwords
         Your Externship and Job Shadow search starts here
-      = form_tag jobs_search_path, :method => :post, :class=>'home_page_form' do
+      = form_tag jobs_search_path, :method => :get, :class=>'home_page_form' do
 
         = text_field :search, 'title',:id => 'search_box'      
         %br

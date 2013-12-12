@@ -12,7 +12,8 @@ class ProfilesController < ApplicationController
   def new
   end
   def show
-    @profile=@current_user.profile
+    id = params[:id]
+    @job = Profile.find(id)
   end
   def edit
     @profile=@current_user.profile
@@ -26,7 +27,7 @@ class ProfilesController < ApplicationController
       redirect_to profile_path(@profile)
     else
       flash.now[:updt_profile_fail]=@profile
-      puts flash.now[:updt_profile_fail]
+
       render :action=>:edit, :id=>@profile
     end
   end 

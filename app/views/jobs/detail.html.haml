@@ -1,0 +1,28 @@
+.my_new_job
+  .list_table
+    #Raleway_font
+      Posted Job
+    .form_title
+    %ul.manager
+      %li
+        Company Name:
+        = @job.companyname
+      %li
+        Job Title:
+        = @job.title
+      %li
+        Job Description:
+        = @job.desc
+      %li
+        Requirements:
+        = @job.reqs
+      %li
+        Desired Qualifications:
+        = @job.desire
+      %li
+        At  
+        = 'State: '+@job.state+',  City: '+@job.state
+    .form_title
+    #div_twobtn_float_left
+      = button_to 'Apply Now', @job.link, :class => 'common_button_search',:method => :get
+    = button_to 'Contact Provider', profile_path(@job.user.profile), :method => :get, :class => 'common_button_search'

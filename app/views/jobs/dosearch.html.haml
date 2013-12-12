@@ -7,7 +7,7 @@
 #search_results
   - @jobs.each do |job|
     .result
-      %p= job[:title]
+      =link_to job[:title], detail_path(job), :target => 'blank'
       %td= job[:companyname]
       %td= job[:city]
       %td= link_to job[:link], job[:link], :target => 'blank'

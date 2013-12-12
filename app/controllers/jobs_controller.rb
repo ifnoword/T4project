@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_filter :sign_in, except: [:index, :dosearch]
+  before_filter :sign_in, except: [:index, :dosearch, :detail]
   #before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
   before_filter :correct_owner, only: [:preview, :edit, :update]
   Perpage = 5
@@ -31,9 +31,14 @@ class JobsController < ApplicationController
   end
   
   def show
-   id = params[:id]
-   @job = Job.find(id)
+    id = params[:id]
+    @job = Job.find(id)
   end 
+
+  def detail
+    id = params[:id]
+    @job = Job.find(id)
+  end
   
   def edit
     @job = Job.find params[:id]

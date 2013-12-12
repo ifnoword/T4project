@@ -4,14 +4,9 @@
       %span#container_sl
         Welcome to ExternMe.com
     .text_style
-<<<<<<< HEAD
-      (Your Externship and Job Shadow search starts here)
-      = form_tag jobs_search_path, :class=>'home_page_form' do
-=======
       .smallwords
         Your Externship and Job Shadow search starts here
       = form_tag jobs_search_path, :method => :post, :class=>'home_page_form' do
->>>>>>> ededba658f7e505ce4ea2ce6e00464aa795b6f41
 
         = text_field :search, 'title',:id => 'search_box'      
         %br

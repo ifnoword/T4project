@@ -4,21 +4,13 @@
 
 
 
-%table#jobs
-  %thead
-    %tr
-      %th Job Title
-      %th Company name
-      %th Location
-      %th Apply on Company Website
-
-  %tbody
-    - @jobs.each do |job|
-      %tr
-        %td= job[:title]
-        %td= job[:companyname]
-        %td= job[:city]
-        %td= link_to job[:link], job[:link], :target => 'blank'
+#search_results
+  - @jobs.each do |job|
+    .result
+      =link_to job[:title], job[:link], :target => 'blank'
+      %td= job[:companyname]
+      %td= job[:city]
+      %td= link_to job[:link], job[:link], :target => 'blank'
 
 = paginate @jobs
 

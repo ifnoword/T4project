@@ -4,7 +4,7 @@
       My Profile
     %ul.manager
       %li
-        Name:
+        Real Name:
         = @profile.name
       %li
         Personal descpriton:

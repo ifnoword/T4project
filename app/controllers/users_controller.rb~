@@ -48,7 +48,6 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)     
     else 
       flash[:acct_fail] = @user
-      flash[:notice] = "That email address has already been used!"
       redirect_to new_user_path
     end
   end #create

@@ -12,7 +12,8 @@ class ProfilesController < ApplicationController
   def new
   end
   def show
-    @profile=@current_user.profile
+    id = params[:id]
+    @profile = Profile.find(id)
   end
   def edit
     @profile=@current_user.profile
