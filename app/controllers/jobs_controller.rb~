@@ -1,11 +1,7 @@
 class JobsController < ApplicationController
   before_filter :sign_in, except: [:index, :dosearch, :detail]
   #before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
-<<<<<<< HEAD
-  before_filter :correct_owner, only: [:preview, :edit, :update, :detail]
-=======
   before_filter :correct_owner, only: [:preview, :edit, :update]
->>>>>>> 960728304fd960612a8dd89f680045486c7da282
   Perpage = 5
 
   def correct_owner
@@ -76,16 +72,16 @@ class JobsController < ApplicationController
  
     case radio
     when "Title"
-      jobs=Job.where(["title like ?", "%#{search}%"])
+      jobs=Job.where(["LOWER(title) like ?", "%#{search.downcase}%"])
       @jobs = jobs.page(params[:page]).per(Perpage)
     when "Company"
-      jobs=Job.where(["companyname like ?", "%#{search}%"])  
+      jobs=Job.where(["LOWER(companyname) like ?", "%#{search.downcase}%"])  
       @jobs = jobs.page(params[:page]).per(Perpage)
     when "Location"
-      jobs=Job.where(["city like ?", "%#{search}%"])
+      jobs=Job.where(["LOWER(city) like ? or LOWER(state) like ?", "%#{search.downcase}%", "%#{search.downcase}%"])
       @jobs = jobs.page(params[:page]).per(Perpage)
     else
-      jobs=Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"])	
+      jobs=Job.where(["LOWER(title) like ? or LOWER(companyname) like ? or LOWER(city) like ?  or LOWER(desc) like ? or LOWER(reqs) like ? or LOWER(state) like ?", "%#{search.downcase}%" , "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%"])	
       @jobs = jobs.page(params[:page]).per(Perpage)    
    end 
    @size = jobs.size
