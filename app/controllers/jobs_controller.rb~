@@ -1,11 +1,7 @@
 class JobsController < ApplicationController
   before_filter :sign_in, except: [:index, :dosearch, :detail]
   #before_filter :correct_owner, except: [:index, :new, :create, :dosearch]
-<<<<<<< HEAD
-  before_filter :correct_owner, only: [:preview, :edit, :update, :detail]
-=======
   before_filter :correct_owner, only: [:preview, :edit, :update]
->>>>>>> 960728304fd960612a8dd89f680045486c7da282
   Perpage = 5
 
   def correct_owner

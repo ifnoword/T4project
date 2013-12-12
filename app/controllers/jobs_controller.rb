@@ -81,7 +81,7 @@ class JobsController < ApplicationController
       jobs=Job.where(["city like ?", "%#{search}%"])
       @jobs = jobs.page(params[:page]).per(Perpage)
     else
-      jobs=Job.where(["title like ? or companyname like ? or city like ?", "%#{search}%" , "%#{search}%", "%#{search}%"])	
+      jobs=Job.all
       @jobs = jobs.page(params[:page]).per(Perpage)    
    end 
    @size = jobs.size
