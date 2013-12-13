@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     puts "test******"
     if user.class == User
       flash[:notice] = "Your account was successfully updated."
+      session[:current_user]=user.email
       redirect_to edit_user_path(user)
     else
       flash.now[:updt_acct_fail] = user
