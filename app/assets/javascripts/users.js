@@ -24,20 +24,22 @@ $(document).ready(function(){
 		//fix the css of flash
 		$('iframe').contents().find("#notice").css({"margin-left": "50px"});
 
-		$(this).fadeIn(300);	  
+	  	$(this).fadeIn(300);
 
 		var h1=$('body', $('iframe').contents()).height()+50;
-		var h3=0;
+		var h2=$('body', $('#panel_div')).height();
 		if(h1>500)
 		{
-			h3=580+h1-500;
 			$('iframe').height(h1);
+			$('#panel_div').height(h1+150);
 		}
 		else
 		{	
-			$('iframe').height('500');
+			$('iframe').height(500);
+			$('#panel_div').height(750);
 
 		}
+
 	});
 /////////////////////////
  

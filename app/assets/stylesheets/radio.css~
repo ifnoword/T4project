@@ -3,13 +3,17 @@
   position:relative;
   left:470px;
 }
+img{
+  border:0 !important;
+}
+
 .radios input[type="radio"]{
-   	background-color: blue;
+
   	padding-top:5px;
 }
 .radios label,.radios input[type="radio"]{
         float:left;
-	height:30px;
+	height:30px !important;
 
 }
 
@@ -19,11 +23,11 @@
         font-size:11px;
 	padding:0;
 	line-height:10px;
- 	vertical-align:bottom;
+ 
         margin:0 10px 0 3px;
         white-space:nowrap;
         /*float:left;*/
-   	background-color: red;
+
 }
 
 input[type=radio]{
