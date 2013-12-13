@@ -10,9 +10,8 @@ img{
 
 .radios input[type="radio"]{
  	float:left;
-	height:30px;
-  line-height: 30px;
-  vertical-align:middle;
+	height:14px;
+
 }
 
 
