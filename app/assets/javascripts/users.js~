@@ -22,7 +22,7 @@ $(document).ready(function(){
 		//fix the css of flash
 		$('iframe').contents().find("#notice").css({"margin-left": "50px"});
 
-	  	$(this).fadeIn(400);
+	  	$(this).fadeIn(300);
 
 		var h1=$('body', $('iframe').contents()).height()+50;
 		var h2=$('body', $('#panel_div')).height();
@@ -43,14 +43,17 @@ $(document).ready(function(){
  
 	$('#leftPanelList').delegate('li a', 'click', function(event) {
 
-			var href = self.attr('href');
+		var self = $(this),
+			i = self.parent().index(),
+			href = self.attr('href');
 
 
-				$('iframe').fadeOut(500).attr('src', function() {
+				$('iframe').fadeOut(200).attr('src', function() {
 					
 					return href;
 				});
 
+		
 		event.preventDefault();
 	});
 

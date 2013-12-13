@@ -43,7 +43,9 @@ $(document).ready(function(){
  
 	$('#leftPanelList').delegate('li a', 'click', function(event) {
 
-			var href = self.attr('href');
+		var self = $(this),
+			i = self.parent().index(),
+			href = self.attr('href');
 
 
 				$('iframe').fadeOut(500).attr('src', function() {
@@ -51,6 +53,7 @@ $(document).ready(function(){
 					return href;
 				});
 
+		
 		event.preventDefault();
 	});
 
