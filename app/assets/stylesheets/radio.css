@@ -11,20 +11,22 @@ img{
 
   	padding-top:5px;
 }
-.radios label,.radios input[type="radio"]{
+.radios input[type="radio"]{
         float:left;
 	height:30px !important;
 
 }
-
+.radios label{
+        float:left;
+}
 .radios label {
 	color:#666;
         cursor:pointer;
         font-size:11px;
 	padding:0 !important;
-	line-height:30px !important;
-	vertical-align:middle !important;
- 
+	line-height:10px !important;
+	vertical-align: baseline !important;
+
         margin:0 10px 0 3px;
         white-space:nowrap;
         /*float:left;*/
