@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     user= User.update_attrbs(params[:user], user)
     puts "test******"
     if user.class == User
-      flash[:notice] = "Your 2account was successfully updated."
+      flash[:notice] = "Your account was successfully updated."
       session[:current_user]=user.email 
       set_current_user
       redirect_to edit_user_path(user)
