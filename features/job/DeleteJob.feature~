@@ -10,4 +10,4 @@ Scenario: delete a job in user center
 
 When I delete the job which job title is "SD intern" and click the confirm button
 
-Then I should see a message "Job asdfasdfasdfasdfasdf was deleted."
+Then I should see a message "Job SD intern was deleted."

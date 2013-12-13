@@ -62,7 +62,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 }
 
 #login-register a,#login-register a:visited;{
-  color:#E22100;
+  color:#E22100 !important;
 }
 
 

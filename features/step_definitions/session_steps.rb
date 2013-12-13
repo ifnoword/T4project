@@ -1,6 +1,6 @@
 # Completed step definitions for basic features: Create an account, Login 
 
-Given /^I am on Name Home Page$/ do
+Given /^I am on ExternMe Home Page$/ do
   visit jobs_path
  end
 
@@ -38,7 +38,7 @@ Then /^I should see email "(.*?)" and "(.*?)"$/ do |text,name|
  end
 
 When /^I click the Sign Out link$/ do
-   click_link "Sign Out"
+   click_button "Sign Out"
 end
 
 Then /^I should be redirected to home page to see the "(.*?)" again$/ do |text|
