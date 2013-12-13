@@ -8,24 +8,22 @@ img{
 }
 
 .radios input[type="radio"]{
-
+	display: inline;
   	padding-top:5px;
-}
-.radios input[type="radio"]{
         float:left;
 	height:30px !important;
-
 }
-.radios label{
 
+.radios label{
+        float:left;
 }
 .radios label {
+	display: inline;
 	color:#666;
         cursor:pointer;
         font-size:11px;
 	padding:0 !important;
-	line-height:10px !important;
-	vertical-align: baseline !important;
+
 
         margin:0 10px 0 3px;
         white-space:nowrap;
