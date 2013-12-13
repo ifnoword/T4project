@@ -22,7 +22,7 @@ $(document).ready(function(){
 		//fix the css of flash
 		$('iframe').contents().find("#notice").css({"margin-left": "50px"});
 
-	  	$(this).fadeIn(500);
+	  	$(this).fadeIn(400);
 
 		var h1=$('body', $('iframe').contents()).height()+50;
 		var h2=$('body', $('#panel_div')).height();
@@ -48,11 +48,14 @@ $(document).ready(function(){
 			href = self.attr('href');
 
 
-				$('iframe').fadeOut(500).attr('src', function() {
+				$('iframe').fadeOut(400);
+	
+				setTimeout(function() {
+		 		     	$('iframe').attr('src', function() {
 					
-					return href;
-				});
-
+						return href;
+					});
+				}, 400);
 		
 		event.preventDefault();
 	});
