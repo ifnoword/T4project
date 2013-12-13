@@ -16,8 +16,9 @@ $(document).ready(function(){
 
 		var gotoparent = $('iframe').contents().find("#warning");
 		if(gotoparent.html()=="Please log in!"){
-			window.location.replace("/login");
 			$('iframe').hide();
+			window.location.replace("/login");
+			
 
 		}
 		//hide the .account inside,but when javascript disable, it will show again.

@@ -14,13 +14,7 @@ $(document).ready(function(){
 				// Hide loading image when iframe is loaded
 	var method = $('iframe').load(function() {	
 
-		var gotoparent = $('iframe').contents().find("#warning");
-		if(gotoparent.html()=="Please log in!"){
-			$('iframe').hide();
-			window.location.replace("/login");
-			
 
-		}
 		//hide the .account inside,but when javascript disable, it will show again.
 		$('iframe').contents().find(".accountLoggedin").hide();
 		
