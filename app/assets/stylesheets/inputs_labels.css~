@@ -6,13 +6,6 @@
   margin-bottom:20px;	
 }
 
-label{
-  display: block;
-  line-height: 25px;
-
-  font-size:18px;
-}
-
 .edit_my_account label{
   padding:10px 0;
 }
@@ -45,7 +38,7 @@ select{
    height: 35px;
    overflow: hidden;
    background: url(down_arrow_select.jpg) no-repeat right #ddd;
-   border: 1px solid #8C8C8C;
+   border: 1px solid #B8BDC2;
 
 appearance:none; 
 -moz-appearance:none; 
@@ -58,11 +51,7 @@ text-overflow:'';
 
 
 
-input,select{
-  height:35px;
-  line-height: 35px;
-  vertical-align:middle;
-}
+
 textarea{
   height:65px;
   width:425px;

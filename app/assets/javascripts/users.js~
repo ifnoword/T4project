@@ -6,9 +6,7 @@ $(document).ready(function(){
 		      notice.slideUp(500);
 		}, 5000);
 	}
-				   
-	$('#usermainCtn').height('580');
-	$('#loading').height('500');
+
 	$('iframe').height('500');
 			
 				// Hide loading image when iframe is loaded
@@ -24,7 +22,7 @@ $(document).ready(function(){
 		//fix the css of flash
 		$('iframe').contents().find("#notice").css({"margin-left": "50px"});
 
-	  	$(this).fadeIn(300);
+	  	$(this).fadeIn(500);
 
 		var h1=$('body', $('iframe').contents()).height()+50;
 		var h2=$('body', $('#panel_div')).height();
@@ -36,7 +34,7 @@ $(document).ready(function(){
 		else
 		{	
 			$('iframe').height(500);
-			$('#panel_div').height(650);
+			$('#panel_div').height(750);
 
 		}
 
@@ -50,16 +48,15 @@ $(document).ready(function(){
 			href = self.attr('href');
 
 
-			// Show loading icon
-		//	$('#loading').fadeIn(100, function() {
-				// Setup iframes
-				$('iframe').fadeOut(200).attr('src', function() {
+				$('iframe').fadeOut(400);
+	
+				setTimeout(function() {
+		 		     	$('iframe').attr('src', function() {
 					
-					return href;
-				});
-
-		//	});
-		// Don't follow the link
+						return href;
+					});
+				}, 400);
+		
 		event.preventDefault();
 	});
 

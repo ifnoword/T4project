@@ -6,18 +6,18 @@
     .text_style
       .smallwords
         Your Externship and Job Shadow search starts here
-      = form_tag jobs_search_path, :method => :post, :class=>'home_page_form' do
+      = form_tag jobs_search_path, :method => :get, :class=>'home_page_form' do
 
         = text_field :search, 'title',:id => 'search_box'      
         %br
         .radios
           = radio_button_tag 'search[radio]', 'All',true
           = label_tag 'All', "All",:id => 'l_All'
-          = radio_button_tag 'search[radio]', 'Title'
+            = radio_button_tag 'search[radio]', 'Title'
           = label_tag 'Title', "Title",:id => 'l_Title'
-          = radio_button_tag 'search[radio]', 'Company'
+            = radio_button_tag 'search[radio]', 'Company'
           = label_tag 'Company', "Company",:id => 'l_Company'
-          = radio_button_tag 'search[radio]', 'Location'
+            = radio_button_tag 'search[radio]', 'Location'
           = label_tag 'Location', "Location",:id => 'l_Location'
 
         %br
