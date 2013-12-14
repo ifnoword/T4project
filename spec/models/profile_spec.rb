@@ -9,7 +9,7 @@ describe Profile do
       fake_user.should_receive(:build_profile).and_return(fake_profile)
       fake_profile.should_receive(:valid?).and_return(true)
       fake_profile.should_receive(:save!)
-      retval = Profile.creat_profile({:name => "name"}, fake_user)
+      retval = Profile.create_profile(fake_user)
       retval == fake_profile
     end
   end

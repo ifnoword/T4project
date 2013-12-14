@@ -97,31 +97,36 @@ describe JobsController do
     end
     it 'should use where method to search job database' do
       @fake_list.should_receive(:size).and_return(1)
-      Job.should_receive(:where).with(["title like ? or companyname like ? or city like ?", "%that%" , "%that%", "%that%"]).and_return(@fake_result)
+      @fake_result.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["LOWER(title) like ? or LOWER(companyname) like ? or LOWER(city) like ? or LOWER(reqs) like ? or LOWER(state) like ? or LOWER(descp) like ?", "%that%", "%that%", "%that%", "%that%", "%that%", "%that%"]).and_return(@fake_result)
       post :dosearch, {:search => {:title => "that", :radio => nil}, :page => 1}
       response.should render_template('dosearch')
     end
     it 'should redirect to jobs path when no results' do
       @fake_list.should_receive(:size).and_return(0)
+      @fake_result.should_receive(:size).and_return(0)
       Job.should_receive(:where).and_return(@fake_result)
       post :dosearch, {:search => {:title => "that", :radio => nil}, :page => 1}
       response.should redirect_to(jobs_path)
     end
     it 'should only search title for title option' do
       @fake_list.should_receive(:size).and_return(1)
-      Job.should_receive(:where).with(["title like ?", "%that%"]).and_return(@fake_result)
+      @fake_result.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["LOWER(title) like ?", "%that%"]).and_return(@fake_result)
       post :dosearch, {:search => {:title => "that", :radio => "Title"}, :page => 1}
       response.should render_template('dosearch')
     end
     it 'should only search company for company option' do
       @fake_list.should_receive(:size).and_return(1)
-      Job.should_receive(:where).with(["companyname like ?", "%that%"]).and_return(@fake_result)
+      @fake_result.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["LOWER(companyname) like ?", "%that%"]).and_return(@fake_result)
       post :dosearch, {:search => {:title => "that", :radio => "Company"}, :page => 1}
       response.should render_template('dosearch')
     end
     it 'should only search location for location option' do
       @fake_list.should_receive(:size).and_return(1)
-      Job.should_receive(:where).with(["city like ?", "%that%"]).and_return(@fake_result)
+      @fake_result.should_receive(:size).and_return(1)
+      Job.should_receive(:where).with(["LOWER(city) like ? or LOWER(state) like ?", "%that%", "%that%"]).and_return(@fake_result)
       post :dosearch, {:search => {:title => "that", :radio => "Location"}, :page => 1}
       response.should render_template('dosearch')
     end

@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 describe ProfilesController do
+  before(:each) do
+    controller.class.skip_before_filter :sign_in
+    controller.class.skip_before_filter :correct_user
+  end
   describe 'show' do
     it 'should redirect to show' do
-      fake_user = double('user1')
-      fake_user.should_receive(:profile)
-      controller.instance_variable_set(:@current_user, fake_user)
+      Profile.should_receive(:find).with("1")
       post :show, {:id => "1"}
       response.should render_template('show')
     end

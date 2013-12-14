@@ -21,15 +21,13 @@ describe UsersController do
         end
       end
       describe 'if the values are valid' do
-        before :each do
+        it 'should add new user to database and return to home page with confirmation' do
           fake_user = double('user1')
           fake_user.stub(:class).and_return(User)
           fake_user.stub(:email).and_return("this_user")
           User.should_receive(:create_user!).with("this_user").and_return(fake_user)
-        end
-        it 'should add new user to database and return to home page with confirmation' do
           post :create, {:user => "this_user"}
-          response.should redirect_to(jobs_path)
+          response.should redirect_to(user_path(fake_user))
         end
       end
     end
@@ -44,6 +42,7 @@ describe UsersController do
         User.should_receive(:update_attrbs).and_return(fake_user)
         fake_user.stub(:name).and_return("this_user")
         fake_user.should_receive(:class).at_least(:once).and_return(User)
+        fake_user.should_receive(:email).at_least(:once).and_return("this@this.com")
         User.should_receive(:find).with("1").and_return(fake_user)
         post :update, {:id => "1", :user => "this_user"}
         response.should redirect_to(edit_user_path(fake_user))

@@ -35,8 +35,8 @@ describe User do
 
       @user2 = User.create_user!(@params)
 
-      @user2.has_key?('name').should == false #error. name is too long
-      @user2.has_key?('email').should == false #error. email is invalid
+      @user2[:name].should == nil
+      @user2[:email].should == nil
     end
 
     it 'should check if the password is empty' do
@@ -129,7 +129,6 @@ describe User do
       fake_user.should_receive(:email=)
       fake_user.should_receive(:valid?).and_return(false)
       fake_user.should_receive(:errors).at_least(:once).and_return(fake_errors)
-      fake_user.should_receive(:save!)
       fake_errors.stub(:each).and_return(fake_key, "this")
       fake_user.should_receive(:password_digest).and_return(nil)
       Hash.should_receive(:new).and_return(fake_errs)

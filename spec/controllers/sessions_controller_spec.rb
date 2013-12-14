@@ -7,7 +7,7 @@ describe SessionsController do
       fake_user.stub(:email).and_return("this_user")
       User.should_receive(:login).with("user","password").and_return(fake_user)
       post :create, {:session => {'email' => "user", 'password' => "password"}}
-      response.should redirect_to(jobs_path)
+      response.should redirect_to(user_path(fake_user))
     end
     it 'should return to login page if invalid' do
       User.should_receive(:login).with("bad","login").and_return(false)
